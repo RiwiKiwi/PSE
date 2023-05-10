@@ -20,6 +20,11 @@ Feedback:
 | 3.2  | Automatische simulatie    | BELANGRIJK | V      |
 
 ### Specification 2.0
+Feedback:
+- make ensures for all functions that changes the data
+- OOP
+- making  some changes in the inputtests
+
 
 |     | Functionaliteit                      | Prioriteit | Status |
 |-----|--------------------------------------|------------|-------|
