@@ -44,5 +44,6 @@ Feedback:
 | 4.2 | GUI (routeplanner)                   | NUTTIG     | X     |
 | 4.3 | GUI (statische gegevens)             | NUTTIG     | X     |
 
+###AUTHORS:
 Made by Riwaaz Ranabhat and Abobaker Rahman
 
