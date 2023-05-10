@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- inplaats van STATION staat er PERSONAGES -->
+<METRONET>
+    <PERSONAGES>
+        <naam>A</naam>
+        <type>Metrostation</type>
+        <volgende>B</volgende>
+        <vorige>C</vorige>
+        <spoor>12</spoor>
+    </PERSONAGES>
+    <PERSONAGES>
+        <naam>B</naam>
+        <type>Halte</type>
+        <volgende>C</volgende>
+        <vorige>A</vorige>
+        <spoor>12</spoor>
+    </PERSONAGES>
+    <PERSONAGES>
+        <naam>C</naam>
+        <type>Metrostation</type>
+        <volgende>A</volgende>
+        <vorige>B</vorige>
+        <spoor>12</spoor>
+    </PERSONAGES>
+    <TRAM>
+        <lijnNr>12</lijnNr>
+        <type>Albatros</type>
+        <beginStation>A</beginStation>
+    </TRAM>
+</METRONET>

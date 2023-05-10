@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!-- previous and next cannot be nullpointers of a station -->
+<METRONET>
+    <STATION>
+        <naam>A</naam>
+        <type>Metrostation</type>
+        <volgende>B</volgende>
+        <vorige>C</vorige>
+        <spoor>12</spoor>
+    </STATION>
+    <STATION>
+        <!-- initial unknown station D -->
+        <naam>B</naam>
+        <volgende>D</volgende>
+        <type>Halte</type>
+        <vorige>A</vorige>
+        <spoor>12</spoor>
+    </STATION>
+    <STATION>
+        <naam>C</naam>
+        <type>Metrostation</type>
+        <volgende>A</volgende>
+        <vorige>B</vorige>
+        <spoor>12</spoor>
+    </STATION>
+    <TRAM>
+        <lijnNr>12</lijnNr>
+        <type>Albatros</type>
+        <voertuigNr>1</voertuigNr>
+        <beginStation>A</beginStation>
+    </TRAM>
+</METRONET>

@@ -1,0 +1,43 @@
+--== STATIONS ==--
+= Station A =
+type: Metrostation
+* Spoor 12:
+	<- F
+	-> B
+= Station B =
+type: Halte
+* Spoor 12:
+	<- A
+	-> C
+= Station C =
+type: Metrostation
+* Spoor 12:
+	<- B
+	-> D
+= Station D =
+type: Halte
+* Spoor 12:
+	<- C
+	-> E
+= Station E =
+type: Metrostation
+* Spoor 12:
+	<- D
+	-> F
+= Station F =
+type: Metrostation
+* Spoor 12:
+	<- E
+	-> G
+= Station G =
+type: Metrostation
+* Spoor 12:
+	<- F
+	-> A
+--== TRAMS ==--
+Tram 12 nr 1
+	 type: PCC
+	 aantalDefecten: 2
+	 reparatieTijd: 3
+	 snelheid: 40
+	 huidig station: A

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<METRONET>
+    <STATION>
+        <niets>A</niets>
+        <iets>Metrostation</iets>
+        <something>B</something>
+        <nothing>C</nothing>
+        <always>12</always>
+    </STATION>
+    <STATION>
+        <naam>B</naam>
+        <type>Halte</type>
+        <volgende>C</volgende>
+        <vorige>A</vorige>
+        <spoor>12</spoor>
+    </STATION>
+    <STATION>
+        <naam>C</naam>
+        <type>Metrostation</type>
+        <volgende>A</volgende>
+        <vorige>B</vorige>
+        <spoor>12</spoor>
+    </STATION>
+    <TRAM>
+        <lijnNr>12</lijnNr>
+        <type>Albatros</type>
+        <beginStation>A</beginStation>
+    </TRAM>
+</METRONET>

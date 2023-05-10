@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- case where every sub root is wrong -->
+<METRONET>
+    <A>
+        <naam>A</naam>
+        <type>Metrostation</type>
+        <volgende>B</volgende>
+        <vorige>C</vorige>
+        <spoor>12</spoor>
+    </A>
+    <B>
+        <naam>B</naam>
+        <type>Halte</type>
+        <volgende>C</volgende>
+        <vorige>A</vorige>
+        <spoor>12</spoor>
+    </B>
+    <C>
+        <naam>C</naam>
+        <type>Metrostation</type>
+        <volgende>A</volgende>
+        <vorige>B</vorige>
+        <spoor>12</spoor>
+    </C>
+    <D>
+        <lijnNr>12</lijnNr>
+        <type>Albatros</type>
+        <beginStation>A</beginStation>
+    </D>
+</METRONET>

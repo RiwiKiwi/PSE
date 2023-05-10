@@ -1,0 +1,25 @@
+# ninja log v5
+1	100	1683703954699751844	CMakeFiles/ttt.dir/tinyxml/tinyxmlerror.cpp.o	6fb1a96ab7544f24
+1	155	1683703954755752777	CMakeFiles/ttt.dir/tinyxml/tinystr.cpp.o	7887190082a239ac
+0	326	1683703954927755642	CMakeFiles/ttt.dir/src/main.cpp.o	3668800213e3e4a3
+2	330	1683703954931755709	CMakeFiles/ttt.dir/src/Tram.cpp.o	6405449818e3eb0f
+2	363	1683703954963756242	CMakeFiles/ttt.dir/src/simulationUtils.cpp.o	4f29e256b1a0f1d0
+2	405	1683703955003756908	CMakeFiles/ttt.dir/src/Station.cpp.o	2c700759fe079380
+1	482	1683703955079758176	CMakeFiles/ttt.dir/tinyxml/tinyxmlparser.cpp.o	49edb1fd0d25c630
+0	824	1683703955423763918	CMakeFiles/ttt.dir/tinyxml/tinyxml.cpp.o	f97a0f3b789f2412
+1	890	1683703955487764986	CMakeFiles/ttt.dir/src/Systeem.cpp.o	ffee010354b7cb1b
+3	935	1683703955531765721	CMakeFiles/ttt.dir/src/MetroOutput.cpp.o	7d1da9c56054160
+3	1284	1683703955879771528	CMakeFiles/ttt.dir/src/MetroReader.cpp.o	e57e55bf83772e7c
+1284	1336	1683703955935772464	ttt	75227d848f37f474
+2	107	1683703960535849637	CMakeFiles/ttt_debug.dir/tinyxml/tinyxmlerror.cpp.o	ba29e67cecdc5690
+2	129	1683703960555849974	CMakeFiles/ttt_debug.dir/tinyxml/tinystr.cpp.o	96bacbe74fe24f58
+3	308	1683703960735853007	CMakeFiles/ttt_debug.dir/src/simulationUtils.cpp.o	2de737257ec7b15e
+1	324	1683703960751853276	CMakeFiles/ttt_debug.dir/src/Tram.cpp.o	5756305879402422
+1	368	1683703960795854017	CMakeFiles/ttt_debug.dir/src/Station.cpp.o	730af51d5ad2eca9
+2	508	1683703960935856376	CMakeFiles/ttt_debug.dir/tinyxml/tinyxmlparser.cpp.o	ed6dc6ce64c5aa7d
+2	790	1683703961219861167	CMakeFiles/ttt_debug.dir/src/Systeem.cpp.o	d2c4b05a836a558d
+3	882	1683703961307862652	CMakeFiles/ttt_debug.dir/src/MetroOutput.cpp.o	dc8e1bfd984eec0c
+2	926	1683703961351863395	CMakeFiles/ttt_debug.dir/tinyxml/tinyxml.cpp.o	3a04d19da7394535
+3	1479	1683703961907872778	CMakeFiles/ttt_debug.dir/src/MetroReader.cpp.o	ee7f6c611d9ede29
+0	4354	1683703964775921338	CMakeFiles/ttt_debug.dir/src/tests.cpp.o	df1185c2fadebe70
+4354	4445	1683703964871922966	ttt_debug	283f64bf24d9fc51

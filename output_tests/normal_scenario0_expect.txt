@@ -1,0 +1,36 @@
+Station A
+<- F
+-> B
+Spoor 12
+
+Station B
+<- A
+-> C
+Spoor 12
+
+Station C
+<- B
+-> D
+Spoor 12
+
+Station D
+<- C
+-> E
+Spoor 12
+
+Station E
+<- D
+-> F
+Spoor 12
+
+Station F
+<- E
+-> G
+Spoor 12
+
+Station G
+<- F
+-> A
+Spoor 12
+
+Tram 12 in Station A
