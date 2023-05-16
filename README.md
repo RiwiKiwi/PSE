@@ -19,7 +19,7 @@ Feedback:
 | 3.1 | Rijden van trams          | VERPLICHT  | V      |
 | 3.2  | Automatische simulatie    | BELANGRIJK | V      |
 
-### Specification 2.0
+### Specification 2.0 & 2.1
 Feedback:
 - make ensures for all functions that changes the data
 - OOP
