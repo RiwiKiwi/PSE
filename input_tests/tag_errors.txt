@@ -1,5 +1,7 @@
 XML PARTIAL IMPORT: EXPECTED <METRONET> ... </METRONET> and got <ROOT> ... </ROOT>.
 XML PARTIAL IMPORT: EXPECTED <METRONET> ... </METRONET> and got <METRO> ... </METRO>.
+XML PARTIAL IMPORT: EXPECTED <METRONET> ... </METRONET> and got <ROOT> ... </ROOT>.
+XML PARTIAL IMPORT: EXPECTED <METRONET> ... </METRONET> and got <METRO> ... </METRO>.
 XML PARTIAL IMPORT: EXPECTED <METRONET> ... </METRONET> and got <LOL> ... </LOL>.
 XML IMPORT ABORTED: EXPECTED tag <STATION> or <TRAM> but got <PERSONAGES> ... </PERSONAGES>.
 XML IMPORT ABORTED: EXPECTED tag <STATION> or <TRAM> but got <IETS> ... </IETS>.
@@ -8,8 +10,28 @@ XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is mi
 XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
 XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
 XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
+XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
+XML IMPORT ABORTED: UNKNOWN tag occured in <TRAM>...</TRAM> or a tag is missing in the xml file
+XML IMPORT ABORTED: THERE ARE NO TRAMS IN YOUR METRONET!
+XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
+XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
+XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
+XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
+XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
+XML PARTIAL IMPORT: EXPECTED <METRONET> ... </METRONET> and got <ROOT> ... </ROOT>.
+XML PARTIAL IMPORT: EXPECTED <METRONET> ... </METRONET> and got <METRO> ... </METRO>.
+XML PARTIAL IMPORT: EXPECTED <METRONET> ... </METRONET> and got <LOL> ... </LOL>.
+XML IMPORT ABORTED: EXPECTED tag <STATION> or <TRAM> but got <PERSONAGES> ... </PERSONAGES>.
+XML IMPORT ABORTED: EXPECTED tag <STATION> or <TRAM> but got <IETS> ... </IETS>.
+XML IMPORT ABORTED: EXPECTED tag <STATION> or <TRAM> but got <A> ... </A>.
+XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
+XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
+XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
+XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
+XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
 XML IMPORT ABORTED: UNKNOWN tag occured in <TRAM>...</TRAM> or a tag is missing in the xml file
 XML IMPORT ABORTED: UNKNOWN tag occured in <TRAM>...</TRAM> or a tag is missing in the xml file
+XML IMPORT ABORTED: expected PCC or Stadslijner or Albatros as tramtype but got 
 XML IMPORT ABORTED: UNKNOWN tag occured in <TRAM>...</TRAM> or a tag is missing in the xml file
 XML IMPORT ABORTED: UNKNOWN tag occured in <TRAM>...</TRAM> or a tag is missing in the xml file
 XML PARTIAL IMPORT: EXPECTED <METRONET> ... </METRONET> and got <ROOT> ... </ROOT>.
@@ -22,8 +44,10 @@ XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is mi
 XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
 XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
 XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
+XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
 XML IMPORT ABORTED: UNKNOWN tag occured in <TRAM>...</TRAM> or a tag is missing in the xml file
 XML IMPORT ABORTED: UNKNOWN tag occured in <TRAM>...</TRAM> or a tag is missing in the xml file
+XML IMPORT ABORTED: expected PCC or Stadslijner or Albatros as tramtype but got 
 XML IMPORT ABORTED: UNKNOWN tag occured in <TRAM>...</TRAM> or a tag is missing in the xml file
 XML IMPORT ABORTED: UNKNOWN tag occured in <TRAM>...</TRAM> or a tag is missing in the xml file
 XML PARTIAL IMPORT: EXPECTED <METRONET> ... </METRONET> and got <ROOT> ... </ROOT>.
@@ -36,7 +60,9 @@ XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is mi
 XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
 XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
 XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
+XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file
 XML IMPORT ABORTED: UNKNOWN tag occured in <TRAM>...</TRAM> or a tag is missing in the xml file
 XML IMPORT ABORTED: UNKNOWN tag occured in <TRAM>...</TRAM> or a tag is missing in the xml file
+XML IMPORT ABORTED: expected PCC or Stadslijner or Albatros as tramtype but got 
 XML IMPORT ABORTED: UNKNOWN tag occured in <TRAM>...</TRAM> or a tag is missing in the xml file
 XML IMPORT ABORTED: UNKNOWN tag occured in <TRAM>...</TRAM> or a tag is missing in the xml file

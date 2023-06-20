@@ -24,6 +24,7 @@ int main()
         print.simple_writeover();
         print.advanced_writeover();
         test.rijd(20);
+        print.advanced_writeover();
     }
     return 0;
 }

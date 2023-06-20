@@ -24,8 +24,7 @@ public:
     /**
      * XML-reader function
      * REQUIRE(input_system.properlyInitialized(),"The system wasn' t correctly initialized!");
-     * ENSURE(!input_system.getTrams().empty(),"importXml postcondition failed!");
-     * ENSURE(!input_system.getStations().empty(),"importXml postconditon failed!");
+     * ENSURE(input_system.checkConsistent() == true,"importXml postcondition failed!");
      * @param input_filename : string (directory where we will read our file ) or variable where our path is stored
      * @param errStream : outstream for declaring message
      * @param input_system : inputvariable of type System

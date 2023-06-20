@@ -29,7 +29,7 @@ SuccessEnum MetroReader::importXml(const char* input_filename,std::ostream& errS
     // check if the root pointer isn' t a rootnode & it must be correctly written !
     if(rootname != "METRONET") {
         errStream << "XML PARTIAL IMPORT: EXPECTED <METRONET> ... </METRONET> and got <" << rootname << "> ... </" << rootname << ">." << endl;
-        return PartialImport;
+        endResult =  PartialImport;
     }
     // HERE WE MAKE THE TRAMS AND STATIONS BUT THE PREVIOUS AND NEXT POINTERS ARE STILL NULL HERE !
     for (TiXmlElement* current = get_root->FirstChildElement(); current != NULL; current = current->NextSiblingElement()) {
@@ -48,6 +48,11 @@ SuccessEnum MetroReader::importXml(const char* input_filename,std::ostream& errS
                     for (TiXmlElement* elements = current->FirstChildElement(); elements != NULL; elements = elements->NextSiblingElement()) {
                         std::string check_element = elements->Value();
                         if (check_element == "naam"){
+                            if (elements->FirstChild() == NULL){
+                                errStream << "XML IMPORT ABORTED: NAAM NOT PROPERLY INITIALIZED!"<<endl;
+                                endResult = ImportAborted;
+                                continue;
+                            }
                             string get_naam = elements->FirstChild()->ValueTStr().c_str();
                             bool result = is_Alphabet(get_naam);
                             if (result){
@@ -60,6 +65,10 @@ SuccessEnum MetroReader::importXml(const char* input_filename,std::ostream& errS
                             }
                         }
                         if (check_element == "type"){
+                            if (elements->FirstChild() == NULL){
+                                errStream << "XML IMPORT ABORTED: TYPE NOT PROPERLY INITIALIZED!" << endl;
+                                endResult = ImportAborted;
+                            }
                             string get_type = elements->FirstChild()->ValueTStr().c_str();
                             bool result = check_type(get_type,true);
                             if (result){
@@ -72,6 +81,11 @@ SuccessEnum MetroReader::importXml(const char* input_filename,std::ostream& errS
                             }
                         }
                         if (check_element == "volgende"){
+                            if (elements->FirstChild() == NULL){
+                                errStream << "XML IMPORT ABORTED: VOLGENDE NOT PROPERLY INITIALIZED!" << endl;
+                                endResult = ImportAborted;
+                                continue;
+                            }
                             string get_volgend = elements->FirstChild()->ValueTStr().c_str();
                             bool result = is_Alphabet(get_volgend);
                             if (result){
@@ -84,6 +98,11 @@ SuccessEnum MetroReader::importXml(const char* input_filename,std::ostream& errS
                             }
                         }
                         if (check_element == "vorige"){
+                            if (elements->FirstChild() == NULL){
+                                errStream << "XML IMPORT ABORTED: VORIGE NOT PROPERLY INITIALIZED!" << endl;
+                                endResult = ImportAborted;
+                                continue;
+                            }
                             string get_vorig = elements->FirstChild()->ValueTStr().c_str();
                             bool result = is_Alphabet(get_vorig);
                             if (result){
@@ -96,6 +115,11 @@ SuccessEnum MetroReader::importXml(const char* input_filename,std::ostream& errS
                             }
                         }
                         if (check_element == "spoor"){
+                            if (elements->FirstChild() == NULL){
+                                errStream << "XML IMPORT ABORTED: SPOOR NOT PROPERLY INITIALIZED!" << endl;
+                                endResult = ImportAborted;
+                                continue;
+                            }
                             const char *get_spoor = elements->FirstChild()->ValueTStr().c_str();
                             string tostring(get_spoor);
                             bool result = is_Number(tostring);
@@ -122,7 +146,7 @@ SuccessEnum MetroReader::importXml(const char* input_filename,std::ostream& errS
                 {
                     // WE HAVE READ SOMETHING ELSE THAN <naam>/<type>/<volgende>/<vorige>/<spoor>
                     errStream << "XML IMPORT ABORTED: UNKNOWN tag occured in <STATION>...</STATION> or a tag is missing in the xml file"<<endl;
-                    return ImportAborted;
+                    endResult = ImportAborted;
                 }
             }
             if (inside == "TRAM"){
@@ -130,31 +154,34 @@ SuccessEnum MetroReader::importXml(const char* input_filename,std::ostream& errS
                 bool elements_result = check_object_elements(inside,current,true);
                 if (elements_result)
                 {
+                    again:
+
                     string checking_tramtype = get_tram_type(current);
                     if (checking_tramtype == "PCC"){
                         SuccessEnum get_result = set_tram(true,current,input_system,errStream);
                         if (get_result == ImportAborted){
                             errStream << "XML IMPORT ABORTED: Failed to make PCC-tram" << endl;
-                            return ImportAborted;
+                            endResult =  ImportAborted;
                         }
                     }
                     else if(checking_tramtype == "Albatros" or checking_tramtype == "Stadslijner"){
                         SuccessEnum get_result_two = set_tram(false,current,input_system,errStream);
                         if (get_result_two == ImportAborted){
                             errStream << "XML IMPORT ABORTED: Failed to make Albatros or Stadslijner" << endl;
-                            return ImportAborted;
+                            endResult = ImportAborted;
                         }
                     }
                     else{
                         errStream << "XML IMPORT ABORTED: expected PCC or Stadslijner or Albatros as tramtype but got "<< checking_tramtype << endl;
-                        return ImportAborted;
+                        endResult = ImportAborted;
                     }
                 }
                 else
                 {
                     // WE HAVE READ SOMETHING ELSE THAN <naam>/<type>/<volgende>/<vorige>/<spoor>
                     errStream << "XML IMPORT ABORTED: UNKNOWN tag occured in <TRAM>...</TRAM> or a tag is missing in the xml file"<<endl;
-                    return ImportAborted;
+                    endResult = ImportAborted;
+                    goto again;
                 }
             }
         }
@@ -209,6 +236,14 @@ SuccessEnum MetroReader::importXml(const char* input_filename,std::ostream& errS
     }
     // Sluit het bestand
     doc.Clear();
+    if (input_system.getTrams().empty()){
+        errStream << "XML IMPORT ABORTED: THERE ARE NO TRAMS IN YOUR METRONET!" << endl;
+        endResult = ImportAborted;
+    }
+    if (input_system.getStations().empty()){
+        errStream <<"XML IMPORT ABORTED: THERE ARE NO STATIONS IN YOUR METRONET!" << endl;
+        endResult = ImportAborted;
+    }
     ENSURE(!input_system.getTrams().empty(),"importXml postcondition failed!");
     ENSURE(!input_system.getStations().empty(),"importXml postconditon failed!");
     return endResult;
@@ -325,6 +360,9 @@ string MetroReader::get_tram_type(TiXmlElement *input_root) {
     for (TiXmlElement* elements = input_root->FirstChildElement(); elements != NULL; elements = elements->NextSiblingElement()) {
         std::string get_element = elements->Value();
         if (get_element == "type"){
+            if (elements->FirstChild() == NULL){
+                return "NULL";
+            }
             string store_type = elements->FirstChild()->Value();
             return store_type;
         }else{
@@ -347,6 +385,11 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
         for (TiXmlElement* elements = input_root->FirstChildElement(); elements != NULL; elements = elements->NextSiblingElement()) {
             std::string check_element = elements->Value();
             if (check_element == "lijnNr"){
+                if (elements->FirstChild() == NULL){
+                    errStream << "XML IMPORT ABORTED: LIJNNR NOT PROPERLY INITIALIZED!" << endl;
+                    last = ImportAborted;
+                    continue;
+                }
                 const char* get_lijnnummer = elements->FirstChild()->ValueTStr().c_str();
                 string to_string(get_lijnnummer);
                 bool result = is_Number(to_string);
@@ -356,9 +399,16 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
                     errStream << "XML IMPORT ABORTED: expected an integer for setting up lijnnummer but got => "<< to_string << endl;
                     errStream << "---------------------------------------------------------------------"<< endl;
                     last = ImportAborted;
+                    continue;
+
                 }
             }
             else if (check_element == "aantalDefecten"){
+                if (elements->FirstChild() == NULL){
+                    errStream << "XML IMPORT ABORTED: AANTAL DEFECTEN NOT PROPERLY INITIALIZED!" << endl;
+                    last = ImportAborted;
+                    continue;
+                }
                 const char* get_moves = elements->FirstChild()->ValueTStr().c_str();
                 string verify(get_moves);
                 if (is_Number(verify)){
@@ -367,9 +417,15 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
                     errStream << "XML IMPORT ABORTED: expected an integer for setting up aantaldefecten but got => "<<verify << endl;
                     errStream << "---------------------------------------------------------------------"<< endl;
                     last = ImportAborted;
+                    continue;
                 }
             }
             else if (check_element == "reparatieTijd"){
+                if (elements->FirstChild() == NULL){
+                    errStream << "XML IMPORT ABORTED: REPARATIETIJD NOT PROPERLY INITIALIZED!" << endl;
+                    last = ImportAborted;
+                    continue;
+                }
                 const char* get_waits = elements->FirstChild()->ValueTStr().c_str();
                 string verify(get_waits);
                 if (is_Number(verify)){
@@ -381,6 +437,11 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
                 }
             }
             else if (check_element == "beginStation"){
+                if (elements->FirstChild() == NULL){
+                    errStream << "XML IMPORT ABORTED: BEGINSTATION NOT PROPERLY INITIALIZED!" << endl;
+                    last = ImportAborted;
+                    continue;
+                }
                 string get_beginstation_naam = elements->FirstChild()->ValueTStr().c_str();
                 bool result = is_Alphabet(get_beginstation_naam);
                 if (result){
@@ -389,9 +450,15 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
                     errStream <<"XML IMPORT ABORTED: expected an upper char for initilalizing the beginstation but got => "<<get_beginstation_naam << endl;
                     errStream << "---------------------------------------------------------------------"<< endl;
                     last = ImportAborted;
+                    continue;
                 }
             }
             else if (check_element == "voertuigNr"){
+                if (elements->FirstChild() == NULL){
+                    errStream << "XML IMPORT ABORTED: VOERTUIGNR NOT PROPERLY INITIALIZED!"<<endl;
+                    last = ImportAborted;
+                    continue;
+                }
                 const char* get_voertuignummer = elements->FirstChild()->ValueTStr().c_str();
                 string tostring(get_voertuignummer);
                 bool result = is_Number(tostring);
@@ -424,6 +491,11 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
         for (TiXmlElement* elements = input_root->FirstChildElement(); elements != NULL; elements = elements->NextSiblingElement()) {
             std::string check_element = elements->Value();
             if (check_element == "lijnNr"){
+                if (elements->FirstChild() == NULL){
+                    errStream << "XML IMPORT ABORTED: LIJNNR NOT PROPERLY INITIALIZED!" << endl;
+                    last = ImportAborted;
+                    continue;
+                }
                 const char* get_lijnnummer = elements->FirstChild()->ValueTStr().c_str();
                 string to_string(get_lijnnummer);
                 bool result = is_Number(to_string);
@@ -436,6 +508,11 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
                 }
             }
             if (check_element == "type"){
+                if (elements->FirstChild() == NULL){
+                    errStream << "XML IMPORT ABORTED: TYPE NOT PROPERLY INITIALIZED FOR ALBATROS OR STADSLIJNER" << endl;
+                    last = ImportAborted;
+                    continue;
+                }
                 string get_type = elements->FirstChild()->ValueTStr().c_str();
                 bool result = check_type(get_type,false);
                 if (result){
@@ -450,6 +527,11 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
                 }
             }
             if (check_element == "beginStation"){
+                if (elements->FirstChild() == NULL){
+                    errStream << "XML IMPORT ABORTED: BEGINSTATION NOT PROPERLY INITIALIZED!" << endl;
+                    last = ImportAborted;
+                    continue;
+                }
                 string get_beginstation_naam = elements->FirstChild()->ValueTStr().c_str();
                 bool result = is_Alphabet(get_beginstation_naam);
                 if (result){
@@ -480,6 +562,11 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
                 }
             }
             if (check_element == "voertuigNr"){
+                if (elements->FirstChild() == NULL){
+                    errStream << "XML IMPORT ABORTED: VOERTUIGNR NOT PROPERLY INITIALIZED!"<<endl;
+                    last = ImportAborted;
+                    continue;
+                }
                 const char* get_voertuignummer = elements->FirstChild()->ValueTStr().c_str();
                 string tostring(get_voertuignummer);
                 bool result = is_Number(tostring);
@@ -489,6 +576,7 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
                     errStream << "XML IMPORT ABORTED: expected an integer for voertuigNr but got => "<<tostring << endl;
                     errStream << "---------------------------------------------------------------------"<< endl;
                     last = ImportAborted;
+                    continue;
                 }
             }
         }

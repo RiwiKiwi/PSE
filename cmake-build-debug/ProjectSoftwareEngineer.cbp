@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ProjectSoftwareEngineer"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/riwi/CLionProjects/PSE/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ttt">
+				<Option output="/home/riwi/CLionProjects/PSE/cmake-build-debug/ttt" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/riwi/CLionProjects/PSE/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/riwi/CLionProjects/PSE/./gtest/include"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 ttt"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ttt/fast">
+				<Option output="/home/riwi/CLionProjects/PSE/cmake-build-debug/ttt" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/riwi/CLionProjects/PSE/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/riwi/CLionProjects/PSE/./gtest/include"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 ttt/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ttt_debug">
+				<Option output="/home/riwi/CLionProjects/PSE/cmake-build-debug/ttt_debug" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/riwi/CLionProjects/PSE/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/riwi/CLionProjects/PSE/./gtest/include"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 ttt_debug"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ttt_debug/fast">
+				<Option output="/home/riwi/CLionProjects/PSE/cmake-build-debug/ttt_debug" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/riwi/CLionProjects/PSE/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/riwi/CLionProjects/PSE/./gtest/include"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 ttt_debug/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/riwi/CLionProjects/PSE/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/riwi/CLionProjects/PSE/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/home/riwi/CLionProjects/PSE/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/DesignByContract.h">
+			<Option target="ttt"/>
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/MetroOutput.cpp">
+			<Option target="ttt"/>
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/MetroOutput.h">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/MetroReader.cpp">
+			<Option target="ttt"/>
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/MetroReader.h">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/Station.cpp">
+			<Option target="ttt"/>
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/Station.h">
+			<Option target="ttt"/>
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/Systeem.cpp">
+			<Option target="ttt"/>
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/Systeem.h">
+			<Option target="ttt"/>
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/Tram.cpp">
+			<Option target="ttt"/>
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/Tram.h">
+			<Option target="ttt"/>
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/main.cpp">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/simulationUtils.cpp">
+			<Option target="ttt"/>
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/simulationUtils.h">
+			<Option target="ttt"/>
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/testInput.h">
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/testOutput.h">
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/testPCC.h">
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/testStation.h">
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/testSysteem.h">
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/testTram.h">
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/src/tests.cpp">
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/tinyxml/tinystr.cpp">
+			<Option target="ttt"/>
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/tinyxml/tinystr.h">
+			<Option target="ttt"/>
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/tinyxml/tinyxml.cpp">
+			<Option target="ttt"/>
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/tinyxml/tinyxml.h">
+			<Option target="ttt"/>
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/tinyxml/tinyxmlerror.cpp">
+			<Option target="ttt"/>
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/tinyxml/tinyxmlparser.cpp">
+			<Option target="ttt"/>
+			<Option target="ttt_debug"/>
+		</Unit>
+		<Unit filename="/home/riwi/CLionProjects/PSE/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
