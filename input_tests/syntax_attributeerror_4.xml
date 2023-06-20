@@ -21,12 +21,12 @@
         <vorige>B</vorige>
         <spoor>12</spoor>
     </STATION>
-    <TRAM
+    <!-- no ending tag -->
+    <TRAM>
         <lijnNr>12</lijnNr>
         <type>PCC</type>
         <voertuigNr>1</voertuigNr>
         <beginStation>A</beginStation>
-    </TRAM>
     <TRAM>
         <lijnNr>12</lijnNr>
         <type>Albatros</type>

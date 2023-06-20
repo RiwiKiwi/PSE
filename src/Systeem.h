@@ -49,11 +49,18 @@ public:
     /**
      * REQUIRE(this->properlyInitialized(), "checkConsistent precondition failed");
      */
-    void checkConsistent();
+    bool checkConsistent();
     /**
      * ENSURE(this->properlyInitialized(),"CONSTRUCTOR OF CLASS SYSTEEM NOT PROPERLY INITIALIZED");
      */
     Systeem();
+    /**
+     * REQUIRE(this->properlyInitialized(),"rijd precondition failed!");
+     * REQUIRE(stappen > 0 , "rijd precondition failed");
+     * ENSURE(this->checkConsistent() == true,"rijd postcondition failed");
+     * @param stappen aantal keer dat je wilt moven
+     */
+    void rijd(int stappen);
 
 };
 

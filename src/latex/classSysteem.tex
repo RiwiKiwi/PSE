@@ -1,0 +1,97 @@
+\doxysection{Systeem Class Reference}
+\hypertarget{classSysteem}{}\label{classSysteem}\index{Systeem@{Systeem}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSysteem_ae53b12d7bc1ca02894328ed60b5a9645}{set\+Trams}} (const vector$<$ \mbox{\hyperlink{classTram}{Tram}} \texorpdfstring{$\ast$}{*} $>$ \&input\+\_\+trams)
+\item 
+void \mbox{\hyperlink{classSysteem_a4114eafec463f9f82fb5ffc0ff4d9b74}{set\+Stations}} (const vector$<$ \mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*} $>$ \&input\+\_\+stations)
+\item 
+const vector$<$ \mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{classSysteem_aabcaa90be45a1a408b4ea111d9f76d37}{get\+Stations}} () const
+\item 
+const vector$<$ \mbox{\hyperlink{classTram}{Tram}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{classSysteem_abc2f48eec0ae70ccecd6db6b5dabfa9a}{get\+Trams}} () const
+\item 
+\Hypertarget{classSysteem_ae54a2720d7ba93b4fb759024d0f66782}\label{classSysteem_ae54a2720d7ba93b4fb759024d0f66782} 
+bool {\bfseries properly\+Initialized} () const
+\item 
+bool \mbox{\hyperlink{classSysteem_a9b7b4b2fb0c91c71d117d4452d60bc1b}{check\+Consistent}} ()
+\item 
+\mbox{\hyperlink{classSysteem_a1fb878c484414d08af7e6e3569fec3f0}{Systeem}} ()
+\item 
+void \mbox{\hyperlink{classSysteem_a136eed925a581eb2aad80cbe432a5822}{rijd}} (int stappen)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSysteem_a1fb878c484414d08af7e6e3569fec3f0}\label{classSysteem_a1fb878c484414d08af7e6e3569fec3f0} 
+\index{Systeem@{Systeem}!Systeem@{Systeem}}
+\index{Systeem@{Systeem}!Systeem@{Systeem}}
+\doxysubsubsection{\texorpdfstring{Systeem()}{Systeem()}}
+{\footnotesize\ttfamily Systeem\+::\+Systeem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ENSURE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}\+CONSTRUCTOR OF CLASS SYSTEEM NOT PROPERLY INITIALIZED\"{}); 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSysteem_a9b7b4b2fb0c91c71d117d4452d60bc1b}\label{classSysteem_a9b7b4b2fb0c91c71d117d4452d60bc1b} 
+\index{Systeem@{Systeem}!checkConsistent@{checkConsistent}}
+\index{checkConsistent@{checkConsistent}!Systeem@{Systeem}}
+\doxysubsubsection{\texorpdfstring{checkConsistent()}{checkConsistent()}}
+{\footnotesize\ttfamily bool Systeem\+::check\+Consistent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(), \"{}check\+Consistent precondition failed\"{}); \Hypertarget{classSysteem_aabcaa90be45a1a408b4ea111d9f76d37}\label{classSysteem_aabcaa90be45a1a408b4ea111d9f76d37} 
+\index{Systeem@{Systeem}!getStations@{getStations}}
+\index{getStations@{getStations}!Systeem@{Systeem}}
+\doxysubsubsection{\texorpdfstring{getStations()}{getStations()}}
+{\footnotesize\ttfamily const vector$<$ \mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*} $>$ \& Systeem\+::get\+Stations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}get\+Stations precondition failed\"{}); \begin{DoxyReturn}{Returns}
+vector of type pointer to \doxylink{classStation}{Station} variables 
+\end{DoxyReturn}
+\Hypertarget{classSysteem_abc2f48eec0ae70ccecd6db6b5dabfa9a}\label{classSysteem_abc2f48eec0ae70ccecd6db6b5dabfa9a} 
+\index{Systeem@{Systeem}!getTrams@{getTrams}}
+\index{getTrams@{getTrams}!Systeem@{Systeem}}
+\doxysubsubsection{\texorpdfstring{getTrams()}{getTrams()}}
+{\footnotesize\ttfamily const vector$<$ \mbox{\hyperlink{classTram}{Tram}} \texorpdfstring{$\ast$}{*} $>$ \& Systeem\+::get\+Trams (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}get\+Trams precondition failed\"{}); \begin{DoxyReturn}{Returns}
+vector of type pointer to \doxylink{classTram}{Tram} 
+\end{DoxyReturn}
+\Hypertarget{classSysteem_a136eed925a581eb2aad80cbe432a5822}\label{classSysteem_a136eed925a581eb2aad80cbe432a5822} 
+\index{Systeem@{Systeem}!rijd@{rijd}}
+\index{rijd@{rijd}!Systeem@{Systeem}}
+\doxysubsubsection{\texorpdfstring{rijd()}{rijd()}}
+{\footnotesize\ttfamily void Systeem\+::rijd (\begin{DoxyParamCaption}\item[{int}]{stappen }\end{DoxyParamCaption})}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}rijd precondition failed!\"{}); REQUIRE(stappen \texorpdfstring{$>$}{>} 0 , \"{}rijd precondition failed\"{}); ENSURE(this-\/\texorpdfstring{$>$}{>}\doxylink{classSysteem_a9b7b4b2fb0c91c71d117d4452d60bc1b}{check\+Consistent()} == true,\"{}rijd postcondition failed\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em stappen} & aantal keer dat je wilt moven \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSysteem_a4114eafec463f9f82fb5ffc0ff4d9b74}\label{classSysteem_a4114eafec463f9f82fb5ffc0ff4d9b74} 
+\index{Systeem@{Systeem}!setStations@{setStations}}
+\index{setStations@{setStations}!Systeem@{Systeem}}
+\doxysubsubsection{\texorpdfstring{setStations()}{setStations()}}
+{\footnotesize\ttfamily void Systeem\+::set\+Stations (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*} $>$ \&}]{input\+\_\+stations }\end{DoxyParamCaption})}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}set\+Stations precondition failed\"{}); ENSURE(\doxylink{classSysteem_aabcaa90be45a1a408b4ea111d9f76d37}{get\+Stations()} == input\+\_\+stations,\"{}set\+Stations postcondition failed\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+stations} & \+: vector of type pointer to \doxylink{classStation}{Station} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSysteem_ae53b12d7bc1ca02894328ed60b5a9645}\label{classSysteem_ae53b12d7bc1ca02894328ed60b5a9645} 
+\index{Systeem@{Systeem}!setTrams@{setTrams}}
+\index{setTrams@{setTrams}!Systeem@{Systeem}}
+\doxysubsubsection{\texorpdfstring{setTrams()}{setTrams()}}
+{\footnotesize\ttfamily void Systeem\+::set\+Trams (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classTram}{Tram}} \texorpdfstring{$\ast$}{*} $>$ \&}]{input\+\_\+trams }\end{DoxyParamCaption})}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}set\+Trams precondition failed\"{}); ENSURE(\doxylink{classSysteem_abc2f48eec0ae70ccecd6db6b5dabfa9a}{get\+Trams()} == input\+\_\+trams,\"{}set\+Trams postcondition failed\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+trams} & \+: vector of type pointer to \doxylink{classTram}{Tram} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Systeem.\+h\item 
+Systeem.\+cpp\end{DoxyCompactItemize}

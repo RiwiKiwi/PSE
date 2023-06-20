@@ -12,8 +12,8 @@ MetroOutput::MetroOutput(const vector<Tram *> &trams, const vector<Station *> &s
 
 
 void MetroOutput::writeOver(){
-    REQUIRE(!stations.empty(),"simple writeOver precondition failed");
-    REQUIRE(!trams.empty(),"simple writeOver precondition failed");
+    REQUIRE(!stations.empty()," writeOver precondition failed");
+    REQUIRE(!trams.empty(),"writeOver precondition failed");
     ofstream out("../output_tests/normal_scenario0_output.txt");
     for (unsigned int i = 0; i < stations.size(); i++)
     {
@@ -76,7 +76,7 @@ void MetroOutput::advanced_writeover() {
   * THIS IS USECASE 2.3
   */
     REQUIRE(!stations.empty(),"advanced writeOver precondition failed");
-    REQUIRE(!stations.empty(),"advanced writeOver precondition failed");
+    REQUIRE(!trams.empty(),"advanced writeOver precondition failed");
     ofstream out("../output_tests/normal_scenario2_output.txt");
     //NOTE => We hebben stations met meerdere sporen niet beloofd dus er zal altijd maar 1 spoor zijn per XML file
     string my_station;
@@ -141,11 +141,13 @@ void MetroOutput::advanced_writeover() {
 
     out << my_station << endl << final_tram << endl;
     out.close();
+    ifstream file("../output_tests/normal_scenario2_output.txt");
+    ENSURE(file.peek() != ifstream::traits_type::eof(),"writeOver postcondition failed");
 }
 
 void MetroOutput::verplaatstram() {
     REQUIRE(!trams.empty(),"verplaatstram precondition failed");
-
+    REQUIRE(!stations.empty(),"verplaatstram precondition failed");
     ofstream out("../output_tests/automatic_simulation1_output.txt",ios_base::app);
 
     if (out.is_open())
@@ -210,21 +212,5 @@ void MetroOutput::verplaatstram() {
             }
         }
     }
-
     out.close();
 }
-
-void MetroOutput::rijd(int stappen)
-{
-    REQUIRE(stappen > 0 , "rijd precondition failed");
-    int stap = 0;
-
-    while (stap < stappen)
-    {
-        verplaatstram();
-        stap++;
-    }
-}
-
-
-

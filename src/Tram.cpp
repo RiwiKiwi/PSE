@@ -8,7 +8,6 @@
 int Tram::getLijnNr() const
 {
     REQUIRE(this->properlyInitialized(),"getLijnNr precondition failed");
-    ENSURE(lijnNr >= 0,"getLijnNr postcondition failed");
     return lijnNr;
 }
 
@@ -24,7 +23,6 @@ void Tram::setLijnNr(int lineNr)
 int Tram::getSnelheid() const
 {
     REQUIRE(this->properlyInitialized(),"getSnelheid precondition failed");
-    ENSURE(snelheid >= 0, "getSnelheid postcondition failed");
     return snelheid;
 }
 
@@ -109,7 +107,6 @@ void Tram::setBeginstationname(const string &input_name) {
 
 int Tram::getVoertuignummer() const {
     REQUIRE(this->properlyInitialized(),"getVoertuignummer precondition failed");
-    ENSURE(voertuignummer >= 0, "getVoertuignummer postcondition failed");
     return voertuignummer;
 }
 

@@ -1,0 +1,7 @@
+XML IMPORT ABORTED: expected an integer for spoor but got => 1youbdudheedudbssgobsgsgoseberdfugdfdbbsib
+---------------------------------------------------------------------
+XML IMPORT ABORTED: repairtime for pcc not present because current value: 0
+XML IMPORT ABORTED: moves not present before defect for pcc because current value: 0
+XML IMPORT ABORTED: Failed to make PCC-tram
+
+

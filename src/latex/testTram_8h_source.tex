@@ -1,0 +1,191 @@
+\doxysection{test\+Tram.\+h}
+\hypertarget{testTram_8h_source}{}\label{testTram_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ aburahman10\ on\ 17/03/23.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ PROJECTSOFTWAREENGINEER\_TESTTRAM\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ PROJECTSOFTWAREENGINEER\_TESTTRAM\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PROJECTSOFTWAREENGINEER\_TESTTRAM\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}iostream"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}fstream"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}sys/stat.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <gtest/gtest.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}Station.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}Tram.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}MetroReader.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtestTram}{testTram}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_type(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ input\_tramtype)\{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ tram\_types[]\ =\ \{\textcolor{stringliteral}{"{}PCC"{}},\textcolor{stringliteral}{"{}Albatros"{}},\textcolor{stringliteral}{"{}Stadslijner"{}}\};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ vector<string>\ trams\_types(tram\_types,\ tram\_types+\ \textcolor{keyword}{sizeof}(tram\_types)\ /\ \textcolor{keyword}{sizeof}(tram\_types[0]));}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (vector<string>::iterator\ it\ =\ trams\_types.begin();\ it\ !=\ trams\_types.end();\ ++it)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\_tramtype\ ==\ *it)\{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00035\ \ \ \ \ \};}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *\ TESTEN\ VAN\ DE\ CONSTRUCTOR}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ TEST\_F(\mbox{\hyperlink{classtestTram}{testTram}},constructor)}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}*\ make\_tram\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00045\ \ \ \ \ ASSERT\_TRUE(make\_tram-\/>properlyInitialized());}
+\DoxyCodeLine{00046\ \ \ \ \ ASSERT\_TRUE(make\_tram-\/>\mbox{\hyperlink{classTram_ad2404fa7837b41287feab05f6a1b52bf}{getLijnNr}}()\ ==\ 0);}
+\DoxyCodeLine{00047\ \ \ \ \ ASSERT\_TRUE(make\_tram-\/>\mbox{\hyperlink{classTram_aa8bcd980469801cb8524f170006f666c}{getSnelheid}}()\ ==\ 0);}
+\DoxyCodeLine{00048\ \ \ \ \ ASSERT\_TRUE(make\_tram-\/>\mbox{\hyperlink{classTram_abe386592de6a7930df75ea184b945403}{getBeginStation}}()\ ==\ NULL);}
+\DoxyCodeLine{00049\ \ \ \ \ ASSERT\_TRUE(make\_tram-\/>\mbox{\hyperlink{classTram_affc75d2523aa54ea42c4e023a82b1a62}{getHuidigeStation}}()\ ==\ NULL);}
+\DoxyCodeLine{00050\ \ \ \ \ ASSERT\_TRUE(make\_tram-\/>\mbox{\hyperlink{classTram_a865733c0109b4f4b98ad9a5b41a1041b}{getType}}()\ ==\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00051\ \ \ \ \ ASSERT\_TRUE(make\_tram-\/>\mbox{\hyperlink{classTram_a5e1e3c04fc22d470616f82039c1445ad}{getBeginstationname}}()\ ==\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00052\ \ \ \ \ ASSERT\_TRUE(make\_tram-\/>\mbox{\hyperlink{classTram_a84c856d1f8a2b417abcf6fcad8e64947}{getVoertuignummer}}()\ ==\ 0);}
+\DoxyCodeLine{00053\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ *\ TESTEN\ VAN\ GETTERS\ EN\ SETTERS}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ GETTER\ EN\ SETTER\ VOOR\ SNELHEID}}
+\DoxyCodeLine{00060\ TEST\_F(\mbox{\hyperlink{classtestTram}{testTram}},Snelheid)\{}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}\ *\ tram\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00062\ \ \ \ \ ASSERT\_EQ(tram-\/>\mbox{\hyperlink{classTram_aa8bcd980469801cb8524f170006f666c}{getSnelheid}}(),0);}
+\DoxyCodeLine{00063\ \ \ \ \ tram-\/>\mbox{\hyperlink{classTram_a235f2c5206027afdaac1a2d29f7b1494}{setSnelheid}}(100);}
+\DoxyCodeLine{00064\ \ \ \ \ EXPECT\_EQ(tram-\/>\mbox{\hyperlink{classTram_aa8bcd980469801cb8524f170006f666c}{getSnelheid}}(),100);}
+\DoxyCodeLine{00065\ \ \ \ \ ASSERT\_NE(tram-\/>\mbox{\hyperlink{classTram_aa8bcd980469801cb8524f170006f666c}{getSnelheid}}(),0);}
+\DoxyCodeLine{00066\ \}}
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ GETTTER\ EN\ SETTER\ VOOR\ SETLIJNNUMMER}}
+\DoxyCodeLine{00068\ TEST\_F(\mbox{\hyperlink{classtestTram}{testTram}},LijnNr)\{}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}*\ tram\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00070\ \ \ \ \ EXPECT\_EQ(tram-\/>\mbox{\hyperlink{classTram_ad2404fa7837b41287feab05f6a1b52bf}{getLijnNr}}(),0);}
+\DoxyCodeLine{00071\ \ \ \ \ tram-\/>\mbox{\hyperlink{classTram_aa4abed68bed572ea91e01eca2d48abfe}{setLijnNr}}(50);}
+\DoxyCodeLine{00072\ \ \ \ \ EXPECT\_EQ(50,tram-\/>\mbox{\hyperlink{classTram_ad2404fa7837b41287feab05f6a1b52bf}{getLijnNr}}());}
+\DoxyCodeLine{00073\ \ \ \ \ ASSERT\_NE(tram-\/>\mbox{\hyperlink{classTram_ad2404fa7837b41287feab05f6a1b52bf}{getLijnNr}}(),0);}
+\DoxyCodeLine{00074\ \}}
+\DoxyCodeLine{00075\ \textcolor{comment}{//GETTER\ EN\ SETTER\ VOOR\ BEGINSTATIONPOINTER}}
+\DoxyCodeLine{00076\ TEST\_F(\mbox{\hyperlink{classtestTram}{testTram}},BeginStationpointer)\{}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}\ *\ tram\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00078\ \ \ \ \ ASSERT\_EQ(NULL,tram-\/>\mbox{\hyperlink{classTram_abe386592de6a7930df75ea184b945403}{getBeginStation}}());}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00080\ \ \ \ \ tram-\/>\mbox{\hyperlink{classTram_a3c2311e85ee636e21f96ae7dfa71ad50}{setBeginStation}}(station);}
+\DoxyCodeLine{00081\ \ \ \ \ EXPECT\_EQ(tram-\/>\mbox{\hyperlink{classTram_abe386592de6a7930df75ea184b945403}{getBeginStation}}(),station);}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ can''t\ be\ equal\ to\ nullpointer}}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}*\ compare\_tram\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00084\ \ \ \ \ ASSERT\_NE(compare\_tram-\/>\mbox{\hyperlink{classTram_abe386592de6a7930df75ea184b945403}{getBeginStation}}(),tram-\/>\mbox{\hyperlink{classTram_abe386592de6a7930df75ea184b945403}{getBeginStation}}());}
+\DoxyCodeLine{00085\ \}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//GETTER\ EN\ SETTER\ VOOR\ HUIDIGESTATIONPOINTER}}
+\DoxyCodeLine{00087\ TEST\_F(\mbox{\hyperlink{classtestTram}{testTram}},HuidigeStationpointer)}
+\DoxyCodeLine{00088\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}*\ tram\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00090\ \ \ \ \ ASSERT\_EQ(NULL,tram-\/>\mbox{\hyperlink{classTram_affc75d2523aa54ea42c4e023a82b1a62}{getHuidigeStation}}());}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00092\ \ \ \ \ tram-\/>\mbox{\hyperlink{classTram_ae6955372c42af7b72b60ec4c8462983c}{setHuidigeStation}}(station);}
+\DoxyCodeLine{00093\ \ \ \ \ EXPECT\_EQ(tram-\/>\mbox{\hyperlink{classTram_affc75d2523aa54ea42c4e023a82b1a62}{getHuidigeStation}}(),station);}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}*\ compare\_tram\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00095\ \ \ \ \ ASSERT\_NE(tram-\/>\mbox{\hyperlink{classTram_affc75d2523aa54ea42c4e023a82b1a62}{getHuidigeStation}}(),compare\_tram-\/>\mbox{\hyperlink{classTram_affc75d2523aa54ea42c4e023a82b1a62}{getHuidigeStation}}());}
+\DoxyCodeLine{00096\ \}}
+\DoxyCodeLine{00097\ \textcolor{comment}{//\ GETTER\ EN\ SETTER\ VOOR\ TYPE}}
+\DoxyCodeLine{00098\ TEST\_F(\mbox{\hyperlink{classtestTram}{testTram}},Type)\{}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}*\ tram\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00100\ \ \ \ \ ASSERT\_EQ(tram-\/>\mbox{\hyperlink{classTram_a865733c0109b4f4b98ad9a5b41a1041b}{getType}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00101\ \ \ \ \ EXPECT\_FALSE(check\_type(tram-\/>\mbox{\hyperlink{classTram_a865733c0109b4f4b98ad9a5b41a1041b}{getType}}()));}
+\DoxyCodeLine{00102\ \ \ \ \ tram-\/>\mbox{\hyperlink{classTram_a096dc0baccdb2cb9f5a83f92a21ccba6}{setType}}(\textcolor{stringliteral}{"{}Albatros"{}});}
+\DoxyCodeLine{00103\ \ \ \ \ EXPECT\_EQ(tram-\/>\mbox{\hyperlink{classTram_a865733c0109b4f4b98ad9a5b41a1041b}{getType}}(),\textcolor{stringliteral}{"{}Albatros"{}});}
+\DoxyCodeLine{00104\ \ \ \ \ ASSERT\_NE(tram-\/>\mbox{\hyperlink{classTram_a865733c0109b4f4b98ad9a5b41a1041b}{getType}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00105\ \ \ \ \ EXPECT\_TRUE(check\_type(tram-\/>\mbox{\hyperlink{classTram_a865733c0109b4f4b98ad9a5b41a1041b}{getType}}()));}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \}}
+\DoxyCodeLine{00108\ \textcolor{comment}{//\ GETTER\ EN\ SETTER\ VOOR\ BEGINSTATIONNAMESTRING}}
+\DoxyCodeLine{00109\ TEST\_F(\mbox{\hyperlink{classtestTram}{testTram}},Beginstationname)\{}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}*\ tram\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00111\ \ \ \ \ ASSERT\_EQ(tram-\/>\mbox{\hyperlink{classTram_a5e1e3c04fc22d470616f82039c1445ad}{getBeginstationname}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00112\ \ \ \ \ tram-\/>\mbox{\hyperlink{classTram_aff34a98b46aab6046a9f5517616edb06}{setBeginstationname}}(\textcolor{stringliteral}{"{}D"{}});}
+\DoxyCodeLine{00113\ \ \ \ \ EXPECT\_EQ(tram-\/>\mbox{\hyperlink{classTram_a5e1e3c04fc22d470616f82039c1445ad}{getBeginstationname}}(),\textcolor{stringliteral}{"{}D"{}});}
+\DoxyCodeLine{00114\ \ \ \ \ ASSERT\_NE(tram-\/>\mbox{\hyperlink{classTram_a5e1e3c04fc22d470616f82039c1445ad}{getBeginstationname}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00115\ \}}
+\DoxyCodeLine{00116\ \textcolor{comment}{//GETTER\ EN\ SETTER\ VOOR\ VOERTUIGNUMMER}}
+\DoxyCodeLine{00117\ TEST\_F(\mbox{\hyperlink{classtestTram}{testTram}},Voertuignummer)\{}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}*\ tram\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00119\ \ \ \ \ ASSERT\_EQ(tram-\/>\mbox{\hyperlink{classTram_a84c856d1f8a2b417abcf6fcad8e64947}{getVoertuignummer}}(),0);}
+\DoxyCodeLine{00120\ \ \ \ \ tram-\/>\mbox{\hyperlink{classTram_a95d085acae025bb5383ab657c3637f2f}{setVoertuignummer}}(10);}
+\DoxyCodeLine{00121\ \ \ \ \ EXPECT\_EQ(tram-\/>\mbox{\hyperlink{classTram_a84c856d1f8a2b417abcf6fcad8e64947}{getVoertuignummer}}(),10);}
+\DoxyCodeLine{00122\ \ \ \ \ ASSERT\_NE(tram-\/>\mbox{\hyperlink{classTram_a84c856d1f8a2b417abcf6fcad8e64947}{getVoertuignummer}}(),0);}
+\DoxyCodeLine{00123\ \}}
+\DoxyCodeLine{00124\ \textcolor{comment}{//TESTEN\ OP\ VERSCHILLENDE\ TYPES\ VOOR\ INITIALIZATIE\ VAN\ TRAM}}
+\DoxyCodeLine{00125\ TEST\_F(\mbox{\hyperlink{classtestTram}{testTram}},types\_test)\{}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ tram\_types[]\ =\ \{\textcolor{stringliteral}{"{}Albatros"{}},\textcolor{stringliteral}{"{}Stadslijner"{}},\textcolor{stringliteral}{"{}PCC"{}},\textcolor{stringliteral}{"{}Albatros"{}},\textcolor{stringliteral}{"{}Albatros"{}},\textcolor{stringliteral}{"{}Albatros"{}}\};}
+\DoxyCodeLine{00127\ \ \ \ \ vector<string>\ trams\_types(tram\_types,\ tram\_types\ +\ \textcolor{keyword}{sizeof}(tram\_types)\ /\ \textcolor{keyword}{sizeof}(tram\_types[0]));}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ trams\_types.size();\ ++i)\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ EXPECT\_TRUE(check\_type(trams\_types[i]));}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ tram\_fout\_types[]\ =\ \{\textcolor{stringliteral}{"{}hallo"{}},\ \textcolor{stringliteral}{"{}PCCS"{}},\ \textcolor{stringliteral}{"{}TRAINS"{}},\ \textcolor{stringliteral}{"{}icc"{}},\ \textcolor{stringliteral}{"{}DFB"{}},\ \textcolor{stringliteral}{"{}UA"{}}\};}
+\DoxyCodeLine{00132\ \ \ \ \ vector<string>\ trams\_fout\_types(tram\_fout\_types,\ tram\_fout\_types\ +\ \textcolor{keyword}{sizeof}(tram\_fout\_types)\ /\ \textcolor{keyword}{sizeof}(tram\_fout\_types[0]));}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ trams\_fout\_types.size();\ ++i)\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ EXPECT\_FALSE(check\_type(trams\_fout\_types[i]));}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \}}
+\DoxyCodeLine{00137\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00138\ \textcolor{comment}{\ *\ CONTRACT\ VIOLATIONS\ (SETTERS)}}
+\DoxyCodeLine{00139\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{comment}{//\ lijnnummer\ kan\ ook\ niet\ signed\ zijn!}}
+\DoxyCodeLine{00142\ TEST\_F(\mbox{\hyperlink{classtestTram}{testTram}},violate\_setLijnnummer)}
+\DoxyCodeLine{00143\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}\ *tram\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00145\ \ \ \ \ EXPECT\_DEATH(tram-\/>\mbox{\hyperlink{classTram_aa4abed68bed572ea91e01eca2d48abfe}{setLijnNr}}(-\/1),\textcolor{stringliteral}{"{}setLijnNr\ must\ be\ equal\ or\ greater\ than\ 0"{}});}
+\DoxyCodeLine{00146\ \ \ \ \ ASSERT\_EQ(tram-\/>\mbox{\hyperlink{classTram_ad2404fa7837b41287feab05f6a1b52bf}{getLijnNr}}(),0);}
+\DoxyCodeLine{00147\ \}}
+\DoxyCodeLine{00148\ \textcolor{comment}{//\ snelheid\ kan\ geen\ signed\ integer\ zijn\ !}}
+\DoxyCodeLine{00149\ TEST\_F(\mbox{\hyperlink{classtestTram}{testTram}},violate\_setSnelheid)}
+\DoxyCodeLine{00150\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}\ *tram\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00152\ \ \ \ \ EXPECT\_DEATH(tram-\/>\mbox{\hyperlink{classTram_a235f2c5206027afdaac1a2d29f7b1494}{setSnelheid}}(-\/1),\textcolor{stringliteral}{"{}setSnelheid\ precondition\ failed"{}});}
+\DoxyCodeLine{00153\ \ \ \ \ ASSERT\_EQ(tram-\/>\mbox{\hyperlink{classTram_aa8bcd980469801cb8524f170006f666c}{getSnelheid}}(),0);}
+\DoxyCodeLine{00154\ \}}
+\DoxyCodeLine{00155\ \textcolor{comment}{//\ Beginstation\ moet\ ook\ initialized\ pointer\ zijn\ !}}
+\DoxyCodeLine{00156\ TEST\_F(\mbox{\hyperlink{classtestTram}{testTram}},violate\_setBeginStation)}
+\DoxyCodeLine{00157\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}\ *tram\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00159\ \ \ \ \ EXPECT\_DEATH(tram-\/>\mbox{\hyperlink{classTram_a3c2311e85ee636e21f96ae7dfa71ad50}{setBeginStation}}(NULL),\textcolor{stringliteral}{"{}setBeginStation\ precondition\ failed"{}});}
+\DoxyCodeLine{00160\ \ \ \ \ ASSERT\_EQ(NULL,\ tram-\/>\mbox{\hyperlink{classTram_abe386592de6a7930df75ea184b945403}{getBeginStation}}());}
+\DoxyCodeLine{00161\ \}}
+\DoxyCodeLine{00162\ \textcolor{comment}{//\ Currentstation\ moet\ een\ initialized\ pointer\ zijn\ !}}
+\DoxyCodeLine{00163\ TEST\_F(\mbox{\hyperlink{classtestTram}{testTram}},violate\_setHuidigeStation)}
+\DoxyCodeLine{00164\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}\ *tram\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00166\ \ \ \ \ EXPECT\_DEATH(tram-\/>\mbox{\hyperlink{classTram_ae6955372c42af7b72b60ec4c8462983c}{setHuidigeStation}}(NULL),\textcolor{stringliteral}{"{}setHuidigeStation\ precondition\ failed"{}});}
+\DoxyCodeLine{00167\ \ \ \ \ ASSERT\_EQ(NULL,tram-\/>\mbox{\hyperlink{classTram_affc75d2523aa54ea42c4e023a82b1a62}{getHuidigeStation}}());}
+\DoxyCodeLine{00168\ \}}
+\DoxyCodeLine{00169\ \textcolor{comment}{//\ Lege\ string\ als\ settype\ mag\ niet\ !}}
+\DoxyCodeLine{00170\ TEST\_F(\mbox{\hyperlink{classtestTram}{testTram}},violate\_setType)\{}
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}\ *\ tram\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00172\ \ \ \ \ EXPECT\_DEATH(tram-\/>\mbox{\hyperlink{classTram_a096dc0baccdb2cb9f5a83f92a21ccba6}{setType}}(\textcolor{stringliteral}{"{}"{}}),\textcolor{stringliteral}{"{}setType\ precondition\ failed"{}});}
+\DoxyCodeLine{00173\ \ \ \ \ ASSERT\_EQ(tram-\/>\mbox{\hyperlink{classTram_a865733c0109b4f4b98ad9a5b41a1041b}{getType}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00174\ \}}
+\DoxyCodeLine{00175\ \textcolor{comment}{//\ Lijnnummer\ mag\ geen\ signed\ int\ zijn}}
+\DoxyCodeLine{00176\ TEST\_F(\mbox{\hyperlink{classtestTram}{testTram}},violate\_setVoertuignummer)\{}
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}*\ tram\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00178\ \ \ \ \ EXPECT\_DEATH(tram-\/>\mbox{\hyperlink{classTram_a95d085acae025bb5383ab657c3637f2f}{setVoertuignummer}}(-\/1),\textcolor{stringliteral}{"{}setVoertuignummer\ precondition\ failed"{}});}
+\DoxyCodeLine{00179\ \ \ \ \ ASSERT\_EQ(tram-\/>\mbox{\hyperlink{classTram_a84c856d1f8a2b417abcf6fcad8e64947}{getVoertuignummer}}(),0);}
+\DoxyCodeLine{00180\ \}}
+\DoxyCodeLine{00181\ \textcolor{comment}{//\ Lege\ string\ als\ setname\ voor\ beginstation\ mag\ niet\ !}}
+\DoxyCodeLine{00182\ TEST\_F(\mbox{\hyperlink{classtestTram}{testTram}},checksetbeginstationstring)\{}
+\DoxyCodeLine{00183\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}*\ tram\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00184\ \ \ \ \ EXPECT\_DEATH(tram-\/>\mbox{\hyperlink{classTram_aff34a98b46aab6046a9f5517616edb06}{setBeginstationname}}(\textcolor{stringliteral}{"{}\(\backslash\)0"{}}),\textcolor{stringliteral}{"{}setBeginstationname\ precondition\ failed"{}});}
+\DoxyCodeLine{00185\ \ \ \ \ ASSERT\_EQ(tram-\/>\mbox{\hyperlink{classTram_a5e1e3c04fc22d470616f82039c1445ad}{getBeginstationname}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00186\ \}}
+
+\end{DoxyCode}

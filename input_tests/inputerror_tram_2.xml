@@ -22,13 +22,15 @@
         <spoor>12</spoor>
     </STATION>
     <TRAM>
-        <!-- stationname has to be capitalized alphabet -->
         <lijnNr>12</lijnNr>
         <type>PCC</type>
+        <aantalDefecten>2</aantalDefecten>
+        <reparatieTijd>3</reparatieTijd>
         <voertuigNr>1</voertuigNr>
         <beginStation>A</beginStation>
     </TRAM>
     <TRAM>
+        <!-- stationname has to be capitalized alphabet -->
         <lijnNr>12</lijnNr>
         <type>Albatros</type>
         <voertuigNr>2</voertuigNr>

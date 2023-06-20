@@ -1,0 +1,260 @@
+\doxysection{test\+Station.\+h}
+\hypertarget{testStation_8h_source}{}\label{testStation_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ aburahman10\ on\ 17/03/23.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ PROJECTSOFTWAREENGINEER\_TESTSTATION\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ PROJECTSOFTWAREENGINEER\_TESTSTATION\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PROJECTSOFTWAREENGINEER\_TESTSTATION\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}iostream"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}fstream"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}sys/stat.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <gtest/gtest.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}Station.h"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtestStation}{testStation}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_type(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ input\_type)\{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ station\_types[]\ =\ \{\textcolor{stringliteral}{"{}Metrostation"{}},\textcolor{stringliteral}{"{}Halte"{}}\};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ vector<string>\ stations\_types(station\_types,\ station\_types+\ \textcolor{keyword}{sizeof}(station\_types)\ /\ \textcolor{keyword}{sizeof}(station\_types[0]));}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (vector<string>::iterator\ it\ =\ stations\_types.begin();\ it\ !=\ stations\_types.end();\ ++it)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\_type\ ==\ *it)\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00033\ \ \ \ \ \};}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ TESTEN\ VAN\ DE\ CONSTRUCTOR}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},\ constructor)}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ new\_station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00044\ \ \ \ \ ASSERT\_TRUE(new\_station-\/>properlyInitialized());}
+\DoxyCodeLine{00045\ \ \ \ \ ASSERT\_TRUE(new\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}()\ ==\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00046\ \ \ \ \ ASSERT\_TRUE(new\_station-\/>\mbox{\hyperlink{classStation_a330c297adddcbfd5d8871075291e9512}{getVolgende}}()\ ==\ NULL);}
+\DoxyCodeLine{00047\ \ \ \ \ ASSERT\_TRUE(new\_station-\/>\mbox{\hyperlink{classStation_a69c0539e899ff540c38eb434a69bfa9e}{getVorige}}()\ ==\ NULL);}
+\DoxyCodeLine{00048\ \ \ \ \ ASSERT\_TRUE(new\_station-\/>\mbox{\hyperlink{classStation_a7c85788de028ae2b97cb3d4d4f60c1ae}{getNext}}()\ ==\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00049\ \ \ \ \ ASSERT\_TRUE(new\_station-\/>\mbox{\hyperlink{classStation_a2eb1fac89600cc7b773c2261fc16fd0f}{getPrev}}()\ ==\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00050\ \ \ \ \ ASSERT\_TRUE(new\_station-\/>\mbox{\hyperlink{classStation_ac9e3c6fc486a500f2557ee785638dd32}{getType}}()\ ==\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00051\ \ \ \ \ ASSERT\_TRUE(new\_station-\/>\mbox{\hyperlink{classStation_a081ca6373631199a30ebab56f50022d8}{getSpoor}}()\ ==\ 0);}
+\DoxyCodeLine{00052\ \ \ \ \ ASSERT\_TRUE(new\_station-\/>\mbox{\hyperlink{classStation_a0b59634fba477327fa213a3274253599}{getSpoorNrs}}().empty());}
+\DoxyCodeLine{00053\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ *\ TESTEN\ VAN\ GETTERS\ EN\ SETTERS}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ GETTER\ EN\ SETTER\ STRING\ NAAM}}
+\DoxyCodeLine{00060\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},\ Naam)}
+\DoxyCodeLine{00061\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00063\ \ \ \ \ ASSERT\_EQ(\textcolor{stringliteral}{"{}"{}},station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}());}
+\DoxyCodeLine{00064\ \ \ \ \ station-\/>\mbox{\hyperlink{classStation_ab21be2cda579c82ebf258c45ae5ef2b1}{setNaam}}(\textcolor{stringliteral}{"{}R"{}});}
+\DoxyCodeLine{00065\ \ \ \ \ EXPECT\_EQ(station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}(),\textcolor{stringliteral}{"{}R"{}});}
+\DoxyCodeLine{00066\ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{comment}{//GETTER\ EN\ SETTER\ VAN\ VOLGENDE}}
+\DoxyCodeLine{00069\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},\ checkVolgendeStation)}
+\DoxyCodeLine{00070\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00072\ \ \ \ \ ASSERT\_EQ(NULL,station-\/>\mbox{\hyperlink{classStation_a330c297adddcbfd5d8871075291e9512}{getVolgende}}());}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ station\_next\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00074\ \ \ \ \ station-\/>\mbox{\hyperlink{classStation_a49d15a8e8772a1932e0586b95655a852}{setVolgende}}(station\_next);}
+\DoxyCodeLine{00075\ \ \ \ \ EXPECT\_TRUE(station-\/>\mbox{\hyperlink{classStation_a330c297adddcbfd5d8871075291e9512}{getVolgende}}()\ ==\ station\_next);}
+\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ GETTER\ EN\ SETTER\ VOOR\ VORIGE}}
+\DoxyCodeLine{00078\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},\ checkVorigeStation)}
+\DoxyCodeLine{00079\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00081\ \ \ \ \ ASSERT\_EQ(NULL,station-\/>\mbox{\hyperlink{classStation_a69c0539e899ff540c38eb434a69bfa9e}{getVorige}}());}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ vorige\_station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00083\ \ \ \ \ station-\/>\mbox{\hyperlink{classStation_a6a3969266668df46245f90c3b0e2a062}{setVorige}}(vorige\_station);}
+\DoxyCodeLine{00084\ \ \ \ \ EXPECT\_EQ(vorige\_station,station-\/>\mbox{\hyperlink{classStation_a69c0539e899ff540c38eb434a69bfa9e}{getVorige}}());}
+\DoxyCodeLine{00085\ \}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//\ TESTING\ GETTER\ EN\ SETTER\ OF\ VOLGEND\ AND\ VORIG\ POINTERS\ TE\ SAMEN}}
+\DoxyCodeLine{00087\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},Volgend\_and\_Vorig)\{}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ mid\_station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00089\ \ \ \ \ ASSERT\_EQ(NULL,mid\_station-\/>\mbox{\hyperlink{classStation_a69c0539e899ff540c38eb434a69bfa9e}{getVorige}}());}
+\DoxyCodeLine{00090\ \ \ \ \ ASSERT\_EQ(NULL,mid\_station-\/>\mbox{\hyperlink{classStation_a330c297adddcbfd5d8871075291e9512}{getVolgende}}());}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ next\_station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ previous\_station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00093\ \ \ \ \ mid\_station-\/>\mbox{\hyperlink{classStation_a6a3969266668df46245f90c3b0e2a062}{setVorige}}(previous\_station);}
+\DoxyCodeLine{00094\ \ \ \ \ mid\_station-\/>\mbox{\hyperlink{classStation_a49d15a8e8772a1932e0586b95655a852}{setVolgende}}(next\_station);}
+\DoxyCodeLine{00095\ \ \ \ \ EXPECT\_EQ(next\_station,mid\_station-\/>\mbox{\hyperlink{classStation_a330c297adddcbfd5d8871075291e9512}{getVolgende}}());}
+\DoxyCodeLine{00096\ \ \ \ \ EXPECT\_EQ(previous\_station,mid\_station-\/>\mbox{\hyperlink{classStation_a69c0539e899ff540c38eb434a69bfa9e}{getVorige}}());}
+\DoxyCodeLine{00097\ \ \ \ \ EXPECT\_EQ(NULL,next\_station-\/>\mbox{\hyperlink{classStation_a330c297adddcbfd5d8871075291e9512}{getVolgende}}());}
+\DoxyCodeLine{00098\ \ \ \ \ EXPECT\_EQ(NULL,previous\_station-\/>\mbox{\hyperlink{classStation_a69c0539e899ff540c38eb434a69bfa9e}{getVorige}}());}
+\DoxyCodeLine{00099\ \}}
+\DoxyCodeLine{00100\ \textcolor{comment}{//\ GETTER\ EN\ SETTER\ VAN\ STRING\ PREV}}
+\DoxyCodeLine{00101\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},Prev)\{}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ make\_station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00103\ \ \ \ \ ASSERT\_EQ(make\_station-\/>\mbox{\hyperlink{classStation_a2eb1fac89600cc7b773c2261fc16fd0f}{getPrev}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ prev\_station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00105\ \ \ \ \ prev\_station-\/>\mbox{\hyperlink{classStation_ab21be2cda579c82ebf258c45ae5ef2b1}{setNaam}}(\textcolor{stringliteral}{"{}A"{}});}
+\DoxyCodeLine{00106\ \ \ \ \ make\_station-\/>\mbox{\hyperlink{classStation_a92c6cc2e4103d2b480d07030f81d992d}{setPrev}}(prev\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}());}
+\DoxyCodeLine{00107\ \ \ \ \ EXPECT\_EQ(prev\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}(),make\_station-\/>\mbox{\hyperlink{classStation_a2eb1fac89600cc7b773c2261fc16fd0f}{getPrev}}());}
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ \textcolor{comment}{//\ GETTER\ EN\ SETTER\ VAN\ STRING\ NEXT}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},Next)\{}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ make\_station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00113\ \ \ \ \ ASSERT\_EQ(make\_station-\/>\mbox{\hyperlink{classStation_a7c85788de028ae2b97cb3d4d4f60c1ae}{getNext}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ next\_station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00115\ \ \ \ \ next\_station-\/>\mbox{\hyperlink{classStation_ab21be2cda579c82ebf258c45ae5ef2b1}{setNaam}}(\textcolor{stringliteral}{"{}A"{}});}
+\DoxyCodeLine{00116\ \ \ \ \ make\_station-\/>\mbox{\hyperlink{classStation_ac048056f68e7745853ee90a53a547f1e}{setNext}}(next\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}());}
+\DoxyCodeLine{00117\ \ \ \ \ EXPECT\_EQ(next\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}(),\ make\_station-\/>\mbox{\hyperlink{classStation_a7c85788de028ae2b97cb3d4d4f60c1ae}{getNext}}());}
+\DoxyCodeLine{00118\ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{comment}{//\ GETTERS\ EN\ SETTERS\ VAN\ NEXT\ EN\ PREV\ TE\ SAMEN}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},Prev\_and\_Next)\{}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ mid\_station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00124\ \ \ \ \ ASSERT\_EQ(mid\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00125\ \ \ \ \ ASSERT\_EQ(mid\_station-\/>\mbox{\hyperlink{classStation_a7c85788de028ae2b97cb3d4d4f60c1ae}{getNext}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00126\ \ \ \ \ ASSERT\_EQ(mid\_station-\/>\mbox{\hyperlink{classStation_a2eb1fac89600cc7b773c2261fc16fd0f}{getPrev}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00127\ \ \ \ \ mid\_station-\/>\mbox{\hyperlink{classStation_ab21be2cda579c82ebf258c45ae5ef2b1}{setNaam}}(\textcolor{stringliteral}{"{}B"{}});}
+\DoxyCodeLine{00128\ \ \ \ \ EXPECT\_EQ(\textcolor{stringliteral}{"{}B"{}},mid\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}());}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ prev\_station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00130\ \ \ \ \ ASSERT\_EQ(prev\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00131\ \ \ \ \ ASSERT\_EQ(prev\_station-\/>\mbox{\hyperlink{classStation_a7c85788de028ae2b97cb3d4d4f60c1ae}{getNext}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00132\ \ \ \ \ ASSERT\_EQ(prev\_station-\/>\mbox{\hyperlink{classStation_a2eb1fac89600cc7b773c2261fc16fd0f}{getPrev}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00133\ \ \ \ \ prev\_station-\/>\mbox{\hyperlink{classStation_ab21be2cda579c82ebf258c45ae5ef2b1}{setNaam}}(\textcolor{stringliteral}{"{}A"{}});}
+\DoxyCodeLine{00134\ \ \ \ \ EXPECT\_EQ(\textcolor{stringliteral}{"{}A"{}},prev\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}());}
+\DoxyCodeLine{00135\ \ \ \ \ mid\_station-\/>\mbox{\hyperlink{classStation_a92c6cc2e4103d2b480d07030f81d992d}{setPrev}}(prev\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}());}
+\DoxyCodeLine{00136\ \ \ \ \ prev\_station-\/>\mbox{\hyperlink{classStation_ac048056f68e7745853ee90a53a547f1e}{setNext}}(mid\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}());}
+\DoxyCodeLine{00137\ \ \ \ \ EXPECT\_EQ(prev\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}(),mid\_station-\/>\mbox{\hyperlink{classStation_a2eb1fac89600cc7b773c2261fc16fd0f}{getPrev}}());}
+\DoxyCodeLine{00138\ \ \ \ \ EXPECT\_EQ(mid\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}(),prev\_station-\/>\mbox{\hyperlink{classStation_a7c85788de028ae2b97cb3d4d4f60c1ae}{getNext}}());}
+\DoxyCodeLine{00139\ \ \ \ \ EXPECT\_EQ(prev\_station-\/>\mbox{\hyperlink{classStation_a2eb1fac89600cc7b773c2261fc16fd0f}{getPrev}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ next\_station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00141\ \ \ \ \ ASSERT\_EQ(next\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00142\ \ \ \ \ ASSERT\_EQ(next\_station-\/>\mbox{\hyperlink{classStation_a7c85788de028ae2b97cb3d4d4f60c1ae}{getNext}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00143\ \ \ \ \ ASSERT\_EQ(next\_station-\/>\mbox{\hyperlink{classStation_a2eb1fac89600cc7b773c2261fc16fd0f}{getPrev}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00144\ \ \ \ \ next\_station-\/>\mbox{\hyperlink{classStation_ab21be2cda579c82ebf258c45ae5ef2b1}{setNaam}}(\textcolor{stringliteral}{"{}C"{}});}
+\DoxyCodeLine{00145\ \ \ \ \ EXPECT\_EQ(\textcolor{stringliteral}{"{}C"{}},next\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}());}
+\DoxyCodeLine{00146\ \ \ \ \ mid\_station-\/>\mbox{\hyperlink{classStation_ac048056f68e7745853ee90a53a547f1e}{setNext}}(next\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}());}
+\DoxyCodeLine{00147\ \ \ \ \ next\_station-\/>\mbox{\hyperlink{classStation_a92c6cc2e4103d2b480d07030f81d992d}{setPrev}}(mid\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}());}
+\DoxyCodeLine{00148\ \ \ \ \ EXPECT\_EQ(next\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}(),mid\_station-\/>\mbox{\hyperlink{classStation_a7c85788de028ae2b97cb3d4d4f60c1ae}{getNext}}());}
+\DoxyCodeLine{00149\ \ \ \ \ EXPECT\_EQ(mid\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}(),next\_station-\/>\mbox{\hyperlink{classStation_a2eb1fac89600cc7b773c2261fc16fd0f}{getPrev}}());}
+\DoxyCodeLine{00150\ \ \ \ \ EXPECT\_EQ(next\_station-\/>\mbox{\hyperlink{classStation_a7c85788de028ae2b97cb3d4d4f60c1ae}{getNext}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00151\ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \textcolor{comment}{//\ GETTER\ EN\ SETTER\ VAN\ VECTOR\ SPOORNUMMERS}}
+\DoxyCodeLine{00154\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},spoorNrs)\{}
+\DoxyCodeLine{00155\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ nul\ =\ 0;}
+\DoxyCodeLine{00157\ \ \ \ \ ASSERT\_EQ(nul,station-\/>\mbox{\hyperlink{classStation_a0b59634fba477327fa213a3274253599}{getSpoorNrs}}().size());}
+\DoxyCodeLine{00158\ \ \ \ \ vector<int>my\_numbers;}
+\DoxyCodeLine{00159\ \ \ \ \ my\_numbers.push\_back(12);}
+\DoxyCodeLine{00160\ \ \ \ \ my\_numbers.push\_back(13);}
+\DoxyCodeLine{00161\ \ \ \ \ EXPECT\_TRUE(my\_numbers.size()\ ==\ 2);}
+\DoxyCodeLine{00162\ \ \ \ \ station-\/>\mbox{\hyperlink{classStation_ab3f4380c8ee7215ac3ffa5c91b76a938}{setSpoorNrs}}(my\_numbers);}
+\DoxyCodeLine{00163\ \ \ \ \ EXPECT\_EQ(my\_numbers,station-\/>\mbox{\hyperlink{classStation_a0b59634fba477327fa213a3274253599}{getSpoorNrs}}());}
+\DoxyCodeLine{00164\ \ \ \ \ ASSERT\_NE(station-\/>\mbox{\hyperlink{classStation_a0b59634fba477327fa213a3274253599}{getSpoorNrs}}().size(),nul);}
+\DoxyCodeLine{00165\ \}}
+\DoxyCodeLine{00166\ \textcolor{comment}{//\ GETTER\ EN\ SETTER\ VAN\ INTEGER\ SPOORNUMMER}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},spoornummer)\{}
+\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ make\_station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00170\ \ \ \ \ ASSERT\_EQ(make\_station-\/>\mbox{\hyperlink{classStation_a081ca6373631199a30ebab56f50022d8}{getSpoor}}(),0);}
+\DoxyCodeLine{00171\ \ \ \ \ make\_station-\/>\mbox{\hyperlink{classStation_a27b3507f2e6ff05c855d9b30c82686da}{setSpoor}}(12);}
+\DoxyCodeLine{00172\ \ \ \ \ EXPECT\_EQ(12,make\_station-\/>\mbox{\hyperlink{classStation_a081ca6373631199a30ebab56f50022d8}{getSpoor}}());}
+\DoxyCodeLine{00173\ \}}
+\DoxyCodeLine{00174\ \textcolor{comment}{//\ GETTER\ EN\ SETTER\ VAN\ STRING\ TYPE}}
+\DoxyCodeLine{00175\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},type)\{}
+\DoxyCodeLine{00176\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ make\_station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00177\ \ \ \ \ ASSERT\_EQ(make\_station-\/>\mbox{\hyperlink{classStation_ac9e3c6fc486a500f2557ee785638dd32}{getType}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00178\ \ \ \ \ EXPECT\_FALSE(check\_type(make\_station-\/>\mbox{\hyperlink{classStation_ac9e3c6fc486a500f2557ee785638dd32}{getType}}()));}
+\DoxyCodeLine{00179\ \ \ \ \ make\_station-\/>\mbox{\hyperlink{classStation_a341839928620f5f8d2c2df59ba066004}{setType}}(\textcolor{stringliteral}{"{}Metrostation"{}});}
+\DoxyCodeLine{00180\ \ \ \ \ EXPECT\_EQ(\textcolor{stringliteral}{"{}Metrostation"{}},make\_station-\/>\mbox{\hyperlink{classStation_ac9e3c6fc486a500f2557ee785638dd32}{getType}}());}
+\DoxyCodeLine{00181\ \ \ \ \ ASSERT\_NE(make\_station-\/>\mbox{\hyperlink{classStation_ac9e3c6fc486a500f2557ee785638dd32}{getType}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00182\ \ \ \ \ EXPECT\_TRUE(check\_type(make\_station-\/>\mbox{\hyperlink{classStation_ac9e3c6fc486a500f2557ee785638dd32}{getType}}()));}
+\DoxyCodeLine{00183\ \}}
+\DoxyCodeLine{00184\ \textcolor{comment}{//\ TEST\ OP\ INGEVEN\ VAN\ VERSCHILLENDE\ TYPES\ VAN\ STATIONS}}
+\DoxyCodeLine{00185\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},types\_test)\{}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ station\_types[]\ =\ \{\textcolor{stringliteral}{"{}Metrostation"{}},\textcolor{stringliteral}{"{}Halte"{}},\textcolor{stringliteral}{"{}Metrostation"{}},\textcolor{stringliteral}{"{}Halte"{}},\textcolor{stringliteral}{"{}Halte"{}},\textcolor{stringliteral}{"{}Halte"{}}\};}
+\DoxyCodeLine{00187\ \ \ \ \ vector<string>\ stations\_types(station\_types,\ station\_types+\ \textcolor{keyword}{sizeof}(station\_types)\ /\ \textcolor{keyword}{sizeof}(station\_types[0]));}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ stations\_types.size();\ ++i)\ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ EXPECT\_TRUE(check\_type(stations\_types[i]));}
+\DoxyCodeLine{00190\ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ station\_fout\_types[]\ =\ \{\textcolor{stringliteral}{"{}hallo"{}},\textcolor{stringliteral}{"{}PCCS"{}},\textcolor{stringliteral}{"{}TRAINS"{}},\textcolor{stringliteral}{"{}icc"{}},\textcolor{stringliteral}{"{}DFB"{}},\textcolor{stringliteral}{"{}UA"{}}\};}
+\DoxyCodeLine{00192\ \ \ \ \ vector<string>\ stations\_fout\_types(station\_fout\_types,\ station\_fout\_types+\ \textcolor{keyword}{sizeof}(station\_fout\_types)\ /\ \textcolor{keyword}{sizeof}(station\_fout\_types[0]));}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ stations\_fout\_types.size();\ ++i)\ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ EXPECT\_FALSE(check\_type(stations\_fout\_types[i]));}
+\DoxyCodeLine{00195\ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \}}
+\DoxyCodeLine{00197\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00198\ \textcolor{comment}{\ *\ CONTRACT\ VIOLATIONS}}
+\DoxyCodeLine{00199\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{comment}{//\ LEGE\ STRING\ ALS\ NAAM\ INITIALIZATIE}}
+\DoxyCodeLine{00202\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},violate\_checksetNaam)}
+\DoxyCodeLine{00203\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ my\_station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00205\ \ \ \ \ EXPECT\_DEATH(my\_station-\/>\mbox{\hyperlink{classStation_ab21be2cda579c82ebf258c45ae5ef2b1}{setNaam}}(\textcolor{stringliteral}{"{}\(\backslash\)0"{}}),\textcolor{stringliteral}{"{}NAME\ CANNOT\ BE\ EMPTY"{}});}
+\DoxyCodeLine{00206\ \ \ \ \ ASSERT\_EQ(my\_station-\/>\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00207\ \}}
+\DoxyCodeLine{00208\ \textcolor{comment}{//\ NULLPOINTER\ ALS\ VOLGENDE\ STATION}}
+\DoxyCodeLine{00209\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},violate\_checksetVolgende)}
+\DoxyCodeLine{00210\ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00212\ \ \ \ \ EXPECT\_DEATH(station-\/>\mbox{\hyperlink{classStation_a49d15a8e8772a1932e0586b95655a852}{setVolgende}}(NULL),\textcolor{stringliteral}{"{}setVolgende\ nextptr\ CANNOT\ BE\ NULL"{}});}
+\DoxyCodeLine{00213\ \ \ \ \ ASSERT\_EQ(NULL,station-\/>\mbox{\hyperlink{classStation_a330c297adddcbfd5d8871075291e9512}{getVolgende}}());}
+\DoxyCodeLine{00214\ \}}
+\DoxyCodeLine{00215\ \textcolor{comment}{//\ NULLPOINTER\ ALS\ VORIGE\ STATION}}
+\DoxyCodeLine{00216\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},violate\_cheksetVorige)\{}
+\DoxyCodeLine{00217\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00218\ \ \ \ \ EXPECT\_DEATH(station-\/>\mbox{\hyperlink{classStation_a6a3969266668df46245f90c3b0e2a062}{setVorige}}(NULL),\textcolor{stringliteral}{"{}setVorige\ prevptr\ CANNOT\ BE\ NULL"{}});}
+\DoxyCodeLine{00219\ \ \ \ \ ASSERT\_EQ(NULL,station-\/>\mbox{\hyperlink{classStation_a69c0539e899ff540c38eb434a69bfa9e}{getVorige}}());}
+\DoxyCodeLine{00220\ \}}
+\DoxyCodeLine{00221\ \textcolor{comment}{//\ LEGE\ STRING\ ALS\ NEXT\ INITIALIZATIE}}
+\DoxyCodeLine{00222\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},violate\_setNext)\{}
+\DoxyCodeLine{00223\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00224\ \ \ \ \ EXPECT\_DEATH(station-\/>\mbox{\hyperlink{classStation_ac048056f68e7745853ee90a53a547f1e}{setNext}}(\textcolor{stringliteral}{"{}\(\backslash\)0"{}}),\textcolor{stringliteral}{"{}setNext\ cannot\ be\ empty\ string"{}});}
+\DoxyCodeLine{00225\ \ \ \ \ ASSERT\_EQ(station-\/>\mbox{\hyperlink{classStation_a7c85788de028ae2b97cb3d4d4f60c1ae}{getNext}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00226\ \}}
+\DoxyCodeLine{00227\ \textcolor{comment}{//\ LEGE\ STRING\ ALS\ PREV\ INITIALIZATIE}}
+\DoxyCodeLine{00228\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},violate\_setPrev)\{}
+\DoxyCodeLine{00229\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00230\ \ \ \ \ EXPECT\_DEATH(station-\/>\mbox{\hyperlink{classStation_a92c6cc2e4103d2b480d07030f81d992d}{setPrev}}(\textcolor{stringliteral}{"{}\(\backslash\)0"{}}),\textcolor{stringliteral}{"{}setPrev\ cannot\ be\ empty\ string"{}});}
+\DoxyCodeLine{00231\ \ \ \ \ ASSERT\_EQ(station-\/>\mbox{\hyperlink{classStation_a2eb1fac89600cc7b773c2261fc16fd0f}{getPrev}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00232\ \}}
+\DoxyCodeLine{00233\ \textcolor{comment}{//\ LEGE\ VECTOR\ GEVEN\ AAN\ EEN\ STATION\ =>\ GEEN\ SPOREN}}
+\DoxyCodeLine{00234\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},violate\_setSpoornmr)\{}
+\DoxyCodeLine{00235\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00236\ \ \ \ \ vector<int>\ leeg;}
+\DoxyCodeLine{00237\ \ \ \ \ EXPECT\_DEATH(station-\/>\mbox{\hyperlink{classStation_ab3f4380c8ee7215ac3ffa5c91b76a938}{setSpoorNrs}}(leeg),\textcolor{stringliteral}{"{}setSpporNrs\ as\ an\ empty\ vector\ as\ input!"{}});}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{long}\ nul\ =\ 0;}
+\DoxyCodeLine{00239\ \ \ \ \ ASSERT\_EQ(station-\/>\mbox{\hyperlink{classStation_a0b59634fba477327fa213a3274253599}{getSpoorNrs}}().size(),nul);}
+\DoxyCodeLine{00240\ \}}
+\DoxyCodeLine{00241\ \textcolor{comment}{//\ SIGNED\ INTEGER\ ALS\ SPOORNUMMER}}
+\DoxyCodeLine{00242\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},violate\_checksetSpoor)\{}
+\DoxyCodeLine{00243\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00244\ \ \ \ \ EXPECT\_DEATH(station-\/>\mbox{\hyperlink{classStation_a27b3507f2e6ff05c855d9b30c82686da}{setSpoor}}(-\/1),\textcolor{stringliteral}{"{}setSpoor\ precondition\ failed"{}});}
+\DoxyCodeLine{00245\ \ \ \ \ ASSERT\_EQ(station-\/>\mbox{\hyperlink{classStation_a081ca6373631199a30ebab56f50022d8}{getSpoor}}(),0);}
+\DoxyCodeLine{00246\ \}}
+\DoxyCodeLine{00247\ \textcolor{comment}{//\ LEGE\ STRING\ ALS\ TYPE}}
+\DoxyCodeLine{00248\ TEST\_F(\mbox{\hyperlink{classtestStation}{testStation}},violate\_checkType)\{}
+\DoxyCodeLine{00249\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ station\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00250\ \ \ \ \ EXPECT\_DEATH(station-\/>\mbox{\hyperlink{classStation_a341839928620f5f8d2c2df59ba066004}{setType}}(\textcolor{stringliteral}{"{}\(\backslash\)0"{}}),\textcolor{stringliteral}{"{}setType\ postcondition\ failed"{}});}
+\DoxyCodeLine{00251\ \ \ \ \ ASSERT\_EQ(station-\/>\mbox{\hyperlink{classStation_ac9e3c6fc486a500f2557ee785638dd32}{getType}}(),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00252\ \}}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ }
+
+\end{DoxyCode}

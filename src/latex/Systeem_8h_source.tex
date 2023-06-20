@@ -1,0 +1,43 @@
+\doxysection{Systeem.\+h}
+\hypertarget{Systeem_8h_source}{}\label{Systeem_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ aburahman10\ on\ 6/03/23.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TICTACTOE10\_SYSTEEM\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TICTACTOE10\_SYSTEEM\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}iostream"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../tinyxml/tinyxml.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}vector"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Tram.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00013\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSysteem}{Systeem}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ vector<Station*>\ stations;}
+\DoxyCodeLine{00019\ \ \ \ \ vector<Tram*>\ trams;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}*\ \_initcheck;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ inconsistent;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSysteem_ae53b12d7bc1ca02894328ed60b5a9645}{setTrams}}(\textcolor{keyword}{const}\ vector<Tram\ *>\ \&input\_trams);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSysteem_a4114eafec463f9f82fb5ffc0ff4d9b74}{setStations}}(\textcolor{keyword}{const}\ vector<Station\ *>\ \&input\_stations);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ vector<Station\ *>\ \&\mbox{\hyperlink{classSysteem_aabcaa90be45a1a408b4ea111d9f76d37}{getStations}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ vector<Tram\ *>\ \&\mbox{\hyperlink{classSysteem_abc2f48eec0ae70ccecd6db6b5dabfa9a}{getTrams}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ properlyInitialized()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSysteem_a9b7b4b2fb0c91c71d117d4452d60bc1b}{checkConsistent}}();}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{classSysteem_a1fb878c484414d08af7e6e3569fec3f0}{Systeem}}();}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSysteem_a136eed925a581eb2aad80cbe432a5822}{rijd}}(\textcolor{keywordtype}{int}\ stappen);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TICTACTOE10\_SYSTEEM\_H}}
+
+\end{DoxyCode}

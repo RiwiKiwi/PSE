@@ -1,0 +1,64 @@
+\doxysection{Metro\+Output Class Reference}
+\hypertarget{classMetroOutput}{}\label{classMetroOutput}\index{MetroOutput@{MetroOutput}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMetroOutput_ad2c76a6e3db1086abd94f57ab67125d0}{Metro\+Output}} (const std\+::vector$<$ \mbox{\hyperlink{classTram}{Tram}} \texorpdfstring{$\ast$}{*} $>$ \&trams, const std\+::vector$<$ \mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*} $>$ \&stations)
+\item 
+void \mbox{\hyperlink{classMetroOutput_a1543349db73a903cc4ea9dc7bffc2786}{write\+Over}} ()
+\item 
+void \mbox{\hyperlink{classMetroOutput_a93375540e503565b5a9c01141d183cac}{simple\+\_\+writeover}} ()
+\item 
+void \mbox{\hyperlink{classMetroOutput_ab2c9978c812a2b82f7c0dc0065df1631}{advanced\+\_\+writeover}} ()
+\item 
+void \mbox{\hyperlink{classMetroOutput_aca282e3e6c0380e377e2fe4c3c5261fc}{verplaatstram}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMetroOutput_ad2c76a6e3db1086abd94f57ab67125d0}\label{classMetroOutput_ad2c76a6e3db1086abd94f57ab67125d0} 
+\index{MetroOutput@{MetroOutput}!MetroOutput@{MetroOutput}}
+\index{MetroOutput@{MetroOutput}!MetroOutput@{MetroOutput}}
+\doxysubsubsection{\texorpdfstring{MetroOutput()}{MetroOutput()}}
+{\footnotesize\ttfamily Metro\+Output\+::\+Metro\+Output (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classTram}{Tram}} \texorpdfstring{$\ast$}{*} $>$ \&}]{trams,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*} $>$ \&}]{stations }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em trams} & inputvector of trams from our system \\
+\hline
+{\em stations} & inputvector of stations from our system \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMetroOutput_ab2c9978c812a2b82f7c0dc0065df1631}\label{classMetroOutput_ab2c9978c812a2b82f7c0dc0065df1631} 
+\index{MetroOutput@{MetroOutput}!advanced\_writeover@{advanced\_writeover}}
+\index{advanced\_writeover@{advanced\_writeover}!MetroOutput@{MetroOutput}}
+\doxysubsubsection{\texorpdfstring{advanced\_writeover()}{advanced\_writeover()}}
+{\footnotesize\ttfamily void Metro\+Output\+::advanced\+\_\+writeover (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+REQUIRE(!stations.empty(),\"{}advanced write\+Over precondition failed\"{}); REQUIRE(!trams.empty(),\"{}advanced write\+Over precondition failed\"{}); ENSURE(file.\+peek() != ifstream\+::traits\+\_\+type\+::eof(),\"{}write\+Over postcondition failed\"{}); \Hypertarget{classMetroOutput_a93375540e503565b5a9c01141d183cac}\label{classMetroOutput_a93375540e503565b5a9c01141d183cac} 
+\index{MetroOutput@{MetroOutput}!simple\_writeover@{simple\_writeover}}
+\index{simple\_writeover@{simple\_writeover}!MetroOutput@{MetroOutput}}
+\doxysubsubsection{\texorpdfstring{simple\_writeover()}{simple\_writeover()}}
+{\footnotesize\ttfamily void Metro\+Output\+::simple\+\_\+writeover (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+REQUIRE(!stations.empty(),\"{}simple write\+Over precondition failed\"{}); REQUIRE(!trams.empty(),\"{}simple write\+Over precondition failed\"{}); ENSURE(file.\+peek() != ifstream\+::traits\+\_\+type\+::eof(),\"{}write\+Over postcondition failed\"{}); \Hypertarget{classMetroOutput_aca282e3e6c0380e377e2fe4c3c5261fc}\label{classMetroOutput_aca282e3e6c0380e377e2fe4c3c5261fc} 
+\index{MetroOutput@{MetroOutput}!verplaatstram@{verplaatstram}}
+\index{verplaatstram@{verplaatstram}!MetroOutput@{MetroOutput}}
+\doxysubsubsection{\texorpdfstring{verplaatstram()}{verplaatstram()}}
+{\footnotesize\ttfamily void Metro\+Output\+::verplaatstram (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+REQUIRE(!trams.empty(),\"{}verplaatstram precondition failed\"{}); REQUIRE(!stations.empty(),\"{}verplaatstram precondition failed\"{}); \Hypertarget{classMetroOutput_a1543349db73a903cc4ea9dc7bffc2786}\label{classMetroOutput_a1543349db73a903cc4ea9dc7bffc2786} 
+\index{MetroOutput@{MetroOutput}!writeOver@{writeOver}}
+\index{writeOver@{writeOver}!MetroOutput@{MetroOutput}}
+\doxysubsubsection{\texorpdfstring{writeOver()}{writeOver()}}
+{\footnotesize\ttfamily void Metro\+Output\+::write\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+REQUIRE(!stations.empty(),\"{}write\+Over precondition failed\"{}); REQUIRE(!trams.empty(),\"{}write\+Over precondition failed\"{}); ENSURE(file.\+peek() != ifstream\+::traits\+\_\+type\+::eof(),\"{}write\+Over postcondition failed\"{}); 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Metro\+Output.\+h\item 
+Metro\+Output.\+cpp\end{DoxyCompactItemize}

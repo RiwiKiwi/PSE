@@ -1,0 +1,113 @@
+\doxysection{test\+PCC.\+h}
+\hypertarget{testPCC_8h_source}{}\label{testPCC_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ riwi\ on\ 7/05/23.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ PROJECTSOFTWAREENGINEER\_TESTPCC\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ PROJECTSOFTWAREENGINEER\_TESTPCC\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PROJECTSOFTWAREENGINEER\_TESTPCC\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <gtest/gtest.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Systeem.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}simulationUtils.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}MetroOutput.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtestPCC}{testPCC}}:\ \textcolor{keyword}{public}\ ::testing::Test\{\};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ TESTEN\ VAN\ DE\ CONSTRUCTOR}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00018\ TEST\_F(\mbox{\hyperlink{classtestPCC}{testPCC}},constructor)\{}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classPCC}{PCC}}*\ make\_pcc\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classPCC}{PCC}};}
+\DoxyCodeLine{00020\ \ \ \ \ EXPECT\_TRUE(make\_pcc-\/>properlyInitialized());}
+\DoxyCodeLine{00021\ \}}
+\DoxyCodeLine{00022\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ TESTEN\ VAN\ GETTERS\ EN\ SETTERS}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ GETTER\ EN\ SETTER\ VAN\ STOREPCCMOVES}}
+\DoxyCodeLine{00026\ TEST\_F(\mbox{\hyperlink{classtestPCC}{testPCC}},storePCCmoves)\{}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classPCC}{PCC}}*\ make\_pcc\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classPCC}{PCC}};}
+\DoxyCodeLine{00028\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getStorepccMoves()\ ==\ 0);}
+\DoxyCodeLine{00029\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getCurrMoves()\ ==\ 0);}
+\DoxyCodeLine{00030\ \ \ \ \ make\_pcc-\/>setStorepccMoves(9);}
+\DoxyCodeLine{00031\ \ \ \ \ EXPECT\_TRUE(make\_pcc-\/>getStorepccMoves()\ ==\ 9);}
+\DoxyCodeLine{00032\ \ \ \ \ EXPECT\_FALSE(make\_pcc-\/>getStorepccMoves()\ ==\ 0);}
+\DoxyCodeLine{00033\ \ \ \ \ EXPECT\_FALSE(make\_pcc-\/>getStorepccMoves()\ ==\ 9000);}
+\DoxyCodeLine{00034\ \}}
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ GETTER\ EN\ SETTER\ VAN\ STOREPCCWAITS}}
+\DoxyCodeLine{00036\ TEST\_F(\mbox{\hyperlink{classtestPCC}{testPCC}},storePCCwaits)\{}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classPCC}{PCC}}*\ make\_pcc\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classPCC}{PCC}};}
+\DoxyCodeLine{00038\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getStorepccWaits()\ ==\ 0);}
+\DoxyCodeLine{00039\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getCurrWaits()\ ==\ 0);}
+\DoxyCodeLine{00040\ \ \ \ \ make\_pcc-\/>setStorepccWaits(10);}
+\DoxyCodeLine{00041\ \ \ \ \ EXPECT\_TRUE(make\_pcc-\/>getStorepccWaits()\ ==\ 10);}
+\DoxyCodeLine{00042\ \ \ \ \ EXPECT\_FALSE(make\_pcc-\/>getStorepccWaits()\ ==\ 0);}
+\DoxyCodeLine{00043\ \ \ \ \ EXPECT\_FALSE(make\_pcc-\/>getStorepccWaits()\ ==\ 90);}
+\DoxyCodeLine{00044\ \}}
+\DoxyCodeLine{00045\ \textcolor{comment}{//GETTER\ EN\ SETTER\ VAN\ CURRMOVES}}
+\DoxyCodeLine{00046\ TEST\_F(\mbox{\hyperlink{classtestPCC}{testPCC}},currMoves)\{}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classPCC}{PCC}}*\ make\_pcc\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classPCC}{PCC}};}
+\DoxyCodeLine{00048\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getStorepccWaits()\ ==\ 0);}
+\DoxyCodeLine{00049\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getStorepccMoves()\ ==\ 0);}
+\DoxyCodeLine{00050\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getCurrMoves()\ ==\ 0);}
+\DoxyCodeLine{00051\ \ \ \ \ make\_pcc-\/>setCurrMoves(90);}
+\DoxyCodeLine{00052\ \ \ \ \ EXPECT\_TRUE(make\_pcc-\/>getCurrMoves()\ ==\ 90);}
+\DoxyCodeLine{00053\ \ \ \ \ EXPECT\_FALSE(make\_pcc-\/>getCurrMoves()\ ==\ 18);}
+\DoxyCodeLine{00054\ \}}
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ GETTER\ EN\ SETTER\ VAN\ CURRWAITS}}
+\DoxyCodeLine{00056\ TEST\_F(\mbox{\hyperlink{classtestPCC}{testPCC}},currWaits)\{}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classPCC}{PCC}}*\ make\_pcc\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classPCC}{PCC}};}
+\DoxyCodeLine{00058\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getStorepccWaits()\ ==\ 0);}
+\DoxyCodeLine{00059\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getStorepccMoves()\ ==\ 0);}
+\DoxyCodeLine{00060\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getCurrWaits()\ ==\ 0);}
+\DoxyCodeLine{00061\ \ \ \ \ make\_pcc-\/>setCurrWaits(100);}
+\DoxyCodeLine{00062\ \ \ \ \ EXPECT\_TRUE(make\_pcc-\/>getCurrWaits()\ ==\ 100);}
+\DoxyCodeLine{00063\ \ \ \ \ EXPECT\_FALSE(make\_pcc-\/>getCurrWaits()\ ==\ 10000);}
+\DoxyCodeLine{00064\ \}}
+\DoxyCodeLine{00065\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ *\ TESTEN\ VAN\ CONTRACT\ VIOLATIONS}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00068\ \textcolor{comment}{//SETTER\ VAN\ STOREMOVESLEFT\ MAG\ NIET\ UNSIGNED\ ZIJN}}
+\DoxyCodeLine{00069\ TEST\_F(\mbox{\hyperlink{classtestPCC}{testPCC}},violate\_storemoves)\{}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{classPCC}{PCC}}*\ make\_pcc\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classPCC}{PCC}};}
+\DoxyCodeLine{00071\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getStorepccWaits()\ ==\ 0);}
+\DoxyCodeLine{00072\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getStorepccMoves()\ ==\ 0);}
+\DoxyCodeLine{00073\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getCurrWaits()\ ==\ 0);}
+\DoxyCodeLine{00074\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getCurrMoves()\ ==\ 0);}
+\DoxyCodeLine{00075\ \ \ \ \ EXPECT\_DEATH(make\_pcc-\/>setStorepccMoves(-\/12),\textcolor{stringliteral}{"{}setStorepccMoves\ precondition\ failed"{}});}
+\DoxyCodeLine{00076\ \ \ \ \ ASSERT\_NE(make\_pcc-\/>getStorepccMoves(),-\/12);}
+\DoxyCodeLine{00077\ \}}
+\DoxyCodeLine{00078\ \textcolor{comment}{//\ SETTER\ VAN\ STOREWAITSLEFFT\ MAG\ NIET\ UNSIGNED\ ZIJN}}
+\DoxyCodeLine{00079\ TEST\_F(\mbox{\hyperlink{classtestPCC}{testPCC}},violate\_storewaits)\{}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{classPCC}{PCC}}*\ make\_pcc\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classPCC}{PCC}};}
+\DoxyCodeLine{00081\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getStorepccWaits()\ ==\ 0);}
+\DoxyCodeLine{00082\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getStorepccMoves()\ ==\ 0);}
+\DoxyCodeLine{00083\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getCurrWaits()\ ==\ 0);}
+\DoxyCodeLine{00084\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getCurrMoves()\ ==\ 0);}
+\DoxyCodeLine{00085\ \ \ \ \ EXPECT\_DEATH(make\_pcc-\/>setStorepccWaits(-\/10),\textcolor{stringliteral}{"{}setStorepccWaits\ precondition\ failed"{}});}
+\DoxyCodeLine{00086\ \ \ \ \ ASSERT\_NE(make\_pcc-\/>getStorepccWaits(),-\/10);}
+\DoxyCodeLine{00087\ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ TEST\_F(\mbox{\hyperlink{classtestPCC}{testPCC}},violate\_currmoves)\{}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{classPCC}{PCC}}*\ make\_pcc\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classPCC}{PCC}};}
+\DoxyCodeLine{00091\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getStorepccWaits()\ ==\ 0);}
+\DoxyCodeLine{00092\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getStorepccMoves()\ ==\ 0);}
+\DoxyCodeLine{00093\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getCurrWaits()\ ==\ 0);}
+\DoxyCodeLine{00094\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getCurrMoves()\ ==\ 0);}
+\DoxyCodeLine{00095\ \ \ \ \ EXPECT\_DEATH(make\_pcc-\/>setCurrMoves(-\/100),\textcolor{stringliteral}{"{}setCurrMoves\ precondition\ failed"{}});}
+\DoxyCodeLine{00096\ \ \ \ \ ASSERT\_NE(make\_pcc-\/>getCurrMoves(),-\/100);}
+\DoxyCodeLine{00097\ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ TEST\_F(\mbox{\hyperlink{classtestPCC}{testPCC}},violate\_currwaits)}
+\DoxyCodeLine{00100\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{classPCC}{PCC}}*\ make\_pcc\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classPCC}{PCC}};}
+\DoxyCodeLine{00102\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getStorepccWaits()\ ==\ 0);}
+\DoxyCodeLine{00103\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getStorepccMoves()\ ==\ 0);}
+\DoxyCodeLine{00104\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getCurrWaits()\ ==\ 0);}
+\DoxyCodeLine{00105\ \ \ \ \ ASSERT\_TRUE(make\_pcc-\/>getCurrMoves()\ ==\ 0);}
+\DoxyCodeLine{00106\ \ \ \ \ EXPECT\_DEATH(make\_pcc-\/>setCurrWaits(-\/10),\textcolor{stringliteral}{"{}setCurrWaits\ precondition\ failed"{}});}
+\DoxyCodeLine{00107\ \ \ \ \ ASSERT\_NE(make\_pcc-\/>getCurrWaits(),-\/10);}
+\DoxyCodeLine{00108\ \}}
+
+\end{DoxyCode}

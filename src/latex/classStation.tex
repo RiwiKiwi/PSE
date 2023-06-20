@@ -1,0 +1,220 @@
+\doxysection{Station Class Reference}
+\hypertarget{classStation}{}\label{classStation}\index{Station@{Station}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classStation_a081ca6373631199a30ebab56f50022d8}{get\+Spoor}} () const
+\item 
+void \mbox{\hyperlink{classStation_a27b3507f2e6ff05c855d9b30c82686da}{set\+Spoor}} (int input\+\_\+spoor)
+\item 
+const string \& \mbox{\hyperlink{classStation_ac9e3c6fc486a500f2557ee785638dd32}{get\+Type}} () const
+\item 
+void \mbox{\hyperlink{classStation_a341839928620f5f8d2c2df59ba066004}{set\+Type}} (const string \&input\+\_\+type)
+\item 
+const vector$<$ int $>$ \& \mbox{\hyperlink{classStation_a0b59634fba477327fa213a3274253599}{get\+Spoor\+Nrs}} () const
+\item 
+void \mbox{\hyperlink{classStation_ab3f4380c8ee7215ac3ffa5c91b76a938}{set\+Spoor\+Nrs}} (const vector$<$ int $>$ \&spoor\+Nrs)
+\item 
+const string \& \mbox{\hyperlink{classStation_a7c85788de028ae2b97cb3d4d4f60c1ae}{get\+Next}} () const
+\item 
+void \mbox{\hyperlink{classStation_ac048056f68e7745853ee90a53a547f1e}{set\+Next}} (const string \&next)
+\item 
+const string \& \mbox{\hyperlink{classStation_a2eb1fac89600cc7b773c2261fc16fd0f}{get\+Prev}} () const
+\item 
+void \mbox{\hyperlink{classStation_a92c6cc2e4103d2b480d07030f81d992d}{set\+Prev}} (const string \&prev)
+\item 
+const string \& \mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{get\+Naam}} () const
+\item 
+void \mbox{\hyperlink{classStation_ab21be2cda579c82ebf258c45ae5ef2b1}{set\+Naam}} (const string \&naam)
+\item 
+\mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classStation_a330c297adddcbfd5d8871075291e9512}{get\+Volgende}} () const
+\item 
+void \mbox{\hyperlink{classStation_a49d15a8e8772a1932e0586b95655a852}{set\+Volgende}} (\mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*}volgende)
+\item 
+\mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classStation_a69c0539e899ff540c38eb434a69bfa9e}{get\+Vorige}} () const
+\item 
+void \mbox{\hyperlink{classStation_a6a3969266668df46245f90c3b0e2a062}{set\+Vorige}} (\mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*}vorige)
+\item 
+\Hypertarget{classStation_a18e2c82e7b318cd7d0fb49a579a24618}\label{classStation_a18e2c82e7b318cd7d0fb49a579a24618} 
+bool {\bfseries properly\+Initialized} () const
+\item 
+\mbox{\hyperlink{classStation_a73d335726aad1d844d81cda6d9fd74e6}{Station}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classStation_a73d335726aad1d844d81cda6d9fd74e6}\label{classStation_a73d335726aad1d844d81cda6d9fd74e6} 
+\index{Station@{Station}!Station@{Station}}
+\index{Station@{Station}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{Station()}{Station()}}
+{\footnotesize\ttfamily Station\+::\+Station (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+ENSURE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}\+CONSTRUCTOR OF CLASS STATION NOT PROPERLY INITIALIZED\"{}); 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classStation_a5cb0b0a752b33d922c541ef7531b16f4}\label{classStation_a5cb0b0a752b33d922c541ef7531b16f4} 
+\index{Station@{Station}!getNaam@{getNaam}}
+\index{getNaam@{getNaam}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{getNaam()}{getNaam()}}
+{\footnotesize\ttfamily const string \& Station\+::get\+Naam (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+EQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}get\+Naam precondition failed\"{}); \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\Hypertarget{classStation_a7c85788de028ae2b97cb3d4d4f60c1ae}\label{classStation_a7c85788de028ae2b97cb3d4d4f60c1ae} 
+\index{Station@{Station}!getNext@{getNext}}
+\index{getNext@{getNext}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{getNext()}{getNext()}}
+{\footnotesize\ttfamily const string \& Station\+::get\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}get\+Next precondition failed\"{}); \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\Hypertarget{classStation_a2eb1fac89600cc7b773c2261fc16fd0f}\label{classStation_a2eb1fac89600cc7b773c2261fc16fd0f} 
+\index{Station@{Station}!getPrev@{getPrev}}
+\index{getPrev@{getPrev}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{getPrev()}{getPrev()}}
+{\footnotesize\ttfamily const string \& Station\+::get\+Prev (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}get\+Prev precondition failed\"{}); \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\Hypertarget{classStation_a081ca6373631199a30ebab56f50022d8}\label{classStation_a081ca6373631199a30ebab56f50022d8} 
+\index{Station@{Station}!getSpoor@{getSpoor}}
+\index{getSpoor@{getSpoor}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{getSpoor()}{getSpoor()}}
+{\footnotesize\ttfamily int Station\+::get\+Spoor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}get\+Spoor precondition failed\"{}); \begin{DoxyReturn}{Returns}
+integer 
+\end{DoxyReturn}
+\Hypertarget{classStation_a0b59634fba477327fa213a3274253599}\label{classStation_a0b59634fba477327fa213a3274253599} 
+\index{Station@{Station}!getSpoorNrs@{getSpoorNrs}}
+\index{getSpoorNrs@{getSpoorNrs}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{getSpoorNrs()}{getSpoorNrs()}}
+{\footnotesize\ttfamily const vector$<$ int $>$ \& Station\+::get\+Spoor\+Nrs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}get\+Spoor\+Nrs precondition failed\"{}); \begin{DoxyReturn}{Returns}
+\+: vector of integers 
+\end{DoxyReturn}
+\Hypertarget{classStation_ac9e3c6fc486a500f2557ee785638dd32}\label{classStation_ac9e3c6fc486a500f2557ee785638dd32} 
+\index{Station@{Station}!getType@{getType}}
+\index{getType@{getType}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily const string \& Station\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}get\+Type precondition failed\"{}); \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\Hypertarget{classStation_a330c297adddcbfd5d8871075291e9512}\label{classStation_a330c297adddcbfd5d8871075291e9512} 
+\index{Station@{Station}!getVolgende@{getVolgende}}
+\index{getVolgende@{getVolgende}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{getVolgende()}{getVolgende()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*} Station\+::get\+Volgende (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}get\+Volgende precondition failed\"{}); \begin{DoxyReturn}{Returns}
+pointer to a station 
+\end{DoxyReturn}
+\Hypertarget{classStation_a69c0539e899ff540c38eb434a69bfa9e}\label{classStation_a69c0539e899ff540c38eb434a69bfa9e} 
+\index{Station@{Station}!getVorige@{getVorige}}
+\index{getVorige@{getVorige}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{getVorige()}{getVorige()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*} Station\+::get\+Vorige (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}get\+Vorige precondition failed\"{}); \begin{DoxyReturn}{Returns}
+pointer to a station 
+\end{DoxyReturn}
+\Hypertarget{classStation_ab21be2cda579c82ebf258c45ae5ef2b1}\label{classStation_ab21be2cda579c82ebf258c45ae5ef2b1} 
+\index{Station@{Station}!setNaam@{setNaam}}
+\index{setNaam@{setNaam}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{setNaam()}{setNaam()}}
+{\footnotesize\ttfamily void Station\+::set\+Naam (\begin{DoxyParamCaption}\item[{const string \&}]{naam }\end{DoxyParamCaption})}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}set\+Naam precondition failed\"{}); ENSURE(name != \"{}\textbackslash{}0\"{},\"{}\+NAME CANNOT BE EMPTY\"{}); ENSURE(\doxylink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{get\+Naam()} == name,\"{}set\+Naam postcondition failed\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em naam} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classStation_ac048056f68e7745853ee90a53a547f1e}\label{classStation_ac048056f68e7745853ee90a53a547f1e} 
+\index{Station@{Station}!setNext@{setNext}}
+\index{setNext@{setNext}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{setNext()}{setNext()}}
+{\footnotesize\ttfamily void Station\+::set\+Next (\begin{DoxyParamCaption}\item[{const string \&}]{next }\end{DoxyParamCaption})}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}set\+Next precondition failed\"{}); ENSURE(nextptr != \"{}\textbackslash{}0\"{},\"{}set\+Next cannot be empty string\"{}); ENSURE(\doxylink{classStation_a7c85788de028ae2b97cb3d4d4f60c1ae}{get\+Next()} == nextptr,\"{}set\+Next postcondition failed\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em next} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classStation_a92c6cc2e4103d2b480d07030f81d992d}\label{classStation_a92c6cc2e4103d2b480d07030f81d992d} 
+\index{Station@{Station}!setPrev@{setPrev}}
+\index{setPrev@{setPrev}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{setPrev()}{setPrev()}}
+{\footnotesize\ttfamily void Station\+::set\+Prev (\begin{DoxyParamCaption}\item[{const string \&}]{prev }\end{DoxyParamCaption})}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}set\+Prev precondition failed\"{}); ENSURE(prevptr != \"{}\textbackslash{}0\"{},\"{}set\+Prev cannot be empty string\"{}); ENSURE(\doxylink{classStation_a2eb1fac89600cc7b773c2261fc16fd0f}{get\+Prev()} == prevptr,\"{}set\+Prev postcondition failed\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em prev} & \+: inputstring or stringvariable \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classStation_a27b3507f2e6ff05c855d9b30c82686da}\label{classStation_a27b3507f2e6ff05c855d9b30c82686da} 
+\index{Station@{Station}!setSpoor@{setSpoor}}
+\index{setSpoor@{setSpoor}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{setSpoor()}{setSpoor()}}
+{\footnotesize\ttfamily void Station\+::set\+Spoor (\begin{DoxyParamCaption}\item[{int}]{input\+\_\+spoor }\end{DoxyParamCaption})}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}set\+Spoor precondition failed\"{}); ENSURE(input\+\_\+spoor\texorpdfstring{$>$}{>}=0,\"{}set\+Spoor precondition failed\"{}); ENSURE(\doxylink{classStation_a081ca6373631199a30ebab56f50022d8}{get\+Spoor()} == input\+\_\+spoor,\"{}set\+Spoor postcondtition failed\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+spoor} & \+: integer or integervariable \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classStation_ab3f4380c8ee7215ac3ffa5c91b76a938}\label{classStation_ab3f4380c8ee7215ac3ffa5c91b76a938} 
+\index{Station@{Station}!setSpoorNrs@{setSpoorNrs}}
+\index{setSpoorNrs@{setSpoorNrs}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{setSpoorNrs()}{setSpoorNrs()}}
+{\footnotesize\ttfamily void Station\+::set\+Spoor\+Nrs (\begin{DoxyParamCaption}\item[{const vector$<$ int $>$ \&}]{spoor\+Nrs }\end{DoxyParamCaption})}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}set\+Spoor\+Nrs precondition failed\"{}); ENSURE(sp\+Nrs.\+size() != 0,\"{}set\+Sppor\+Nrs as an empty vector as input!\"{}); ENSURE(\doxylink{classStation_a0b59634fba477327fa213a3274253599}{get\+Spoor\+Nrs()} == sp\+Nrs,\"{}set\+Spoor\+Nrs postcondition failed\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em spoor\+Nrs} & \+: vector of integers \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classStation_a341839928620f5f8d2c2df59ba066004}\label{classStation_a341839928620f5f8d2c2df59ba066004} 
+\index{Station@{Station}!setType@{setType}}
+\index{setType@{setType}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{setType()}{setType()}}
+{\footnotesize\ttfamily void Station\+::set\+Type (\begin{DoxyParamCaption}\item[{const string \&}]{input\+\_\+type }\end{DoxyParamCaption})}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}get\+Type precondition failed\"{}); ENSURE(input\+\_\+type != \"{}\textbackslash{}0\"{},\"{}set\+Type postcondition failed\"{}); ENSURE(\doxylink{classStation_ac9e3c6fc486a500f2557ee785638dd32}{get\+Type()} == input\+\_\+type,\"{}set\+Type postcondition failed\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+type} & \+: string or stringvariable \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classStation_a49d15a8e8772a1932e0586b95655a852}\label{classStation_a49d15a8e8772a1932e0586b95655a852} 
+\index{Station@{Station}!setVolgende@{setVolgende}}
+\index{setVolgende@{setVolgende}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{setVolgende()}{setVolgende()}}
+{\footnotesize\ttfamily void Station\+::set\+Volgende (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*}}]{volgende }\end{DoxyParamCaption})}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}set\+Volgende precondition failed\"{}); ENSURE(nextptr != NULL,\"{}set\+Volgende nextptr CANNOT BE NULL\"{}); ENSURE(\doxylink{classStation_a330c297adddcbfd5d8871075291e9512}{get\+Volgende()} == nextptr,\"{}set\+Volgende postcondtion failed\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em volgende} & \+: variable of pointer to station \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classStation_a6a3969266668df46245f90c3b0e2a062}\label{classStation_a6a3969266668df46245f90c3b0e2a062} 
+\index{Station@{Station}!setVorige@{setVorige}}
+\index{setVorige@{setVorige}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{setVorige()}{setVorige()}}
+{\footnotesize\ttfamily void Station\+::set\+Vorige (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*}}]{vorige }\end{DoxyParamCaption})}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}set\+Vorige precondition failed\"{}); ENSURE(prevptr != NULL,\"{}set\+Vorige prevptr CANNOT BE NULL\"{}); ENSURE(\doxylink{classStation_a69c0539e899ff540c38eb434a69bfa9e}{get\+Vorige()} == prevptr,\"{}set\+Vorige postcondition failed\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em vorige} & \+: variable of pointer to a station \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Station.\+h\item 
+Station.\+cpp\end{DoxyCompactItemize}

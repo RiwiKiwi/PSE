@@ -1,0 +1,135 @@
+\doxysection{Tram.\+h}
+\hypertarget{Tram_8h_source}{}\label{Tram_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ aburahman10\ on\ 6/03/23.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TICTACTOE10\_TRAM\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TICTACTOE10\_TRAM\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Station.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}iostream"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}DesignByContract.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTram}{Tram}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ lijnNr;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ snelheid;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ voertuignummer;}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ beginStation;}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ huidigeStation;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{string}\ beginstationname;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{string}\ type;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}*\ \_initcheck;}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTram_a84c856d1f8a2b417abcf6fcad8e64947}{getVoertuignummer}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTram_a95d085acae025bb5383ab657c3637f2f}{setVoertuignummer}}(\textcolor{keywordtype}{int}\ input\_voertuignummer);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\mbox{\hyperlink{classTram_a5e1e3c04fc22d470616f82039c1445ad}{getBeginstationname}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTram_aff34a98b46aab6046a9f5517616edb06}{setBeginstationname}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&input\_name);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classTram_a865733c0109b4f4b98ad9a5b41a1041b}{getType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTram_a096dc0baccdb2cb9f5a83f92a21ccba6}{setType}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&input\_type);}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}\ *\mbox{\hyperlink{classTram_affc75d2523aa54ea42c4e023a82b1a62}{getHuidigeStation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTram_ae6955372c42af7b72b60ec4c8462983c}{setHuidigeStation}}(\mbox{\hyperlink{classStation}{Station}}\ *huidigeStation);}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTram_ad2404fa7837b41287feab05f6a1b52bf}{getLijnNr}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTram_aa4abed68bed572ea91e01eca2d48abfe}{setLijnNr}}(\textcolor{keywordtype}{int}\ lijnNr);}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTram_aa8bcd980469801cb8524f170006f666c}{getSnelheid}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTram_a235f2c5206027afdaac1a2d29f7b1494}{setSnelheid}}(\textcolor{keywordtype}{int}\ snelheid);}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}\ *\mbox{\hyperlink{classTram_abe386592de6a7930df75ea184b945403}{getBeginStation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTram_a3c2311e85ee636e21f96ae7dfa71ad50}{setBeginStation}}(\mbox{\hyperlink{classStation}{Station}}\ *beginStation);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ properlyInitialized()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00118\ \textcolor{comment}{\ \ \ \ /***}}
+\DoxyCodeLine{00119\ \textcolor{comment}{\ \ \ \ \ *\ ENSURE(this-\/>properlyInitialized(),"{}CONSTRUCTOR\ OF\ CLASS\ TRAM\ NOT\ PROPERLY\ INITIALIZED"{});}}
+\DoxyCodeLine{00120\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}();}
+\DoxyCodeLine{00122\ \};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPCC}{PCC}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTram}{Tram}}\{}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{int}\ storepcc\_moves;}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{int}\ storepcc\_waits;}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{int}\ curr\_moves;}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{int}\ curr\_waits;}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{classPCC}{PCC}}*\ \_\_inicheck;}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{classPCC}{PCC}}()\{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \_\_inicheck\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ storepcc\_waits\ =\ 0;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ storepcc\_moves\ =\ 0;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ curr\_waits\ =\ 0;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ curr\_moves\ =\ 0;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ ENSURE(this-\/>properlyInitialized(),\textcolor{stringliteral}{"{}CONSTRUCTOR\ OF\ PCC\ NOT\ PROPERLY\ INITIALIZED"{}});}
+\DoxyCodeLine{00141\ \ \ \ \ \};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{bool}\ properlyInitialized()\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_initcheck\ ==\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{int}\ getStorepccMoves()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ REQUIRE(\_initcheck-\/>properlyInitialized(),\textcolor{stringliteral}{"{}getStorepccMoves\ precondition\ failed"{}});}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ storepcc\_moves;}
+\DoxyCodeLine{00150\ \ \ \ \ \}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{void}\ setStorepccMoves(\textcolor{keywordtype}{int}\ storepccMoves)\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ REQUIRE(this-\/>properlyInitialized(),\textcolor{stringliteral}{"{}setStorepccMoves\ precondition\ failed"{}});}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ REQUIRE(storepccMoves\ >\ 0,\textcolor{stringliteral}{"{}setStorepccMoves\ precondition\ failed"{}});}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ storepcc\_moves\ =\ storepccMoves;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ curr\_moves\ =\ storepccMoves;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ ENSURE(getStorepccMoves()\ ==\ storepccMoves,\textcolor{stringliteral}{"{}setStorepccMoves\ postcondition\ failed"{}});}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ ENSURE(getCurrMoves()\ ==\ storepccMoves,\textcolor{stringliteral}{"{}setStorepccMoves\ postcondition\ failed"{}});}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{int}\ getStorepccWaits()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ REQUIRE(\_initcheck-\/>properlyInitialized(),\textcolor{stringliteral}{"{}getStorepccWaits\ preconditon\ failed"{}});}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ storepcc\_waits;}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{void}\ setStorepccWaits(\textcolor{keywordtype}{int}\ storepccWaits)\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ REQUIRE(this-\/>properlyInitialized(),\textcolor{stringliteral}{"{}setStorepccWaits\ precondition\ failed"{}});}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ REQUIRE(storepccWaits\ >\ 0,\textcolor{stringliteral}{"{}setStorepccWaits\ precondition\ failed"{}});}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ storepcc\_waits\ =\ storepccWaits;}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ curr\_waits\ =\ storepccWaits;}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ ENSURE(getStorepccWaits()\ ==\ storepccWaits,\textcolor{stringliteral}{"{}setStorepccWaits\ postcondition\ failed"{}});}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ ENSURE(getCurrWaits()\ ==\ storepccWaits,\textcolor{stringliteral}{"{}setStorepccWaits\ postcondition\ failed"{}});}
+\DoxyCodeLine{00173\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{int}\ getCurrMoves()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ REQUIRE(\_\_inicheck-\/>properlyInitialized(),\textcolor{stringliteral}{"{}getCurrMoves\ preconditon\ failed"{}});}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ curr\_moves;}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{void}\ setCurrMoves(\textcolor{keywordtype}{int}\ currMoves)\ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ REQUIRE(this-\/>properlyInitialized(),\textcolor{stringliteral}{"{}setCurrMoves\ preconditon\ failed"{}});}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ REQUIRE(currMoves\ >=\ 0\ ,\ \textcolor{stringliteral}{"{}setCurrMoves\ precondition\ failed"{}});}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ curr\_moves\ =\ currMoves;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ ENSURE(getCurrMoves()\ ==\ currMoves,\textcolor{stringliteral}{"{}setCurrMoves\ postcondition\ failed"{}});}
+\DoxyCodeLine{00185\ \ \ \ \ \}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{int}\ getCurrWaits()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ REQUIRE(\_\_inicheck-\/>properlyInitialized(),\textcolor{stringliteral}{"{}getCurrWaits\ precondition\ failed"{}});}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ curr\_waits;}
+\DoxyCodeLine{00190\ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{void}\ setCurrWaits(\textcolor{keywordtype}{int}\ currWaits)\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ REQUIRE(this-\/>properlyInitialized(),\textcolor{stringliteral}{"{}setCurrWaits\ preconditon\ failed"{}});}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ REQUIRE(currWaits\ >=\ 0,\ \textcolor{stringliteral}{"{}setCurrWaits\ precondition\ failed"{}});}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ curr\_waits\ =\ currWaits;}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ ENSURE(getCurrWaits()\ ==\ currWaits,\textcolor{stringliteral}{"{}setCurrWaits\ postcondition\ failed"{}});}
+\DoxyCodeLine{00197\ \ \ \ \ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \};}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TICTACTOE10\_TRAM\_H}}
+
+\end{DoxyCode}

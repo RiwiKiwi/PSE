@@ -23,7 +23,7 @@
     </STATION>
     <TRAM>
         <lijnNr>12</lijnNr>
-        <type>Albatros</type>
+        <type>PCC</type>
         <voertuigNr>1</voertuigNr>
         <beginStation>A</beginStation>
     </TRAM>

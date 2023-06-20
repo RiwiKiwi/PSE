@@ -25,6 +25,8 @@
         <!-- tramtype bestaat niet -->
         <lijnNr>12</lijnNr>
         <type>PCCS</type>
+        <aantalDefecten>2</aantalDefecten>
+        <reparatieTijd>3</reparatieTijd>
         <voertuigNr>1</voertuigNr>
         <beginStation>C</beginStation>
     </TRAM>
@@ -32,6 +34,6 @@
         <lijnNr>12</lijnNr>
         <type>Albatros</type>
         <voertuigNr>2</voertuigNr>
-        <beginStation>B</beginStation>
+        <beginStation>A</beginStation>
     </TRAM>
 </METRONET>

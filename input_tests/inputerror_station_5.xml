@@ -23,6 +23,7 @@
         <spoor>12</spoor>
     </STATION>
     <TRAM>
+        <!-- pcc tram moet aantal defecten en reparaties ook hebben -->
         <lijnNr>12</lijnNr>
         <type>PCC</type>
         <voertuigNr>1</voertuigNr>
@@ -32,6 +33,6 @@
         <lijnNr>12</lijnNr>
         <type>Albatros</type>
         <voertuigNr>2</voertuigNr>
-        <beginStation>B</beginStation>
+        <beginStation>C</beginStation>
     </TRAM>
 </METRONET>

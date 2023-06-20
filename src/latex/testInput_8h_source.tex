@@ -1,0 +1,452 @@
+\doxysection{test\+Input.\+h}
+\hypertarget{testInput_8h_source}{}\label{testInput_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ aburahman10\ on\ 17/03/23.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ PROJECTSOFTWAREENGINEER\_TESTINPUT\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ PROJECTSOFTWAREENGINEER\_TESTINPUT\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PROJECTSOFTWAREENGINEER\_TESTINPUT\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}iostream"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}fstream"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}sys/stat.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <gtest/gtest.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}simulationUtils.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}MetroReader.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtestInput}{testInput}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ checking\ if\ the\ input\ test\ directory\ exists}}
+\DoxyCodeLine{00023\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},check\_inputttest\_directory)\{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ dir\_status\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00025\ \ \ \ \ ASSERT\_TRUE(dir\_status);}
+\DoxyCodeLine{00026\ \}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ TESTING\ IF\ ALL\ INPUTFILES\ AREN'T\ EMPTY\ \&\ that\ they\ all\ exist\ to\ test\ it\ out}}
+\DoxyCodeLine{00028\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},Emptynesstest)\{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ inconsistent\_files\ =\ 6;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ counter\ =\ 1;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ ss\ <<\ counter;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ dir\_status\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ ASSERT\_TRUE(dir\_status);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ check\_file\ =\ \textcolor{stringliteral}{"{}inconsistent\_"{}}+ss.str()+\textcolor{stringliteral}{"{}.xml"{}};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ present\_file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/"{}}+check\_file);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ EXPECT\_TRUE(present\_file);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_emptyness\ =\ FileIsEmpty(\textcolor{stringliteral}{"{}../input\_tests/"{}}+check\_file);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ ASSERT\_FALSE(check\_emptyness);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ ss.str()\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ counter++;}
+\DoxyCodeLine{00043\ \ \ \ \ \}\textcolor{keywordflow}{while}(counter\ <=inconsistent\_files);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ counter\ =\ 1;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ inputstation\_files\ =\ 5;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ ss\ <<\ counter;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ dir\_status\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ ASSERT\_TRUE(dir\_status);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ check\_file\ =\ \textcolor{stringliteral}{"{}inputerror\_station\_"{}}+ss.str()+\textcolor{stringliteral}{"{}.xml"{}};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ present\_file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/"{}}+check\_file);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ EXPECT\_TRUE(present\_file);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_emptyness\ =\ FileIsEmpty(\textcolor{stringliteral}{"{}../input\_tests/"{}}+check\_file);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ ASSERT\_FALSE(check\_emptyness);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ ss.str()\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ counter++;}
+\DoxyCodeLine{00060\ \ \ \ \ \}\textcolor{keywordflow}{while}(counter\ <=\ inputstation\_files);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ counter\ =\ 1;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ inputtram\_files\ =\ 5;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ ss\ <<\ counter;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ dir\_status\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ ASSERT\_TRUE(dir\_status);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ check\_file\ =\ \textcolor{stringliteral}{"{}inputerror\_tram\_"{}}+ss.str()+\textcolor{stringliteral}{"{}.xml"{}};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ present\_file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/"{}}+check\_file);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ EXPECT\_TRUE(present\_file);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_emptyness\ =\ FileIsEmpty(\textcolor{stringliteral}{"{}../input\_tests/"{}}+check\_file);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ ASSERT\_FALSE(check\_emptyness);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ ss.str()\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ counter++;}
+\DoxyCodeLine{00077\ \ \ \ \ \}\textcolor{keywordflow}{while}(counter\ <=\ inputtram\_files);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ counter\ =\ 1;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ syntax\_files\ =\ 6;}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ ss\ <<\ counter;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ dir\_status\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ ASSERT\_TRUE(dir\_status);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ check\_file\ =\ \textcolor{stringliteral}{"{}syntax\_attributeerror\_"{}}+ss.str()+\textcolor{stringliteral}{"{}.xml"{}};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ present\_file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/"{}}+check\_file);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ EXPECT\_TRUE(present\_file);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_emptyness\ =\ FileIsEmpty(\textcolor{stringliteral}{"{}../input\_tests/"{}}+check\_file);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ ASSERT\_FALSE(check\_emptyness);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ ss.str()\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ counter++;}
+\DoxyCodeLine{00094\ \ \ \ \ \}\textcolor{keywordflow}{while}(counter\ <=\ syntax\_files);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ counter\ =\ 1;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ wrongobjectstations\ =\ 4;}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ ss\ <<\ counter;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ dir\_status\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ ASSERT\_TRUE(dir\_status);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ check\_file\ =\ \textcolor{stringliteral}{"{}wrong\_objectelements\_station\_"{}}+ss.str()+\textcolor{stringliteral}{"{}.xml"{}};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ present\_file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/"{}}+check\_file);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ EXPECT\_TRUE(present\_file);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_emptyness\ =\ FileIsEmpty(\textcolor{stringliteral}{"{}../input\_tests/"{}}+check\_file);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ ASSERT\_FALSE(check\_emptyness);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ ss.str()\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ counter++;}
+\DoxyCodeLine{00111\ \ \ \ \ \}\textcolor{keywordflow}{while}(counter\ <=\ wrongobjectstations);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ counter\ =\ 1;}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ wrongobjecttrams\ =\ 4;}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ ss\ <<\ counter;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ dir\_status\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ ASSERT\_TRUE(dir\_status);}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ check\_file\ =\ \textcolor{stringliteral}{"{}wrong\_objectelements\_tram\_"{}}+ss.str()+\textcolor{stringliteral}{"{}.xml"{}};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ present\_file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/"{}}+check\_file);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ EXPECT\_TRUE(present\_file);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_emptyness\ =\ FileIsEmpty(\textcolor{stringliteral}{"{}../input\_tests/"{}}+check\_file);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ ASSERT\_FALSE(check\_emptyness);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ ss.str()\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ counter++;}
+\DoxyCodeLine{00128\ \ \ \ \ \}\textcolor{keywordflow}{while}(counter\ <=\ wrongobjecttrams);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ counter\ =\ 1;}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ wrongroot\ =\ 3;}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ ss\ <<\ counter;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ dir\_status\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ ASSERT\_TRUE(dir\_status);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ check\_file\ =\ \textcolor{stringliteral}{"{}wrong\_root\_"{}}+ss.str()+\textcolor{stringliteral}{"{}.xml"{}};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ present\_file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/"{}}+check\_file);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ EXPECT\_TRUE(present\_file);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_emptyness\ =\ FileIsEmpty(\textcolor{stringliteral}{"{}../input\_tests/"{}}+check\_file);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ ASSERT\_FALSE(check\_emptyness);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ ss.str()\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ counter++;}
+\DoxyCodeLine{00145\ \ \ \ \ \}\textcolor{keywordflow}{while}(counter\ <=\ wrongroot);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ counter\ =\ 1;}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ wrongsubroot\ =\ 3;}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ ss\ <<\ counter;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ dir\_status\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ ASSERT\_TRUE(dir\_status);}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ check\_file\ =\ \textcolor{stringliteral}{"{}wrong\_subroot\_"{}}+ss.str()+\textcolor{stringliteral}{"{}.xml"{}};}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ present\_file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/"{}}+check\_file);}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ EXPECT\_TRUE(present\_file);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_emptyness\ =\ FileIsEmpty(\textcolor{stringliteral}{"{}../input\_tests/"{}}+check\_file);}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ ASSERT\_FALSE(check\_emptyness);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ ss.str()\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ counter++;}
+\DoxyCodeLine{00162\ \ \ \ \ \}\textcolor{keywordflow}{while}(counter\ <=\ wrongsubroot);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{comment}{//\ TESTING\ WRONG\ TAGNAME\ VOOR\ ROOT}}
+\DoxyCodeLine{00167\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},check\_return\_wrongrootfiles)\{}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{bool}\ dir\_status\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00169\ \ \ \ \ ASSERT\_TRUE(dir\_status);}
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ new\_system;}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ counter\ =\ 1;}
+\DoxyCodeLine{00172\ \ \ \ \ std::ofstream\ output(\textcolor{stringliteral}{"{}../input\_tests/tag\_errors.txt"{}},ios\_base::app);}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordflow}{while}(counter\ <\ 4)\{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ converting\ counter\ to\ string}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ ss\ <<\ counter;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ xml\_file\ =\ \textcolor{stringliteral}{"{}wrong\_root\_"{}}+ss.str()+\textcolor{stringliteral}{"{}.xml"{}};}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/"{}}+xml\_file);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ ASSERT\_TRUE(check\_file);}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ not\_empty\ =\ FileIsEmpty(\textcolor{stringliteral}{"{}../input\_tests/"{}}+xml\_file);}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ EXPECT\_FALSE(not\_empty);}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ file\ =\ \textcolor{stringliteral}{"{}../input\_tests/"{}}+xml\_file;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ omzetting\ naar\ const\ char\ *\ =>\ c\_str()}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(file.c\_str(),output,new\_system);}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ EXPECT\_EQ(PartialImport,result);}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{comment}{//reset\ the\ string\ for\ next\ number}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ ss.str()\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ counter\ +=\ 1;}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \}}
+\DoxyCodeLine{00191\ \textcolor{comment}{//\ TESTING\ WRONG\ TAGNAME\ FOR\ SUBROOT}}
+\DoxyCodeLine{00192\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},check\_return\_wrongsubrootfiles)\{}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{bool}\ dir\_status\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00194\ \ \ \ \ ASSERT\_TRUE(dir\_status);}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ counter\ =\ 1;}
+\DoxyCodeLine{00196\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ new\_system;}
+\DoxyCodeLine{00197\ \ \ \ \ std::ofstream\ output(\textcolor{stringliteral}{"{}../input\_tests/tag\_errors.txt"{}},ios\_base::app);}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{comment}{//\ THERE\ ARE\ 3\ FILES\ IN\ TOTAL\ TO\ CHECK\ FOR\ WRONG\ ROOT\ NAMES\ !}}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordflow}{while}\ (counter\ <\ 4)\{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ converting\ counter\ to\ string}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ ss\ <<\ counter;}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ xml\_file\ =\ \textcolor{stringliteral}{"{}wrong\_subroot\_"{}}+ss.str()+\textcolor{stringliteral}{"{}.xml"{}};}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/"{}}+xml\_file);}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ ASSERT\_TRUE(check\_file);}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ not\_empty\ =\ FileIsEmpty(\textcolor{stringliteral}{"{}../input\_tests/"{}}+xml\_file);}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ EXPECT\_FALSE(not\_empty);}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ file\ =\ \textcolor{stringliteral}{"{}../input\_tests/"{}}+xml\_file;}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ omzetting\ naar\ const\ char\ *\ =>\ c\_str()}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(file.c\_str(),output,new\_system);}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ EXPECT\_EQ(ImportAborted,result);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{comment}{//reset\ the\ string\ for\ next\ number}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ ss.str()\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ counter\ +=\ 1;}
+\DoxyCodeLine{00215\ \ \ \ \ \}}
+\DoxyCodeLine{00216\ \}}
+\DoxyCodeLine{00217\ \textcolor{comment}{//\ CHECKING\ VOOR\ WRONG\ TAG\ NAMES\ FOR\ STATIONELEMENTS}}
+\DoxyCodeLine{00218\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},check\_return\_wrongstation\_elements)\{}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordtype}{bool}\ dir\_status\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00220\ \ \ \ \ ASSERT\_TRUE(dir\_status);}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ counter\ =\ 1;}
+\DoxyCodeLine{00222\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ new\_system;}
+\DoxyCodeLine{00223\ \ \ \ \ std::ofstream\ output(\textcolor{stringliteral}{"{}../input\_tests/tag\_errors.txt"{}},ios\_base::app);}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{comment}{//\ THERE\ ARE\ 4\ FILES\ IN\ TOTAL\ TO\ CHECK\ FOR\ WRONG\ ROOT\ NAMES\ !}}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordflow}{while}\ (counter\ <\ 5)\{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ converting\ counter\ to\ string}}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ ss\ <<\ counter;}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ xml\_file\ =\ \textcolor{stringliteral}{"{}wrong\_objectelements\_station\_"{}}+ss.str()+\textcolor{stringliteral}{"{}.xml"{}};}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/"{}}+xml\_file);}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ ASSERT\_TRUE(check\_file);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ not\_empty\ =\ FileIsEmpty(\textcolor{stringliteral}{"{}../input\_tests/"{}}+xml\_file);}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ EXPECT\_FALSE(not\_empty);}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ file\ =\ \textcolor{stringliteral}{"{}../input\_tests/"{}}+xml\_file;}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ omzetting\ naar\ const\ char\ *\ =>\ c\_str()}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(file.c\_str(),output,new\_system);}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ EXPECT\_EQ(ImportAborted,\ result);}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{comment}{//reset\ the\ string\ for\ next\ number}}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ ss.str()\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ counter\ +=\ 1;}
+\DoxyCodeLine{00241\ \ \ \ \ \}}
+\DoxyCodeLine{00242\ \}}
+\DoxyCodeLine{00243\ \textcolor{comment}{//CHECKING\ VOOR\ WRONG\ TAG\ NAMES\ FOR\ TRAMELEMENTS}}
+\DoxyCodeLine{00244\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},check\_wrongtram\_elements)\{}
+\DoxyCodeLine{00245\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ make\_system;}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ counter\ =\ 1;}
+\DoxyCodeLine{00247\ \ \ \ \ std::ofstream\ output(\textcolor{stringliteral}{"{}../input\_tests/tag\_errors.txt"{}},ios\_base::app);}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordflow}{while}\ (counter\ <\ 5)\{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ ss\ <<\ counter;}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ xml\_file\ =\ \textcolor{stringliteral}{"{}wrong\_objectelements\_tram\_"{}}+ss.str()+\textcolor{stringliteral}{"{}.xml"{}};}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/"{}}+xml\_file);}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ ASSERT\_TRUE(check\_file);}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ not\_empty\ =\ FileIsEmpty(\textcolor{stringliteral}{"{}../input\_tests/"{}}+xml\_file);}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ EXPECT\_FALSE(not\_empty);}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ file\ =\ \textcolor{stringliteral}{"{}../input\_tests/"{}}+xml\_file;}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ omzetting\ naar\ const\ char\ *\ =>\ c\_str()}}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(file.c\_str(),output,make\_system);}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ EXPECT\_EQ(ImportAborted,\ result);}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ ss.str()\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ counter\ +=\ 1;}
+\DoxyCodeLine{00262\ \ \ \ \ \}}
+\DoxyCodeLine{00263\ \}}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \textcolor{comment}{//\ CHECKER\ FOR\ SYNTAXERRORS}}
+\DoxyCodeLine{00266\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},syntax\_error1)\{}
+\DoxyCodeLine{00267\ \ \ \ \ std::ofstream\ make\_file(\textcolor{stringliteral}{"{}../input\_tests/syntax\_errors.txt"{}});}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordtype}{bool}\ Dir\_exists\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00269\ \ \ \ \ ASSERT\_TRUE(Dir\_exists);}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordtype}{bool}\ file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/syntax\_attributeerror\_1.xml"{}});}
+\DoxyCodeLine{00271\ \ \ \ \ EXPECT\_TRUE(file);}
+\DoxyCodeLine{00272\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ make\_system\_one;}
+\DoxyCodeLine{00273\ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(\textcolor{stringliteral}{"{}../input\_tests/syntax\_attributeerror\_1.xml"{}},make\_file,make\_system\_one);}
+\DoxyCodeLine{00274\ \ \ \ \ make\_file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00275\ \ \ \ \ EXPECT\_TRUE(result\ ==\ ImportAborted);}
+\DoxyCodeLine{00276\ \}}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},syntax\_error2)\{}
+\DoxyCodeLine{00279\ \ \ \ \ std::ofstream\ make\_file(\textcolor{stringliteral}{"{}../input\_tests/syntax\_errors.txt"{}});}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordtype}{bool}\ Dir\_exists\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00281\ \ \ \ \ ASSERT\_TRUE(Dir\_exists);}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordtype}{bool}\ file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/syntax\_attributeerror\_2.xml"{}});}
+\DoxyCodeLine{00283\ \ \ \ \ EXPECT\_TRUE(file);}
+\DoxyCodeLine{00284\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ make\_system\_one;}
+\DoxyCodeLine{00285\ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(\textcolor{stringliteral}{"{}../input\_tests/syntax\_attributeerror\_2.xml"{}},make\_file,make\_system\_one);}
+\DoxyCodeLine{00286\ \ \ \ \ make\_file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00287\ \ \ \ \ EXPECT\_TRUE(result\ ==\ ImportAborted);}
+\DoxyCodeLine{00288\ \}}
+\DoxyCodeLine{00289\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},syntax\_error3)\{}
+\DoxyCodeLine{00290\ \ \ \ \ std::ofstream\ make\_file(\textcolor{stringliteral}{"{}../input\_tests/syntax\_errors.txt"{}});}
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordtype}{bool}\ Dir\_exists\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00292\ \ \ \ \ ASSERT\_TRUE(Dir\_exists);}
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keywordtype}{bool}\ file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/syntax\_attributeerror\_3.xml"{}});}
+\DoxyCodeLine{00294\ \ \ \ \ EXPECT\_TRUE(file);}
+\DoxyCodeLine{00295\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ make\_system\_one;}
+\DoxyCodeLine{00296\ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(\textcolor{stringliteral}{"{}../input\_tests/syntax\_attributeerror\_3.xml"{}},make\_file,make\_system\_one);}
+\DoxyCodeLine{00297\ \ \ \ \ make\_file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00298\ \ \ \ \ EXPECT\_TRUE(result\ ==\ ImportAborted);}
+\DoxyCodeLine{00299\ \}}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},syntax\_error4)\{}
+\DoxyCodeLine{00302\ \ \ \ \ std::ofstream\ make\_file(\textcolor{stringliteral}{"{}../input\_tests/syntax\_errors.txt"{}});}
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keywordtype}{bool}\ Dir\_exists\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00304\ \ \ \ \ ASSERT\_TRUE(Dir\_exists);}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordtype}{bool}\ file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/syntax\_attributeerror\_4.xml"{}});}
+\DoxyCodeLine{00306\ \ \ \ \ EXPECT\_TRUE(file);}
+\DoxyCodeLine{00307\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ make\_system\_one;}
+\DoxyCodeLine{00308\ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(\textcolor{stringliteral}{"{}../input\_tests/syntax\_attributeerror\_4.xml"{}},make\_file,make\_system\_one);}
+\DoxyCodeLine{00309\ \ \ \ \ make\_file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00310\ \ \ \ \ EXPECT\_TRUE(result\ ==\ ImportAborted);}
+\DoxyCodeLine{00311\ \}}
+\DoxyCodeLine{00312\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},syntax\_error5)\{}
+\DoxyCodeLine{00313\ \ \ \ \ std::ofstream\ make\_file(\textcolor{stringliteral}{"{}../input\_tests/syntax\_errors.txt"{}});}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keywordtype}{bool}\ Dir\_exists\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00315\ \ \ \ \ ASSERT\_TRUE(Dir\_exists);}
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{keywordtype}{bool}\ file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/syntax\_attributeerror\_5.xml"{}});}
+\DoxyCodeLine{00317\ \ \ \ \ EXPECT\_TRUE(file);}
+\DoxyCodeLine{00318\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ make\_system\_one;}
+\DoxyCodeLine{00319\ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(\textcolor{stringliteral}{"{}../input\_tests/syntax\_attributeerror\_5.xml"{}},make\_file,make\_system\_one);}
+\DoxyCodeLine{00320\ \ \ \ \ make\_file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00321\ \ \ \ \ EXPECT\_TRUE(result\ ==\ ImportAborted);}
+\DoxyCodeLine{00322\ \}}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},syntax\_error6)\{}
+\DoxyCodeLine{00325\ \ \ \ \ std::ofstream\ make\_file(\textcolor{stringliteral}{"{}../input\_tests/syntax\_errors.txt"{}});}
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keywordtype}{bool}\ Dir\_exists\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00327\ \ \ \ \ ASSERT\_TRUE(Dir\_exists);}
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keywordtype}{bool}\ file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/syntax\_attributeerror\_6.xml"{}});}
+\DoxyCodeLine{00329\ \ \ \ \ EXPECT\_TRUE(file);}
+\DoxyCodeLine{00330\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ make\_system\_one;}
+\DoxyCodeLine{00331\ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(\textcolor{stringliteral}{"{}../input\_tests/syntax\_attributeerror\_6.xml"{}},make\_file,make\_system\_one);}
+\DoxyCodeLine{00332\ \ \ \ \ make\_file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00333\ \ \ \ \ EXPECT\_TRUE(result\ ==\ ImportAborted);}
+\DoxyCodeLine{00334\ \}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \textcolor{comment}{//\ CHECKING\ FOR\ WRONG\ INPUTS\ FROM\ THE\ USER\ FOR\ STATION}}
+\DoxyCodeLine{00337\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},input\_error\_station1)\{}
+\DoxyCodeLine{00338\ \ \ \ \ std::ofstream\ make\_file(\textcolor{stringliteral}{"{}../input\_tests/inputstation\_errors.txt"{}});}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keywordtype}{bool}\ Dir\_exists\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00340\ \ \ \ \ ASSERT\_TRUE(Dir\_exists);}
+\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keywordtype}{bool}\ file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_station\_1.xml"{}});}
+\DoxyCodeLine{00342\ \ \ \ \ EXPECT\_TRUE(file);}
+\DoxyCodeLine{00343\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ make\_system\_one;}
+\DoxyCodeLine{00344\ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_station\_1.xml"{}},make\_file,make\_system\_one);}
+\DoxyCodeLine{00345\ \ \ \ \ make\_file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00346\ \ \ \ \ EXPECT\_TRUE(result\ ==\ ImportAborted);}
+\DoxyCodeLine{00347\ \}}
+\DoxyCodeLine{00348\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},input\_error\_station2)\{}
+\DoxyCodeLine{00349\ \ \ \ \ std::ofstream\ make\_file(\textcolor{stringliteral}{"{}../input\_tests/inputstation\_errors.txt"{}});}
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keywordtype}{bool}\ Dir\_exists\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00351\ \ \ \ \ ASSERT\_TRUE(Dir\_exists);}
+\DoxyCodeLine{00352\ \ \ \ \ \textcolor{keywordtype}{bool}\ file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_station\_2.xml"{}});}
+\DoxyCodeLine{00353\ \ \ \ \ EXPECT\_TRUE(file);}
+\DoxyCodeLine{00354\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ make\_system;}
+\DoxyCodeLine{00355\ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_station\_2.xml"{}},make\_file,make\_system);}
+\DoxyCodeLine{00356\ \ \ \ \ make\_file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00357\ \ \ \ \ EXPECT\_TRUE(result\ ==\ ImportAborted);}
+\DoxyCodeLine{00358\ \}}
+\DoxyCodeLine{00359\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},input\_error\_station3)\{}
+\DoxyCodeLine{00360\ \ \ \ \ std::ofstream\ make\_file(\textcolor{stringliteral}{"{}../input\_tests/inputstation\_errors.txt"{}});}
+\DoxyCodeLine{00361\ \ \ \ \ \textcolor{keywordtype}{bool}\ Dir\_exists\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00362\ \ \ \ \ ASSERT\_TRUE(Dir\_exists);}
+\DoxyCodeLine{00363\ \ \ \ \ \textcolor{keywordtype}{bool}\ file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_station\_3.xml"{}});}
+\DoxyCodeLine{00364\ \ \ \ \ EXPECT\_TRUE(file);}
+\DoxyCodeLine{00365\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ make\_system;}
+\DoxyCodeLine{00366\ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_station\_3.xml"{}},make\_file,make\_system);}
+\DoxyCodeLine{00367\ \ \ \ \ make\_file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00368\ \ \ \ \ EXPECT\_TRUE(result\ ==\ ImportAborted);}
+\DoxyCodeLine{00369\ \}}
+\DoxyCodeLine{00370\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},input\_error\_station4)\{}
+\DoxyCodeLine{00371\ \ \ \ \ std::ofstream\ make\_file(\textcolor{stringliteral}{"{}../input\_tests/inputstation\_errors.txt"{}});}
+\DoxyCodeLine{00372\ \ \ \ \ \textcolor{keywordtype}{bool}\ Dir\_exists\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00373\ \ \ \ \ ASSERT\_TRUE(Dir\_exists);}
+\DoxyCodeLine{00374\ \ \ \ \ \textcolor{keywordtype}{bool}\ file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_station\_4.xml"{}});}
+\DoxyCodeLine{00375\ \ \ \ \ EXPECT\_TRUE(file);}
+\DoxyCodeLine{00376\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ make\_system;}
+\DoxyCodeLine{00377\ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_station\_4.xml"{}},make\_file,make\_system);}
+\DoxyCodeLine{00378\ \ \ \ \ make\_file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00379\ \ \ \ \ EXPECT\_TRUE(result\ ==\ ImportAborted);}
+\DoxyCodeLine{00380\ \}}
+\DoxyCodeLine{00381\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},input\_error\_station5)\{}
+\DoxyCodeLine{00382\ \ \ \ \ std::ofstream\ make\_file(\textcolor{stringliteral}{"{}../input\_tests/inputstation\_errors.txt"{}});}
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keywordtype}{bool}\ Dir\_exists\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00384\ \ \ \ \ ASSERT\_TRUE(Dir\_exists);}
+\DoxyCodeLine{00385\ \ \ \ \ \textcolor{keywordtype}{bool}\ file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_station\_5.xml"{}});}
+\DoxyCodeLine{00386\ \ \ \ \ EXPECT\_TRUE(file);}
+\DoxyCodeLine{00387\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ make\_system;}
+\DoxyCodeLine{00388\ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_station\_5.xml"{}},make\_file,make\_system);}
+\DoxyCodeLine{00389\ \ \ \ \ make\_file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00390\ \ \ \ \ EXPECT\_TRUE(result\ ==\ ImportAborted);}
+\DoxyCodeLine{00391\ \}}
+\DoxyCodeLine{00392\ \textcolor{comment}{//\ CHECKING\ FOR\ WRONG\ INPUTS\ FROM\ THE\ USER\ FOR\ TRAM}}
+\DoxyCodeLine{00393\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},input\_error\_tram1)\{}
+\DoxyCodeLine{00394\ \ \ \ \ std::ofstream\ make\_file(\textcolor{stringliteral}{"{}../input\_tests/inputtram\_errors.txt"{}});}
+\DoxyCodeLine{00395\ \ \ \ \ \textcolor{keywordtype}{bool}\ Dir\_exists\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00396\ \ \ \ \ ASSERT\_TRUE(Dir\_exists);}
+\DoxyCodeLine{00397\ \ \ \ \ \textcolor{keywordtype}{bool}\ file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_tram\_1.xml"{}});}
+\DoxyCodeLine{00398\ \ \ \ \ EXPECT\_TRUE(file);}
+\DoxyCodeLine{00399\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ make\_system;}
+\DoxyCodeLine{00400\ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_tram\_1.xml"{}},make\_file,make\_system);}
+\DoxyCodeLine{00401\ \ \ \ \ make\_file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00402\ \ \ \ \ EXPECT\_TRUE(result\ ==\ ImportAborted);}
+\DoxyCodeLine{00403\ \}}
+\DoxyCodeLine{00404\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},input\_error\_tram2)\{}
+\DoxyCodeLine{00405\ \ \ \ \ std::ofstream\ make\_file(\textcolor{stringliteral}{"{}../input\_tests/inputtram\_errors.txt"{}});}
+\DoxyCodeLine{00406\ \ \ \ \ \textcolor{keywordtype}{bool}\ Dir\_exists\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00407\ \ \ \ \ ASSERT\_TRUE(Dir\_exists);}
+\DoxyCodeLine{00408\ \ \ \ \ \textcolor{keywordtype}{bool}\ file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_tram\_2.xml"{}});}
+\DoxyCodeLine{00409\ \ \ \ \ EXPECT\_TRUE(file);}
+\DoxyCodeLine{00410\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ make\_system;}
+\DoxyCodeLine{00411\ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_tram\_2.xml"{}},make\_file,make\_system);}
+\DoxyCodeLine{00412\ \ \ \ \ make\_file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00413\ \ \ \ \ EXPECT\_TRUE(result\ ==\ ImportAborted);}
+\DoxyCodeLine{00414\ \}}
+\DoxyCodeLine{00415\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},input\_error\_tram3)\{}
+\DoxyCodeLine{00416\ \ \ \ \ std::ofstream\ make\_file(\textcolor{stringliteral}{"{}../input\_tests/inputtram\_errors.txt"{}});}
+\DoxyCodeLine{00417\ \ \ \ \ \textcolor{keywordtype}{bool}\ Dir\_exists\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00418\ \ \ \ \ ASSERT\_TRUE(Dir\_exists);}
+\DoxyCodeLine{00419\ \ \ \ \ \textcolor{keywordtype}{bool}\ file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_tram\_3.xml"{}});}
+\DoxyCodeLine{00420\ \ \ \ \ EXPECT\_TRUE(file);}
+\DoxyCodeLine{00421\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ make\_system;}
+\DoxyCodeLine{00422\ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_tram\_3.xml"{}},make\_file,make\_system);}
+\DoxyCodeLine{00423\ \ \ \ \ make\_file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00424\ \ \ \ \ EXPECT\_TRUE(result\ ==\ ImportAborted);}
+\DoxyCodeLine{00425\ \}}
+\DoxyCodeLine{00426\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},input\_error\_tram4)\{}
+\DoxyCodeLine{00427\ \ \ \ \ std::ofstream\ make\_file(\textcolor{stringliteral}{"{}../input\_tests/inputtram\_errors.txt"{}});}
+\DoxyCodeLine{00428\ \ \ \ \ \textcolor{keywordtype}{bool}\ Dir\_exists\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00429\ \ \ \ \ ASSERT\_TRUE(Dir\_exists);}
+\DoxyCodeLine{00430\ \ \ \ \ \textcolor{keywordtype}{bool}\ file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_tram\_4.xml"{}});}
+\DoxyCodeLine{00431\ \ \ \ \ EXPECT\_TRUE(file);}
+\DoxyCodeLine{00432\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ make\_system;}
+\DoxyCodeLine{00433\ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_tram\_4.xml"{}},make\_file,make\_system);}
+\DoxyCodeLine{00434\ \ \ \ \ make\_file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00435\ \ \ \ \ EXPECT\_TRUE(result\ ==\ ImportAborted);}
+\DoxyCodeLine{00436\ \}}
+\DoxyCodeLine{00437\ TEST\_F(\mbox{\hyperlink{classtestInput}{testInput}},input\_error\_tram5)\{}
+\DoxyCodeLine{00438\ \ \ \ \ std::ofstream\ make\_file(\textcolor{stringliteral}{"{}../input\_tests/inputtram\_errors.txt"{}});}
+\DoxyCodeLine{00439\ \ \ \ \ \textcolor{keywordtype}{bool}\ Dir\_exists\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00440\ \ \ \ \ ASSERT\_TRUE(Dir\_exists);}
+\DoxyCodeLine{00441\ \ \ \ \ \textcolor{keywordtype}{bool}\ file\ =\ FileExists(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_tram\_5.xml"{}});}
+\DoxyCodeLine{00442\ \ \ \ \ EXPECT\_TRUE(file);}
+\DoxyCodeLine{00443\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ make\_system;}
+\DoxyCodeLine{00444\ \ \ \ \ SuccessEnum\ result\ =\ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(\textcolor{stringliteral}{"{}../input\_tests/inputerror\_tram\_5.xml"{}},make\_file,make\_system);}
+\DoxyCodeLine{00445\ \ \ \ \ make\_file\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00446\ \ \ \ \ EXPECT\_TRUE(result\ ==\ ImportAborted);}
+\DoxyCodeLine{00447\ \}}
+
+\end{DoxyCode}

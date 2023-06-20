@@ -90,15 +90,14 @@ TEST_F(testOutput, check_automatic_simulation)
     ASSERT_TRUE(directory_exits);
 
     Systeem systeem;
-    ofstream file("../input_tests/errors.txt");
-    SuccessEnum succes = MetroReader::importXml("../src/advanced_ascii.xml",file,systeem);
+    SuccessEnum succes = MetroReader::importXml("../src/advanced_ascii.xml",cerr,systeem);
 
     if (succes == Success)
     {
-        systeem.checkConsistent();
+        ASSERT_TRUE(systeem.checkConsistent());
         //Generate output using outputclass object
         MetroOutput print(systeem.getTrams(),systeem.getStations());
-        print.rijd(20);
+        systeem.rijd(20);
         bool compare = FileCompare("../output_tests/automatic_simulation1_output.txt","../output_tests/automatic_expect_20.txt");
         EXPECT_TRUE(compare);
     }
@@ -110,12 +109,12 @@ TEST_F(testOutput, check_scenario0)
     ASSERT_TRUE(directory_exits);
 
     Systeem systeem;
-    ofstream file("../input_tests/errors.txt");
-    SuccessEnum succes = MetroReader::importXml("../src/advanced_ascii.xml",file,systeem);
+
+    SuccessEnum succes = MetroReader::importXml("../src/advanced_ascii.xml",cerr,systeem);
 
     if (succes == Success)
     {
-        systeem.checkConsistent();
+        ASSERT_TRUE(systeem.checkConsistent());
         //Generate output using outputclass object
         MetroOutput print(systeem.getTrams(),systeem.getStations());
         print.writeOver();
@@ -130,12 +129,12 @@ TEST_F(testOutput, check_scenario1)
     ASSERT_TRUE(directory_exits);
 
     Systeem systeem;
-    ofstream file("../input_tests/errors.txt");
-    SuccessEnum succes = MetroReader::importXml("../src/advanced_ascii.xml",file,systeem);
+
+    SuccessEnum succes = MetroReader::importXml("../src/advanced_ascii.xml",cerr,systeem);
 
     if (succes == Success)
     {
-        systeem.checkConsistent();
+        ASSERT_TRUE(systeem.checkConsistent());
         //Generate output using outputclass object
         MetroOutput print(systeem.getTrams(),systeem.getStations());
         print.simple_writeover();
@@ -150,12 +149,12 @@ TEST_F(testOutput, check_scenario2)
     ASSERT_TRUE(directory_exits);
 
     Systeem systeem;
-    ofstream file("../input_tests/errors.txt");
-    SuccessEnum succes = MetroReader::importXml("../src/advanced_ascii.xml",file,systeem);
+
+    SuccessEnum succes = MetroReader::importXml("../src/advanced_ascii.xml",cerr,systeem);
 
     if (succes == Success)
     {
-        systeem.checkConsistent();
+        ASSERT_TRUE(systeem.checkConsistent());
         //Generate output using outputclass object
         MetroOutput print(systeem.getTrams(),systeem.getStations());
         print.advanced_writeover();

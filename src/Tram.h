@@ -27,7 +27,6 @@ protected:
 public:
     /**
      * REQUIRE(this->properlyInitialized(),"getVoertuignummer precondition failed");
-     * ENSURE(voertuignummer >= 0, "getVoertuignummer postcondition failed");
      * @return unsigned integer
      */
     int getVoertuignummer() const;
@@ -91,7 +90,6 @@ public:
     void setLijnNr(int lijnNr);
     /**
      * REQUIRE(this->properlyInitialized(),"getSnelheid precondition failed");
-     * ENSURE(snelheid >= 0, "getSnelheid postcondition failed");
      * @return unsigned integer
      */
     virtual int getSnelheid() const;

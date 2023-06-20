@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<!-- ROOT IS NIET GOED -->
-<METRONET
+<!-- ROOT IS NIET GOED GESLOTEN-->
+<METRONET>
     <STATION>
         <naam>A</naam>
         <type>Metrostation</type>

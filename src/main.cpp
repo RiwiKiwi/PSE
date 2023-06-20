@@ -13,7 +13,7 @@ int main()
 {
     Systeem test;
     // Initializing the system using xmlimporter class
-    SuccessEnum result = MetroReader::importXml("../src/definitive_ascii.xml",std::cerr,test);
+    SuccessEnum result = MetroReader::importXml("../src/advanced_ascii.xml",std::cerr,test);
     if (result == Success)
     {
         //consistentiecheck before generating output
@@ -22,8 +22,8 @@ int main()
         MetroOutput print(test.getTrams(),test.getStations());
         print.writeOver();
         print.simple_writeover();
-        print.rijd(20);
         print.advanced_writeover();
+        test.rijd(20);
     }
     return 0;
 }

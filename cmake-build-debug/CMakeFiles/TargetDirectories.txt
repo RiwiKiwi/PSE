@@ -1,4 +1,4 @@
-/home/riwi/CLionProjects/PSE_NEW/cmake-build-debug/CMakeFiles/ttt.dir
-/home/riwi/CLionProjects/PSE_NEW/cmake-build-debug/CMakeFiles/ttt_debug.dir
-/home/riwi/CLionProjects/PSE_NEW/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/riwi/CLionProjects/PSE_NEW/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/riwi/CLionProjects/PSE/cmake-build-debug/CMakeFiles/ttt.dir
+/home/riwi/CLionProjects/PSE/cmake-build-debug/CMakeFiles/ttt_debug.dir
+/home/riwi/CLionProjects/PSE/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/riwi/CLionProjects/PSE/cmake-build-debug/CMakeFiles/rebuild_cache.dir

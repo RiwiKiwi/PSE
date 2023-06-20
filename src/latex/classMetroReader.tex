@@ -1,0 +1,160 @@
+\doxysection{Metro\+Reader Class Reference}
+\hypertarget{classMetroReader}{}\label{classMetroReader}\index{MetroReader@{MetroReader}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Success\+Enum \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{import\+Xml}} (const char \texorpdfstring{$\ast$}{*}input\+\_\+filename, std\+::ostream \&err\+Stream, \mbox{\hyperlink{classSysteem}{Systeem}} \&input\+\_\+system)
+\item 
+static bool \mbox{\hyperlink{classMetroReader_ae43781b61fb30a218608885cdbfb0a2e}{check\+\_\+object}} (std\+::string \&input\+\_\+object, bool root\+\_\+initialized)
+\item 
+static bool \mbox{\hyperlink{classMetroReader_a08a586f104c42890e6a1e5ce29abbf70}{check\+\_\+object\+\_\+elements}} (std\+::string \&input\+\_\+object, Ti\+Xml\+Element \texorpdfstring{$\ast$}{*}check\+\_\+root, bool subroot\+\_\+initialized)
+\item 
+static bool \mbox{\hyperlink{classMetroReader_ad50d0972a8df1b7d7a3557559e274137}{is\+\_\+\+Alphabet}} (std\+::string \&check\+\_\+string)
+\item 
+static bool \mbox{\hyperlink{classMetroReader_af9b4bdb9f1d9a319108fa6a7250d49da}{is\+\_\+\+Number}} (std\+::string \&check\+\_\+string)
+\item 
+static bool \mbox{\hyperlink{classMetroReader_acf074c39e8678011ca3812329d8d31fd}{check\+\_\+type}} (std\+::string \&input\+\_\+type, bool is\+\_\+station)
+\item 
+static string \mbox{\hyperlink{classMetroReader_a2992fa302a0df6e81f80bee76c60ff00}{get\+\_\+tram\+\_\+type}} (Ti\+Xml\+Element \texorpdfstring{$\ast$}{*}input\+\_\+root)
+\item 
+static Success\+Enum \mbox{\hyperlink{classMetroReader_a66679139c4c3dedfbd6ff276cd22fbc5}{set\+\_\+tram}} (bool is\+\_\+pcc, Ti\+Xml\+Element \texorpdfstring{$\ast$}{*}input\+\_\+root, \mbox{\hyperlink{classSysteem}{Systeem}} \&input\+\_\+systeem, std\+::ostream \&err\+Stream)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMetroReader_ae43781b61fb30a218608885cdbfb0a2e}\label{classMetroReader_ae43781b61fb30a218608885cdbfb0a2e} 
+\index{MetroReader@{MetroReader}!check\_object@{check\_object}}
+\index{check\_object@{check\_object}!MetroReader@{MetroReader}}
+\doxysubsubsection{\texorpdfstring{check\_object()}{check\_object()}}
+{\footnotesize\ttfamily bool Metro\+Reader\+::check\+\_\+object (\begin{DoxyParamCaption}\item[{std\+::string \&}]{input\+\_\+object,  }\item[{bool}]{root\+\_\+initialized }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Function for subrootchecker REQUIRE(root\+\_\+initialized == true,\"{}root isn\textquotesingle{}t properlyinitialized\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+object} & string or stringvariable \\
+\hline
+{\em root\+\_\+initialized} & inputbool \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{classMetroReader_a08a586f104c42890e6a1e5ce29abbf70}\label{classMetroReader_a08a586f104c42890e6a1e5ce29abbf70} 
+\index{MetroReader@{MetroReader}!check\_object\_elements@{check\_object\_elements}}
+\index{check\_object\_elements@{check\_object\_elements}!MetroReader@{MetroReader}}
+\doxysubsubsection{\texorpdfstring{check\_object\_elements()}{check\_object\_elements()}}
+{\footnotesize\ttfamily bool Metro\+Reader\+::check\+\_\+object\+\_\+elements (\begin{DoxyParamCaption}\item[{std\+::string \&}]{input\+\_\+object,  }\item[{Ti\+Xml\+Element \texorpdfstring{$\ast$}{*}}]{check\+\_\+root,  }\item[{bool}]{subroot\+\_\+initialized }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Function for elements of subroot checker REQUIRE(subroot\+\_\+initialized == true,\"{}check\+\_\+object\+\_\+elements precondition failed\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+object} & string =\texorpdfstring{$>$}{>} STATION OR TRAM \\
+\hline
+{\em check\+\_\+root} & Ti\+Xml\+Element\texorpdfstring{$\ast$}{*} our checking root of xmlfile \\
+\hline
+{\em subroot\+\_\+initialized} & \+: inputbool \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{classMetroReader_acf074c39e8678011ca3812329d8d31fd}\label{classMetroReader_acf074c39e8678011ca3812329d8d31fd} 
+\index{MetroReader@{MetroReader}!check\_type@{check\_type}}
+\index{check\_type@{check\_type}!MetroReader@{MetroReader}}
+\doxysubsubsection{\texorpdfstring{check\_type()}{check\_type()}}
+{\footnotesize\ttfamily bool Metro\+Reader\+::check\+\_\+type (\begin{DoxyParamCaption}\item[{std\+::string \&}]{input\+\_\+type,  }\item[{bool}]{is\+\_\+station }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Funciton to check if the inputted type in xmlfile is good or not 
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+type} & inputstring or stringvariable \\
+\hline
+{\em is\+\_\+station} & give true if station and false if it is a tram that we want to check for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{classMetroReader_a2992fa302a0df6e81f80bee76c60ff00}\label{classMetroReader_a2992fa302a0df6e81f80bee76c60ff00} 
+\index{MetroReader@{MetroReader}!get\_tram\_type@{get\_tram\_type}}
+\index{get\_tram\_type@{get\_tram\_type}!MetroReader@{MetroReader}}
+\doxysubsubsection{\texorpdfstring{get\_tram\_type()}{get\_tram\_type()}}
+{\footnotesize\ttfamily string Metro\+Reader\+::get\+\_\+tram\+\_\+type (\begin{DoxyParamCaption}\item[{Ti\+Xml\+Element \texorpdfstring{$\ast$}{*}}]{input\+\_\+root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Function that will give back which tramtype this is 
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+root} & \+: inputsubroot for getting the type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string =\texorpdfstring{$>$}{>} \doxylink{classPCC}{PCC} OR ALBATROS OR STADSLIJNER 
+\end{DoxyReturn}
+\Hypertarget{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}\label{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b} 
+\index{MetroReader@{MetroReader}!importXml@{importXml}}
+\index{importXml@{importXml}!MetroReader@{MetroReader}}
+\doxysubsubsection{\texorpdfstring{importXml()}{importXml()}}
+{\footnotesize\ttfamily Success\+Enum Metro\+Reader\+::import\+Xml (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{input\+\_\+filename,  }\item[{std\+::ostream \&}]{err\+Stream,  }\item[{\mbox{\hyperlink{classSysteem}{Systeem}} \&}]{input\+\_\+system }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+XML-\/reader function REQUIRE(input\+\_\+system.\+properly\+Initialized(),\"{}\+The system wasn\textquotesingle{} t correctly initialized!\"{}); ENSURE(!input\+\_\+system.get\+Trams().empty(),\"{}import\+Xml postcondition failed!\"{}); ENSURE(!input\+\_\+system.get\+Stations().empty(),\"{}import\+Xml postconditon failed!\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+filename} & \+: string (directory where we will read our file ) or variable where our path is stored \\
+\hline
+{\em err\+Stream} & \+: outstream for declaring message \\
+\hline
+{\em input\+\_\+system} & \+: inputvariable of type System \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Success\+Enum =\texorpdfstring{$>$}{>} declaration for if the filereading went well or not 
+\end{DoxyReturn}
+\Hypertarget{classMetroReader_ad50d0972a8df1b7d7a3557559e274137}\label{classMetroReader_ad50d0972a8df1b7d7a3557559e274137} 
+\index{MetroReader@{MetroReader}!is\_Alphabet@{is\_Alphabet}}
+\index{is\_Alphabet@{is\_Alphabet}!MetroReader@{MetroReader}}
+\doxysubsubsection{\texorpdfstring{is\_Alphabet()}{is\_Alphabet()}}
+{\footnotesize\ttfamily bool Metro\+Reader\+::is\+\_\+\+Alphabet (\begin{DoxyParamCaption}\item[{std\+::string \&}]{check\+\_\+string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Function to check if the given string is an alphabet 
+\begin{DoxyParams}{Parameters}
+{\em check\+\_\+string} & inputstringvariable or string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{classMetroReader_af9b4bdb9f1d9a319108fa6a7250d49da}\label{classMetroReader_af9b4bdb9f1d9a319108fa6a7250d49da} 
+\index{MetroReader@{MetroReader}!is\_Number@{is\_Number}}
+\index{is\_Number@{is\_Number}!MetroReader@{MetroReader}}
+\doxysubsubsection{\texorpdfstring{is\_Number()}{is\_Number()}}
+{\footnotesize\ttfamily bool Metro\+Reader\+::is\+\_\+\+Number (\begin{DoxyParamCaption}\item[{std\+::string \&}]{check\+\_\+string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Function to check if the inputstring is convertible to a number 
+\begin{DoxyParams}{Parameters}
+{\em check\+\_\+string} & inputstringvariable or string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{classMetroReader_a66679139c4c3dedfbd6ff276cd22fbc5}\label{classMetroReader_a66679139c4c3dedfbd6ff276cd22fbc5} 
+\index{MetroReader@{MetroReader}!set\_tram@{set\_tram}}
+\index{set\_tram@{set\_tram}!MetroReader@{MetroReader}}
+\doxysubsubsection{\texorpdfstring{set\_tram()}{set\_tram()}}
+{\footnotesize\ttfamily Success\+Enum Metro\+Reader\+::set\+\_\+tram (\begin{DoxyParamCaption}\item[{bool}]{is\+\_\+pcc,  }\item[{Ti\+Xml\+Element \texorpdfstring{$\ast$}{*}}]{input\+\_\+root,  }\item[{\mbox{\hyperlink{classSysteem}{Systeem}} \&}]{input\+\_\+systeem,  }\item[{std\+::ostream \&}]{err\+Stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Function to setup our \doxylink{classPCC}{PCC} or TRAM object REQUIRE(input\+\_\+systeem.\+properly\+Initialized(),\"{}\+The system wasn\textquotesingle{} t properlyinitialized correctly!\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em is\+\_\+pcc} & true if we have to make \doxylink{classPCC}{PCC} and else false =\texorpdfstring{$>$}{>} making TRAM object \\
+\hline
+{\em input\+\_\+root} & inputroot of the xmlfile \\
+\hline
+{\em input\+\_\+systeem} & our Metrosystem \\
+\hline
+{\em err\+Stream} & outstream for errormessage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Success\+Enum 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Metro\+Reader.\+h\item 
+Metro\+Reader.\+cpp\end{DoxyCompactItemize}

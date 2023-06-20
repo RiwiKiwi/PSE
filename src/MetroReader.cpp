@@ -54,7 +54,9 @@ SuccessEnum MetroReader::importXml(const char* input_filename,std::ostream& errS
                                 new_station->setNaam(get_naam);
                             }else{
                                 errStream <<"XML IMPORT ABORTED: expected an upper char for stationname but got => "<< get_naam << endl;
-                                return ImportAborted;
+                                errStream << "---------------------------------------------------------------------"<< endl;
+                                endResult = ImportAborted;
+                                continue;
                             }
                         }
                         if (check_element == "type"){
@@ -64,7 +66,9 @@ SuccessEnum MetroReader::importXml(const char* input_filename,std::ostream& errS
                                 new_station->setType(get_type);
                             }else{
                                 errStream <<"XML IMPORT ABORTED: expected Metrostation or Halte as type but got => "<<get_type<< endl;
-                                return ImportAborted;
+                                errStream << "---------------------------------------------------------------------"<< endl;
+                                endResult = ImportAborted;
+                                continue;
                             }
                         }
                         if (check_element == "volgende"){
@@ -74,7 +78,9 @@ SuccessEnum MetroReader::importXml(const char* input_filename,std::ostream& errS
                                 new_station->setNext(get_volgend);
                             }else{
                                 errStream <<"XML IMPORT ABORTED: expected an upper char for station volgende but got => "<<get_volgend<< endl;
-                                return ImportAborted;
+                                errStream << "---------------------------------------------------------------------"<< endl;
+                                endResult = ImportAborted;
+                                continue;
                             }
                         }
                         if (check_element == "vorige"){
@@ -84,7 +90,9 @@ SuccessEnum MetroReader::importXml(const char* input_filename,std::ostream& errS
                                 new_station->setPrev(get_vorig);
                             }else{
                                 errStream <<"XML IMPORT ABORTED: expected an upper char for station vorige but got => "<<get_vorig << endl;
-                                return ImportAborted;
+                                errStream << "---------------------------------------------------------------------"<< endl;
+                                endResult = ImportAborted;
+                                continue;
                             }
                         }
                         if (check_element == "spoor"){
@@ -98,7 +106,9 @@ SuccessEnum MetroReader::importXml(const char* input_filename,std::ostream& errS
                                 new_station->setSpoorNrs(new_station_sporen);
                             }else{
                                 errStream <<"XML IMPORT ABORTED: expected an integer for spoor but got => "<<tostring<< endl;
-                                return ImportAborted;
+                                errStream << "---------------------------------------------------------------------"<< endl;
+                                endResult = ImportAborted;
+                                continue;
                             }
                         }
                     }
@@ -326,6 +336,7 @@ string MetroReader::get_tram_type(TiXmlElement *input_root) {
 
 SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem &input_systeem,std::ostream& errStream) {
     REQUIRE(input_systeem.properlyInitialized(),"The system wasn' t properlyinitialized correctly!");
+    SuccessEnum last = Success;
     if (is_pcc){
         const char* t_Elements[] = {"lijnNr","type","beginStation","snelheid","voertuigNr","aantalDefecten","reparatieTijd"};
         vector<string> pcc_elements(t_Elements, t_Elements + sizeof(t_Elements) / sizeof(t_Elements[0]));
@@ -343,7 +354,8 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
                     make_pcc->setLijnNr(atoi(get_lijnnummer));
                 }else{
                     errStream << "XML IMPORT ABORTED: expected an integer for setting up lijnnummer but got => "<< to_string << endl;
-                    return ImportAborted;
+                    errStream << "---------------------------------------------------------------------"<< endl;
+                    last = ImportAborted;
                 }
             }
             else if (check_element == "aantalDefecten"){
@@ -353,6 +365,8 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
                     make_pcc->setStorepccMoves(atoi(get_moves));
                 }else{
                     errStream << "XML IMPORT ABORTED: expected an integer for setting up aantaldefecten but got => "<<verify << endl;
+                    errStream << "---------------------------------------------------------------------"<< endl;
+                    last = ImportAborted;
                 }
             }
             else if (check_element == "reparatieTijd"){
@@ -362,6 +376,8 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
                     make_pcc->setStorepccWaits(atoi(get_waits));
                 }else{
                     errStream << "XML IMPORT ABORTED: expected an integer for setting up reparatieTijd but got => "<<verify << endl;
+                    errStream << "---------------------------------------------------------------------"<< endl;
+                    last = ImportAborted;
                 }
             }
             else if (check_element == "beginStation"){
@@ -371,7 +387,8 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
                     make_pcc->setBeginstationname(get_beginstation_naam);
                 }else{
                     errStream <<"XML IMPORT ABORTED: expected an upper char for initilalizing the beginstation but got => "<<get_beginstation_naam << endl;
-                    return ImportAborted;
+                    errStream << "---------------------------------------------------------------------"<< endl;
+                    last = ImportAborted;
                 }
             }
             else if (check_element == "voertuigNr"){
@@ -382,10 +399,22 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
                     make_pcc->setVoertuignummer(atoi(get_voertuignummer));
                 }else{
                     errStream << "XML IMPORT ABORTED: expected an integer for voertuigNr but got => "<<tostring << endl;
-                    return ImportAborted;
+                    errStream << "---------------------------------------------------------------------"<< endl;
+                    last = ImportAborted;
                 }
             }
         }
+        int check_reparatietijd = make_pcc->getStorepccWaits();
+        int check_aantaldefecten = make_pcc->getStorepccMoves();
+        if (check_reparatietijd == 0){
+            errStream << "XML IMPORT ABORTED: repairtime for pcc not present because current value: "<<check_reparatietijd << endl;
+            last = ImportAborted;
+        }
+        if (check_aantaldefecten == 0){
+            errStream << "XML IMPORT ABORTED: moves not present before defect for pcc because current value: "<<check_aantaldefecten << endl;
+            last = ImportAborted;
+        }
+
         vector<Tram*> adding_vector = input_systeem.getTrams();
         adding_vector.push_back(make_pcc);
         input_systeem.setTrams(adding_vector);
@@ -402,7 +431,8 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
                     new_tram->setLijnNr(atoi(get_lijnnummer));
                 }else{
                     errStream << "XML IMPORT ABORTED: expected an integer for setting up lijnnummer but got => "<< to_string << endl;
-                    return ImportAborted;
+                    errStream << "---------------------------------------------------------------------"<< endl;
+                    last = ImportAborted;
                 }
             }
             if (check_element == "type"){
@@ -415,7 +445,8 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
                     }
                 }else{
                     errStream <<"XML IMPORT ABORTED: expected PCC or Albatros or Stadslijner but got => "<< get_type << endl;
-                    return ImportAborted;
+                    errStream << "---------------------------------------------------------------------"<< endl;
+                    last = ImportAborted;
                 }
             }
             if (check_element == "beginStation"){
@@ -436,14 +467,16 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
                                 new_tram->setBeginstationname(get_beginstation_naam);
                                 continue;
                             }
-                            errStream << "XML PARTIAL IMPORT: tramtype of albatros or stadslijner can only be initialized to a metrostation!" << endl;
-                            return ImportAborted;
+                            errStream << "XML PARTIAL IMPORT: tramtype of albatros or stadslijner can only be initialized to a metrostation but got: "<< get_type << endl;
+                            errStream << "---------------------------------------------------------------------"<< endl;
+                            last = ImportAborted;
                         }
                     }
                 }
                 else{
                     errStream <<"XML IMPORT ABORTED: expected an upper char for initilalizing the beginstation but got => "<<get_beginstation_naam << endl;
-                    return ImportAborted;
+                    errStream << "---------------------------------------------------------------------"<< endl;
+                    last = ImportAborted;
                 }
             }
             if (check_element == "voertuigNr"){
@@ -454,7 +487,8 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
                     new_tram->setVoertuignummer(atoi(get_voertuignummer));
                 }else{
                     errStream << "XML IMPORT ABORTED: expected an integer for voertuigNr but got => "<<tostring << endl;
-                    return ImportAborted;
+                    errStream << "---------------------------------------------------------------------"<< endl;
+                    last = ImportAborted;
                 }
             }
         }
@@ -463,5 +497,5 @@ SuccessEnum MetroReader::set_tram(bool is_pcc, TiXmlElement *input_root, Systeem
         adding_vector.push_back(new_tram);
         input_systeem.setTrams(adding_vector);
     }
-    return Success;
+    return last;
 }

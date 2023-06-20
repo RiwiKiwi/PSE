@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <METRONET>
-    <STATION>
+    <!-- TAG NAAM VERGETEN -->
+    <>
         <naam>A</naam>
         <type>Metrostation</type>
         <volgende>B</volgende>
@@ -33,7 +34,7 @@
         <voertuigNr>2</voertuigNr>
         <beginStation>B</beginStation>
     </TRAM>
-    <TRAM
+    <TRAM>
         <lijnNr>12</lijnNr>
         <type>Stadslijner</type>
         <voertuigNr>3</voertuigNr>

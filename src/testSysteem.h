@@ -87,7 +87,8 @@ TEST_F(testSysteem,inconsistentie_metronet){
         Systeem new_system;
         string import_file = "../input_tests/"+xml_file;
         MetroReader::importXml(import_file.c_str(),std::cerr,new_system);
-        new_system.checkConsistent();
+        bool checker = new_system.checkConsistent();
+        ASSERT_FALSE(checker);
         string output_file = "../input_tests/inconsistent"+ss.str()+"_output.txt";
         EXPECT_TRUE(FileExists(output_file));
         string expect_file =  "../input_tests/inconsistent"+ss.str()+"_expect.txt";

@@ -41,7 +41,3 @@ Tram 12 nr 1
 	 reparatieTijd: 3
 	 snelheid: 40
 	 huidig station: A
-Tram 12 nr 2
-	 type: Albatros
-	 snelheid: 70
-	 huidig station: A

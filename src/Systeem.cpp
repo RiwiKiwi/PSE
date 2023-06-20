@@ -10,9 +10,24 @@
 #include "DesignByContract.h"
 #include "unistd.h"
 #include "algorithm"
+#include "MetroOutput.h"
 using namespace std;
 
-void Systeem::checkConsistent()
+void Systeem::rijd(int stappen)
+{
+    REQUIRE(this->properlyInitialized(),"rijd precondition failed!");
+    REQUIRE(stappen > 0 , "rijd precondition failed");
+    int stap = 0;
+    while (stap < stappen)
+    {
+        MetroOutput printer(this->trams,this->stations);
+        printer.verplaatstram();
+        stap++;
+    }
+    ENSURE(this->checkConsistent() == true,"rijd postcondition failed");
+}
+
+bool Systeem::checkConsistent()
 {
     REQUIRE(this->properlyInitialized(), "checkConsistent precondition failed");
     inconsistent = 0;
@@ -122,7 +137,7 @@ void Systeem::checkConsistent()
                 five << "XML PARTIAL IMPORT: Inconsistent voorwaarde 5 failed";
                 inconsistent = 1;
                 five.close();
-                goto final;
+                break;
             }else{
                 continue;
             }
@@ -144,7 +159,7 @@ void Systeem::checkConsistent()
                     continue;
                 }else{
                     inconsistent = 1;
-                    goto final;
+                    break;
                 }
             }
         }
@@ -167,20 +182,24 @@ void Systeem::checkConsistent()
                     six << "XML PARTIAL IMPORT: Inconsistent voorwaarde 6 failed";
                     inconsistent = 1;
                     six.close();
-                    goto final;
+                    break;
                 }else{
                     continue;
                 }
             }
         }
     }
-    final:
     if (inconsistent == 1)
     {
         ofstream voorwaardes("../input_tests/consistent_errors.txt");
         voorwaardes << "Inconsistent metronet" << endl;
         voorwaardes.close();
+        return false;
     }
+    if (inconsistent == 0){
+        return true;
+    }
+    return false;
 }
 
 Systeem::Systeem()

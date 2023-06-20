@@ -1,0 +1,62 @@
+\doxysection{Station.\+h}
+\hypertarget{Station_8h_source}{}\label{Station_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ aburahman10\ on\ 6/03/23.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TICTACTOE10\_STATION\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TICTACTOE10\_STATION\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}iostream"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}vector"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classStation}{Station}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{string}\ naam;}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ volgende;}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ vorige;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{string}\ next;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{string}\ prev;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{string}\ type;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ spoor;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ vector<int>\ spoorNrs;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ \_initcheck;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classStation_a081ca6373631199a30ebab56f50022d8}{getSpoor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classStation_a27b3507f2e6ff05c855d9b30c82686da}{setSpoor}}(\textcolor{keywordtype}{int}\ input\_spoor);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\mbox{\hyperlink{classStation_ac9e3c6fc486a500f2557ee785638dd32}{getType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classStation_a341839928620f5f8d2c2df59ba066004}{setType}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&input\_type);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{const}\ vector<int>\ \&\mbox{\hyperlink{classStation_a0b59634fba477327fa213a3274253599}{getSpoorNrs}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classStation_ab3f4380c8ee7215ac3ffa5c91b76a938}{setSpoorNrs}}(\textcolor{keyword}{const}\ vector<int>\ \&spoorNrs);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\mbox{\hyperlink{classStation_a7c85788de028ae2b97cb3d4d4f60c1ae}{getNext}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classStation_ac048056f68e7745853ee90a53a547f1e}{setNext}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&next);}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\mbox{\hyperlink{classStation_a2eb1fac89600cc7b773c2261fc16fd0f}{getPrev}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classStation_a92c6cc2e4103d2b480d07030f81d992d}{setPrev}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&prev);}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\mbox{\hyperlink{classStation_a5cb0b0a752b33d922c541ef7531b16f4}{getNaam}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classStation_ab21be2cda579c82ebf258c45ae5ef2b1}{setNaam}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&naam);}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}\ *\mbox{\hyperlink{classStation_a330c297adddcbfd5d8871075291e9512}{getVolgende}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classStation_a49d15a8e8772a1932e0586b95655a852}{setVolgende}}(\mbox{\hyperlink{classStation}{Station}}\ *volgende);}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}\ *\mbox{\hyperlink{classStation_a69c0539e899ff540c38eb434a69bfa9e}{getVorige}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classStation_a6a3969266668df46245f90c3b0e2a062}{setVorige}}(\mbox{\hyperlink{classStation}{Station}}\ *vorige);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{bool}\ properlyInitialized()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{classStation_a73d335726aad1d844d81cda6d9fd74e6}{Station}}();}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TICTACTOE10\_STATION\_H}}
+
+\end{DoxyCode}

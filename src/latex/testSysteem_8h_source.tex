@@ -1,0 +1,107 @@
+\doxysection{test\+Systeem.\+h}
+\hypertarget{testSysteem_8h_source}{}\label{testSysteem_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ aburahman10\ on\ 17/03/23.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ PROJECTSOFTWAREENGINEER\_TESTSYSTEEM\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ PROJECTSOFTWAREENGINEER\_TESTSYSTEEM\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PROJECTSOFTWAREENGINEER\_TESTSYSTEEM\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}iostream"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}fstream"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}sys/stat.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <gtest/gtest.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Systeem.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}simulationUtils.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}Systeem.h"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtestSysteem}{testSysteem}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{\};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ TESTEN\ VAN\ DE\ CONSTRUCTOR}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ TEST\_F(\mbox{\hyperlink{classtestSysteem}{testSysteem}},\ constructor)}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}*\ systeem\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classSysteem}{Systeem}};}
+\DoxyCodeLine{00029\ \ \ \ \ ASSERT\_TRUE(systeem-\/>properlyInitialized());}
+\DoxyCodeLine{00030\ \ \ \ \ ASSERT\_TRUE(systeem-\/>\mbox{\hyperlink{classSysteem_abc2f48eec0ae70ccecd6db6b5dabfa9a}{getTrams}}().empty());}
+\DoxyCodeLine{00031\ \ \ \ \ ASSERT\_TRUE(systeem-\/>\mbox{\hyperlink{classSysteem_aabcaa90be45a1a408b4ea111d9f76d37}{getStations}}().empty());}
+\DoxyCodeLine{00032\ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ TESTEN\ VAN\ GETTERS\ EN\ SETTERS}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ GETTER\ \&\ SETTER\ STATIONS*}}
+\DoxyCodeLine{00039\ TEST\_F(\mbox{\hyperlink{classtestSysteem}{testSysteem}},Stationsvector)}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}*\ systeem\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classSysteem}{Systeem}};}
+\DoxyCodeLine{00042\ \ \ \ \ vector<Station*>get\_stations\ =\ systeem-\/>\mbox{\hyperlink{classSysteem_aabcaa90be45a1a408b4ea111d9f76d37}{getStations}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ nul\ =\ 0;}
+\DoxyCodeLine{00044\ \ \ \ \ ASSERT\_EQ(nul,get\_stations.size());}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ station\_one\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}*\ station\_two\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStation}{Station}};}
+\DoxyCodeLine{00047\ \ \ \ \ get\_stations.push\_back(station\_one);}
+\DoxyCodeLine{00048\ \ \ \ \ get\_stations.push\_back(station\_two);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ twee\ =\ 2;}
+\DoxyCodeLine{00050\ \ \ \ \ EXPECT\_EQ(twee,get\_stations.size());}
+\DoxyCodeLine{00051\ \ \ \ \ systeem-\/>\mbox{\hyperlink{classSysteem_a4114eafec463f9f82fb5ffc0ff4d9b74}{setStations}}(get\_stations);}
+\DoxyCodeLine{00052\ \ \ \ \ ASSERT\_TRUE(systeem-\/>\mbox{\hyperlink{classSysteem_aabcaa90be45a1a408b4ea111d9f76d37}{getStations}}()\ ==\ get\_stations);}
+\DoxyCodeLine{00053\ \}}
+\DoxyCodeLine{00054\ \textcolor{comment}{//GETTER\ EN\ SETTER\ TRAMS*}}
+\DoxyCodeLine{00055\ TEST\_F(\mbox{\hyperlink{classtestSysteem}{testSysteem}},Tramsvector)}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}*\ systeem\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classSysteem}{Systeem}};}
+\DoxyCodeLine{00058\ \ \ \ \ vector<Tram*>\ get\_trams\ =\ systeem-\/>\mbox{\hyperlink{classSysteem_abc2f48eec0ae70ccecd6db6b5dabfa9a}{getTrams}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ nul\ =\ 0;}
+\DoxyCodeLine{00060\ \ \ \ \ ASSERT\_EQ(nul,get\_trams.size());}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}*\ tram\_one\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}*\ tram\_two\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTram}{Tram}};}
+\DoxyCodeLine{00063\ \ \ \ \ get\_trams.push\_back(tram\_one);}
+\DoxyCodeLine{00064\ \ \ \ \ get\_trams.push\_back(tram\_two);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ twee\ =\ 2;}
+\DoxyCodeLine{00066\ \ \ \ \ EXPECT\_EQ(twee,get\_trams.size());}
+\DoxyCodeLine{00067\ \ \ \ \ systeem-\/>\mbox{\hyperlink{classSysteem_ae53b12d7bc1ca02894328ed60b5a9645}{setTrams}}(get\_trams);}
+\DoxyCodeLine{00068\ \ \ \ \ ASSERT\_TRUE(systeem-\/>\mbox{\hyperlink{classSysteem_abc2f48eec0ae70ccecd6db6b5dabfa9a}{getTrams}}()\ ==\ get\_trams);}
+\DoxyCodeLine{00069\ \}}
+\DoxyCodeLine{00070\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ *\ TESTEN\ VAN\ INCONSISTENTIE\ VAN\ JE\ SYSTEEM}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ LOOPING\ THROUGH\ EVERY\ INCONSISTENT\ XML-\/FILES}}
+\DoxyCodeLine{00074\ TEST\_F(\mbox{\hyperlink{classtestSysteem}{testSysteem}},inconsistentie\_metronet)\{}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ \ \ \ \ *\ ALLE\ INCONSISTENTIE\ VOORWAARDES\ WORDEN\ HIER\ GETEST\ VIA\ LOOP\ !}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{bool}\ dir\_status\ =\ DirectoryExists(\textcolor{stringliteral}{"{}../input\_tests"{}});}
+\DoxyCodeLine{00079\ \ \ \ \ ASSERT\_TRUE(dir\_status);}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ counter\ =\ 1;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ INT\ TO\ STRING}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ ss\ <<\ counter;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ xml\_file\ =\ \textcolor{stringliteral}{"{}inconsistent\_"{}}+ss.str()+\textcolor{stringliteral}{"{}.xml"{}};}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSysteem}{Systeem}}\ new\_system;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ import\_file\ =\ \textcolor{stringliteral}{"{}../input\_tests/"{}}+xml\_file;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMetroReader_a29028a5b3ab8ae8635b2e747ec5e8e8b}{MetroReader::importXml}}(import\_file.c\_str(),std::cerr,new\_system);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ checker\ =\ new\_system.\mbox{\hyperlink{classSysteem_a9b7b4b2fb0c91c71d117d4452d60bc1b}{checkConsistent}}();}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ ASSERT\_FALSE(checker);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ output\_file\ =\ \textcolor{stringliteral}{"{}../input\_tests/inconsistent"{}}+ss.str()+\textcolor{stringliteral}{"{}\_output.txt"{}};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ EXPECT\_TRUE(FileExists(output\_file));}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ expect\_file\ =\ \ \textcolor{stringliteral}{"{}../input\_tests/inconsistent"{}}+ss.str()+\textcolor{stringliteral}{"{}\_expect.txt"{}};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ EXPECT\_TRUE(FileCompare(output\_file,expect\_file));}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ ss.str()\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ counter++;}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{while}(counter\ <=\ 6);}
+\DoxyCodeLine{00100\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ }
+
+\end{DoxyCode}

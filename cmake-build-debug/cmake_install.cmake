@@ -1,4 +1,4 @@
-# Install script for directory: /home/riwi/CLionProjects/PSE_NEW
+# Install script for directory: /home/riwi/CLionProjects/PSE
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/riwi/CLionProjects/PSE_NEW/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/riwi/CLionProjects/PSE/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

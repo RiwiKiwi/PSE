@@ -1,0 +1,218 @@
+\doxysection{Tram Class Reference}
+\hypertarget{classTram}{}\label{classTram}\index{Tram@{Tram}}
+Inheritance diagram for Tram\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTram}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classTram_a84c856d1f8a2b417abcf6fcad8e64947}{get\+Voertuignummer}} () const
+\item 
+void \mbox{\hyperlink{classTram_a95d085acae025bb5383ab657c3637f2f}{set\+Voertuignummer}} (int input\+\_\+voertuignummer)
+\item 
+const string \& \mbox{\hyperlink{classTram_a5e1e3c04fc22d470616f82039c1445ad}{get\+Beginstationname}} () const
+\item 
+void \mbox{\hyperlink{classTram_aff34a98b46aab6046a9f5517616edb06}{set\+Beginstationname}} (const string \&input\+\_\+name)
+\item 
+virtual string \mbox{\hyperlink{classTram_a865733c0109b4f4b98ad9a5b41a1041b}{get\+Type}} () const
+\item 
+virtual void \mbox{\hyperlink{classTram_a096dc0baccdb2cb9f5a83f92a21ccba6}{set\+Type}} (const string \&input\+\_\+type)
+\item 
+\mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTram_affc75d2523aa54ea42c4e023a82b1a62}{get\+Huidige\+Station}} () const
+\item 
+void \mbox{\hyperlink{classTram_ae6955372c42af7b72b60ec4c8462983c}{set\+Huidige\+Station}} (\mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*}huidige\+Station)
+\item 
+int \mbox{\hyperlink{classTram_ad2404fa7837b41287feab05f6a1b52bf}{get\+Lijn\+Nr}} () const
+\item 
+void \mbox{\hyperlink{classTram_aa4abed68bed572ea91e01eca2d48abfe}{set\+Lijn\+Nr}} (int lijn\+Nr)
+\item 
+virtual int \mbox{\hyperlink{classTram_aa8bcd980469801cb8524f170006f666c}{get\+Snelheid}} () const
+\item 
+virtual void \mbox{\hyperlink{classTram_a235f2c5206027afdaac1a2d29f7b1494}{set\+Snelheid}} (int snelheid)
+\item 
+\mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTram_abe386592de6a7930df75ea184b945403}{get\+Begin\+Station}} () const
+\item 
+void \mbox{\hyperlink{classTram_a3c2311e85ee636e21f96ae7dfa71ad50}{set\+Begin\+Station}} (\mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*}begin\+Station)
+\item 
+\Hypertarget{classTram_a54135dd1028b6362213abdd10150266a}\label{classTram_a54135dd1028b6362213abdd10150266a} 
+bool {\bfseries properly\+Initialized} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classTram_a568ecdf8b0310bd4cd255ab3db45e4e4}\label{classTram_a568ecdf8b0310bd4cd255ab3db45e4e4} 
+int {\bfseries lijn\+Nr}
+\item 
+\Hypertarget{classTram_abcdf7f3ab0e67b537067f06092c5019e}\label{classTram_abcdf7f3ab0e67b537067f06092c5019e} 
+int {\bfseries snelheid}
+\item 
+\Hypertarget{classTram_a7dfb65a3ec1e066c20dc9086eae49f77}\label{classTram_a7dfb65a3ec1e066c20dc9086eae49f77} 
+int {\bfseries voertuignummer}
+\item 
+\Hypertarget{classTram_ac93a3a546b76f9c779f33b2d6c699468}\label{classTram_ac93a3a546b76f9c779f33b2d6c699468} 
+\mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*} {\bfseries begin\+Station}
+\item 
+\Hypertarget{classTram_a3d8bc844480c6205c33277979150c8a4}\label{classTram_a3d8bc844480c6205c33277979150c8a4} 
+\mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*} {\bfseries huidige\+Station}
+\item 
+\Hypertarget{classTram_a7af31ca761f137bdb830fbdbf043302b}\label{classTram_a7af31ca761f137bdb830fbdbf043302b} 
+string {\bfseries beginstationname}
+\item 
+\Hypertarget{classTram_a4cb6eeca40d5af4f8cac9b4060d95c8d}\label{classTram_a4cb6eeca40d5af4f8cac9b4060d95c8d} 
+string {\bfseries type}
+\item 
+\Hypertarget{classTram_a06b21636d223f1d72a5e2ff832fe2175}\label{classTram_a06b21636d223f1d72a5e2ff832fe2175} 
+\mbox{\hyperlink{classTram}{Tram}} \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+initcheck}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTram_abe386592de6a7930df75ea184b945403}\label{classTram_abe386592de6a7930df75ea184b945403} 
+\index{Tram@{Tram}!getBeginStation@{getBeginStation}}
+\index{getBeginStation@{getBeginStation}!Tram@{Tram}}
+\doxysubsubsection{\texorpdfstring{getBeginStation()}{getBeginStation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*} Tram\+::get\+Begin\+Station (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}get\+Begin\+Station precondition failed\"{}); \begin{DoxyReturn}{Returns}
+Station\texorpdfstring{$\ast$}{*} (pointer to a variable of Stationtype) 
+\end{DoxyReturn}
+\Hypertarget{classTram_a5e1e3c04fc22d470616f82039c1445ad}\label{classTram_a5e1e3c04fc22d470616f82039c1445ad} 
+\index{Tram@{Tram}!getBeginstationname@{getBeginstationname}}
+\index{getBeginstationname@{getBeginstationname}!Tram@{Tram}}
+\doxysubsubsection{\texorpdfstring{getBeginstationname()}{getBeginstationname()}}
+{\footnotesize\ttfamily const string \& Tram\+::get\+Beginstationname (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}get\+Beginstationname precondition failed\"{}); \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\Hypertarget{classTram_affc75d2523aa54ea42c4e023a82b1a62}\label{classTram_affc75d2523aa54ea42c4e023a82b1a62} 
+\index{Tram@{Tram}!getHuidigeStation@{getHuidigeStation}}
+\index{getHuidigeStation@{getHuidigeStation}!Tram@{Tram}}
+\doxysubsubsection{\texorpdfstring{getHuidigeStation()}{getHuidigeStation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*} Tram\+::get\+Huidige\+Station (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}get\+Huidige\+Station precondition failed\"{}); \begin{DoxyReturn}{Returns}
+Station\texorpdfstring{$\ast$}{*} (pointer to a variable of Stationtype) 
+\end{DoxyReturn}
+\Hypertarget{classTram_ad2404fa7837b41287feab05f6a1b52bf}\label{classTram_ad2404fa7837b41287feab05f6a1b52bf} 
+\index{Tram@{Tram}!getLijnNr@{getLijnNr}}
+\index{getLijnNr@{getLijnNr}!Tram@{Tram}}
+\doxysubsubsection{\texorpdfstring{getLijnNr()}{getLijnNr()}}
+{\footnotesize\ttfamily int Tram\+::get\+Lijn\+Nr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}get\+Lijn\+Nr precondition failed\"{}); ENSURE(lijn\+Nr \texorpdfstring{$>$}{>}= 0,\"{}get\+Lijn\+Nr postcondition failed\"{}); \begin{DoxyReturn}{Returns}
+integer 
+\end{DoxyReturn}
+\Hypertarget{classTram_aa8bcd980469801cb8524f170006f666c}\label{classTram_aa8bcd980469801cb8524f170006f666c} 
+\index{Tram@{Tram}!getSnelheid@{getSnelheid}}
+\index{getSnelheid@{getSnelheid}!Tram@{Tram}}
+\doxysubsubsection{\texorpdfstring{getSnelheid()}{getSnelheid()}}
+{\footnotesize\ttfamily int Tram\+::get\+Snelheid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}get\+Snelheid precondition failed\"{}); \begin{DoxyReturn}{Returns}
+unsigned integer 
+\end{DoxyReturn}
+\Hypertarget{classTram_a865733c0109b4f4b98ad9a5b41a1041b}\label{classTram_a865733c0109b4f4b98ad9a5b41a1041b} 
+\index{Tram@{Tram}!getType@{getType}}
+\index{getType@{getType}!Tram@{Tram}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily string Tram\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}get\+Type precondition failed\"{}); \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\Hypertarget{classTram_a84c856d1f8a2b417abcf6fcad8e64947}\label{classTram_a84c856d1f8a2b417abcf6fcad8e64947} 
+\index{Tram@{Tram}!getVoertuignummer@{getVoertuignummer}}
+\index{getVoertuignummer@{getVoertuignummer}!Tram@{Tram}}
+\doxysubsubsection{\texorpdfstring{getVoertuignummer()}{getVoertuignummer()}}
+{\footnotesize\ttfamily int Tram\+::get\+Voertuignummer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}get\+Voertuignummer precondition failed\"{}); \begin{DoxyReturn}{Returns}
+unsigned integer 
+\end{DoxyReturn}
+\Hypertarget{classTram_a3c2311e85ee636e21f96ae7dfa71ad50}\label{classTram_a3c2311e85ee636e21f96ae7dfa71ad50} 
+\index{Tram@{Tram}!setBeginStation@{setBeginStation}}
+\index{setBeginStation@{setBeginStation}!Tram@{Tram}}
+\doxysubsubsection{\texorpdfstring{setBeginStation()}{setBeginStation()}}
+{\footnotesize\ttfamily void Tram\+::set\+Begin\+Station (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*}}]{begin\+Station }\end{DoxyParamCaption})}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}set\+Begin\+Station precondition failed\"{}); REQUIRE(start\+Station != NULL,\"{}set\+Begin\+Station precondition failed\"{}); ENSURE(\doxylink{classTram_abe386592de6a7930df75ea184b945403}{get\+Begin\+Station()} == start\+Station,\"{}set\+Begin\+Station post condition failed\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em begin\+Station} & \+: input pointer has to be of Stationtype \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTram_aff34a98b46aab6046a9f5517616edb06}\label{classTram_aff34a98b46aab6046a9f5517616edb06} 
+\index{Tram@{Tram}!setBeginstationname@{setBeginstationname}}
+\index{setBeginstationname@{setBeginstationname}!Tram@{Tram}}
+\doxysubsubsection{\texorpdfstring{setBeginstationname()}{setBeginstationname()}}
+{\footnotesize\ttfamily void Tram\+::set\+Beginstationname (\begin{DoxyParamCaption}\item[{const string \&}]{input\+\_\+name }\end{DoxyParamCaption})}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}set\+Beginstationname precondition failed\"{}); REQUIRE(input\+\_\+name != \"{}\textbackslash{}0\"{},\"{}set\+Beginstationname precondition failed\"{}); ENSURE(\doxylink{classTram_a5e1e3c04fc22d470616f82039c1445ad}{get\+Beginstationname()} == input\+\_\+name,\"{}set\+Beginstationname postcondition failed \"{}); 
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+name} & \+: string variable or string \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTram_ae6955372c42af7b72b60ec4c8462983c}\label{classTram_ae6955372c42af7b72b60ec4c8462983c} 
+\index{Tram@{Tram}!setHuidigeStation@{setHuidigeStation}}
+\index{setHuidigeStation@{setHuidigeStation}!Tram@{Tram}}
+\doxysubsubsection{\texorpdfstring{setHuidigeStation()}{setHuidigeStation()}}
+{\footnotesize\ttfamily void Tram\+::set\+Huidige\+Station (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classStation}{Station}} \texorpdfstring{$\ast$}{*}}]{huidige\+Station }\end{DoxyParamCaption})}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}set\+Huidige\+Station precondition failed\"{}); REQUIRE(hdig\+Station !=NULL,\"{}set\+Huidige\+Station precondition failed\"{}); ENSURE(\doxylink{classTram_affc75d2523aa54ea42c4e023a82b1a62}{get\+Huidige\+Station()} == hdig\+Station,\"{}set\+Huidige\+Station postcondition failed\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em huidige\+Station} & \+: Station\texorpdfstring{$\ast$}{*} (input pointer to a variable of Stationtype) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTram_aa4abed68bed572ea91e01eca2d48abfe}\label{classTram_aa4abed68bed572ea91e01eca2d48abfe} 
+\index{Tram@{Tram}!setLijnNr@{setLijnNr}}
+\index{setLijnNr@{setLijnNr}!Tram@{Tram}}
+\doxysubsubsection{\texorpdfstring{setLijnNr()}{setLijnNr()}}
+{\footnotesize\ttfamily void Tram\+::set\+Lijn\+Nr (\begin{DoxyParamCaption}\item[{int}]{lijn\+Nr }\end{DoxyParamCaption})}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}set\+Lijn\+Nr precondition failed\"{}); REQUIRE(line\+Nr \texorpdfstring{$>$}{>}= 0,\"{}set\+Lijn\+Nr must be equal or greater than 0\"{}); ENSURE(\doxylink{classTram_ad2404fa7837b41287feab05f6a1b52bf}{get\+Lijn\+Nr()} == line\+Nr,\"{}set\+Lijn\+Nr must be equal to line\+Nr\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em lijn\+Nr} & \+: input integer to set lijnnummer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTram_a235f2c5206027afdaac1a2d29f7b1494}\label{classTram_a235f2c5206027afdaac1a2d29f7b1494} 
+\index{Tram@{Tram}!setSnelheid@{setSnelheid}}
+\index{setSnelheid@{setSnelheid}!Tram@{Tram}}
+\doxysubsubsection{\texorpdfstring{setSnelheid()}{setSnelheid()}}
+{\footnotesize\ttfamily void Tram\+::set\+Snelheid (\begin{DoxyParamCaption}\item[{int}]{snelheid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}set\+Snelheid precondition failed\"{}); REQUIRE(velocity \texorpdfstring{$>$}{>}= 0,\"{}set\+Snelheid precondition failed\"{}); ENSURE(\doxylink{classTram_aa8bcd980469801cb8524f170006f666c}{get\+Snelheid()} == velocity,\"{}set\+Snelheid post condition failed\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em snelheid} & \+: input integer to set velocity \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTram_a096dc0baccdb2cb9f5a83f92a21ccba6}\label{classTram_a096dc0baccdb2cb9f5a83f92a21ccba6} 
+\index{Tram@{Tram}!setType@{setType}}
+\index{setType@{setType}!Tram@{Tram}}
+\doxysubsubsection{\texorpdfstring{setType()}{setType()}}
+{\footnotesize\ttfamily void Tram\+::set\+Type (\begin{DoxyParamCaption}\item[{const string \&}]{input\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}set\+Type precondition failed\"{}); REQUIRE(input\+\_\+type != \"{}\textbackslash{}0\"{},\"{}set\+Type precondition failed\"{}); ENSURE(\doxylink{classTram_a865733c0109b4f4b98ad9a5b41a1041b}{get\+Type()} == input\+\_\+type,\"{}set\+Type postcondition failed\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+type} & \+: string variable or string \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTram_a95d085acae025bb5383ab657c3637f2f}\label{classTram_a95d085acae025bb5383ab657c3637f2f} 
+\index{Tram@{Tram}!setVoertuignummer@{setVoertuignummer}}
+\index{setVoertuignummer@{setVoertuignummer}!Tram@{Tram}}
+\doxysubsubsection{\texorpdfstring{setVoertuignummer()}{setVoertuignummer()}}
+{\footnotesize\ttfamily void Tram\+::set\+Voertuignummer (\begin{DoxyParamCaption}\item[{int}]{input\+\_\+voertuignummer }\end{DoxyParamCaption})}
+
+REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}set\+Voertuignummer precondition failed\"{}); REQUIRE(input\+\_\+voertuignummer \texorpdfstring{$>$}{>}= 0,\"{}set\+Voertuignummer precondition failed\"{}); ENSURE(\doxylink{classTram_a84c856d1f8a2b417abcf6fcad8e64947}{get\+Voertuignummer()}== input\+\_\+voertuignummer,\"{}set\+Voertuignummer postcondition failed\"{}); 
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+voertuignummer} & \+: integervariable or integer \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tram.\+h\item 
+Tram.\+cpp\end{DoxyCompactItemize}

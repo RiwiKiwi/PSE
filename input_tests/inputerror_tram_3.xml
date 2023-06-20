@@ -25,6 +25,8 @@
         <!-- lijnnumber has to be an integer -->
         <lijnNr>e</lijnNr>
         <type>PCC</type>
+        <aantalDefecten>2</aantalDefecten>
+        <reparatieTijd>3</reparatieTijd>
         <voertuigNr>1</voertuigNr>
         <beginStation>A</beginStation>
     </TRAM>

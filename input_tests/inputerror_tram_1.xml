@@ -24,8 +24,10 @@
     <TRAM>
         <lijnNr>12</lijnNr>
         <type>PCC</type>
+        <aantalDefecten>2</aantalDefecten>
+        <reparatieTijd>3</reparatieTijd>
         <voertuigNr>1</voertuigNr>
-        <beginStation>C</beginStation>
+        <beginStation>A</beginStation>
     </TRAM>
     <TRAM>
         <!-- Albatros has to be initialized to a metrostation and not halte -->
