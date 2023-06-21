@@ -88,6 +88,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab2c9978c812a2b82f7c0dc0065df1631"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca282e3e6c0380e377e2fe4c3c5261fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMetroOutput.html#aca282e3e6c0380e377e2fe4c3c5261fc">verplaatstram</a> ()</td></tr>
 <tr class="separator:aca282e3e6c0380e377e2fe4c3c5261fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd4fcf323c0861258ca6319813635b08"><td class="memItemLeft" align="right" valign="top"><a id="afd4fcf323c0861258ca6319813635b08" name="afd4fcf323c0861258ca6319813635b08"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>properlyInitialized</b> () const</td></tr>
+<tr class="separator:afd4fcf323c0861258ca6319813635b08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad2c76a6e3db1086abd94f57ab67125d0" name="ad2c76a6e3db1086abd94f57ab67125d0"></a>
@@ -115,7 +118,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructor </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Constructor ENSURE(this-&gt;properlyInitialized(),"CONSTRUCTOR OF OUTPUTCLASS NOT PROPERLY INITIALIZED!"); </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">trams</td><td>inputvector of trams from our system </td></tr>
     <tr><td class="paramname">stations</td><td>inputvector of stations from our system </td></tr>
@@ -140,7 +143,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>REQUIRE(!stations.empty(),"advanced writeOver precondition failed"); REQUIRE(!trams.empty(),"advanced writeOver precondition failed"); ENSURE(file.peek() != ifstream::traits_type::eof(),"writeOver postcondition failed"); </p>
+<p>Advanced Output of our specification 2 (USECASE 2.3) REQUIRE(this-&gt;properlyInitialized(),"CONSTRUCTOR OF OUTPUTCLASS NOT PROPERLY INITIALIZED!"); REQUIRE(!stations.empty(),"advanced writeOver precondition failed"); REQUIRE(!trams.empty(),"advanced writeOver precondition failed"); ENSURE(file.peek() != ifstream::traits_type::eof(),"writeOver postcondition failed"); </p>
 
 </div>
 </div>
@@ -158,7 +161,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>REQUIRE(!stations.empty(),"simple writeOver precondition failed"); REQUIRE(!trams.empty(),"simple writeOver precondition failed"); ENSURE(file.peek() != ifstream::traits_type::eof(),"writeOver postcondition failed"); </p>
+<p>Simple Output of our specification 2 (USECASE 2.2) REQUIRE(this-&gt;properlyInitialized(),"CONSTRUCTOR OF OUTPUTCLASS NOT PROPERLY INITIALIZED!"); REQUIRE(!stations.empty(),"simple writeOver precondition failed"); REQUIRE(!trams.empty(),"simple writeOver precondition failed"); ENSURE(file.peek() != ifstream::traits_type::eof(),"writeOver postcondition failed"); </p>
 
 </div>
 </div>
@@ -176,7 +179,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>REQUIRE(!trams.empty(),"verplaatstram precondition failed"); REQUIRE(!stations.empty(),"verplaatstram precondition failed"); </p>
+<p>Function to stimulate automatic simulation of our specification 2 (USECASE 3.1/3.2/3.3) REQUIRE(this-&gt;properlyInitialized(),"CONSTRUCTOR OF OUTPUTCLASS NOT PROPERLY INITIALIZED!"); REQUIRE(!trams.empty(),"verplaatstram precondition failed"); REQUIRE(!stations.empty(),"verplaatstram precondition failed"); ENSURE(file.peek()!= ifstream::traits_type::eof(),"verplaatstram postcondition failed"); </p>
 
 </div>
 </div>
@@ -194,7 +197,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>REQUIRE(!stations.empty(),"writeOver precondition failed"); REQUIRE(!trams.empty(),"writeOver precondition failed"); ENSURE(file.peek() != ifstream::traits_type::eof(),"writeOver postcondition failed"); </p>
+<p>Simple Output of our specification 1 (USECASE 2.1) REQUIRE(this-&gt;properlyInitialized(),"CONSTRUCTOR OF OUTPUTCLASS NOT PROPERLY INITIALIZED!"); REQUIRE(!stations.empty(),"writeOver precondition failed"); REQUIRE(!trams.empty(),"writeOver precondition failed"); ENSURE(file.peek() != ifstream::traits_type::eof(),"writeOver postcondition failed"); </p>
 
 </div>
 </div>

@@ -29,7 +29,7 @@ void \mbox{\hyperlink{classSysteem_a136eed925a581eb2aad80cbe432a5822}{rijd}} (in
 \doxysubsubsection{\texorpdfstring{Systeem()}{Systeem()}}
 {\footnotesize\ttfamily Systeem\+::\+Systeem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-ENSURE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}\+CONSTRUCTOR OF CLASS SYSTEEM NOT PROPERLY INITIALIZED\"{}); 
+Constructor ENSURE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}\+CONSTRUCTOR OF CLASS SYSTEEM NOT PROPERLY INITIALIZED\"{}); 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{classSysteem_a9b7b4b2fb0c91c71d117d4452d60bc1b}\label{classSysteem_a9b7b4b2fb0c91c71d117d4452d60bc1b} 
@@ -38,7 +38,7 @@ ENSURE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}\+CONSTRUCTOR O
 \doxysubsubsection{\texorpdfstring{checkConsistent()}{checkConsistent()}}
 {\footnotesize\ttfamily bool Systeem\+::check\+Consistent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(), \"{}check\+Consistent precondition failed\"{}); \Hypertarget{classSysteem_aabcaa90be45a1a408b4ea111d9f76d37}\label{classSysteem_aabcaa90be45a1a408b4ea111d9f76d37} 
+Consistent checker REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(), \"{}check\+Consistent precondition failed\"{}); \Hypertarget{classSysteem_aabcaa90be45a1a408b4ea111d9f76d37}\label{classSysteem_aabcaa90be45a1a408b4ea111d9f76d37} 
 \index{Systeem@{Systeem}!getStations@{getStations}}
 \index{getStations@{getStations}!Systeem@{Systeem}}
 \doxysubsubsection{\texorpdfstring{getStations()}{getStations()}}
@@ -62,7 +62,7 @@ vector of type pointer to \doxylink{classTram}{Tram}
 \doxysubsubsection{\texorpdfstring{rijd()}{rijd()}}
 {\footnotesize\ttfamily void Systeem\+::rijd (\begin{DoxyParamCaption}\item[{int}]{stappen }\end{DoxyParamCaption})}
 
-REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}rijd precondition failed!\"{}); REQUIRE(stappen \texorpdfstring{$>$}{>} 0 , \"{}rijd precondition failed\"{}); ENSURE(this-\/\texorpdfstring{$>$}{>}\doxylink{classSysteem_a9b7b4b2fb0c91c71d117d4452d60bc1b}{check\+Consistent()} == true,\"{}rijd postcondition failed\"{}); 
+Automatic simulator function REQUIRE(this-\/\texorpdfstring{$>$}{>}properly\+Initialized(),\"{}rijd precondition failed!\"{}); REQUIRE(stappen \texorpdfstring{$>$}{>} 0 , \"{}rijd precondition failed\"{}); ENSURE(this-\/\texorpdfstring{$>$}{>}\doxylink{classSysteem_a9b7b4b2fb0c91c71d117d4452d60bc1b}{check\+Consistent()} == true,\"{}rijd postcondition failed\"{}); 
 \begin{DoxyParams}{Parameters}
 {\em stappen} & aantal keer dat je wilt moven \\
 \hline

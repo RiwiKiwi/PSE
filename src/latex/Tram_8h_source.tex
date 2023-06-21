@@ -46,90 +46,79 @@
 \DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTram_a3c2311e85ee636e21f96ae7dfa71ad50}{setBeginStation}}(\mbox{\hyperlink{classStation}{Station}}\ *beginStation);}
 \DoxyCodeLine{00116\ }
 \DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ properlyInitialized()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00118\ \textcolor{comment}{\ \ \ \ /***}}
-\DoxyCodeLine{00119\ \textcolor{comment}{\ \ \ \ \ *\ ENSURE(this-\/>properlyInitialized(),"{}CONSTRUCTOR\ OF\ CLASS\ TRAM\ NOT\ PROPERLY\ INITIALIZED"{});}}
-\DoxyCodeLine{00120\ \textcolor{comment}{\ \ \ \ \ */}}
-\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{classTram}{Tram}}();}
-\DoxyCodeLine{00122\ \};}
-\DoxyCodeLine{00123\ }
-\DoxyCodeLine{00124\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPCC}{PCC}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTram}{Tram}}\{}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{int}\ storepcc\_moves;}
-\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{int}\ storepcc\_waits;}
-\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{int}\ curr\_moves;}
-\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{int}\ curr\_waits;}
-\DoxyCodeLine{00130\ }
-\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{classPCC}{PCC}}*\ \_\_inicheck;}
-\DoxyCodeLine{00132\ }
-\DoxyCodeLine{00133\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{classPCC}{PCC}}()\{}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \_\_inicheck\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ storepcc\_waits\ =\ 0;}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ storepcc\_moves\ =\ 0;}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ curr\_waits\ =\ 0;}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ curr\_moves\ =\ 0;}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ ENSURE(this-\/>properlyInitialized(),\textcolor{stringliteral}{"{}CONSTRUCTOR\ OF\ PCC\ NOT\ PROPERLY\ INITIALIZED"{}});}
-\DoxyCodeLine{00141\ \ \ \ \ \};}
-\DoxyCodeLine{00142\ }
-\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{bool}\ properlyInitialized()\ \{}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_initcheck\ ==\ \textcolor{keyword}{this};}
-\DoxyCodeLine{00145\ \ \ \ \ \}}
-\DoxyCodeLine{00146\ }
-\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{int}\ getStorepccMoves()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ REQUIRE(\_initcheck-\/>properlyInitialized(),\textcolor{stringliteral}{"{}getStorepccMoves\ precondition\ failed"{}});}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ storepcc\_moves;}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{classTram_aad83b2e7e79d57528691bf317ab0e1ef}{Tram}}();}
+\DoxyCodeLine{00123\ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPCC}{PCC}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTram}{Tram}}\{}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{int}\ storepcc\_moves;}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{int}\ storepcc\_waits;}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{int}\ curr\_moves;}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{int}\ curr\_waits;}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{classPCC}{PCC}}*\ \_\_inicheck;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{classPCC_a942d36135d139dcecffe2bc438847491}{PCC}}()\{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \_\_inicheck\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ storepcc\_waits\ =\ 0;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ storepcc\_moves\ =\ 0;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ curr\_waits\ =\ 0;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ curr\_moves\ =\ 0;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ ENSURE(this-\/>properlyInitialized(),\textcolor{stringliteral}{"{}CONSTRUCTOR\ OF\ PCC\ NOT\ PROPERLY\ INITIALIZED"{}});}
+\DoxyCodeLine{00146\ \ \ \ \ \};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{bool}\ properlyInitialized()\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_initcheck\ ==\ \textcolor{keyword}{this};}
 \DoxyCodeLine{00150\ \ \ \ \ \}}
-\DoxyCodeLine{00151\ }
-\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{void}\ setStorepccMoves(\textcolor{keywordtype}{int}\ storepccMoves)\ \{}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ REQUIRE(this-\/>properlyInitialized(),\textcolor{stringliteral}{"{}setStorepccMoves\ precondition\ failed"{}});}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ REQUIRE(storepccMoves\ >\ 0,\textcolor{stringliteral}{"{}setStorepccMoves\ precondition\ failed"{}});}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ storepcc\_moves\ =\ storepccMoves;}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ curr\_moves\ =\ storepccMoves;}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ ENSURE(getStorepccMoves()\ ==\ storepccMoves,\textcolor{stringliteral}{"{}setStorepccMoves\ postcondition\ failed"{}});}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ ENSURE(getCurrMoves()\ ==\ storepccMoves,\textcolor{stringliteral}{"{}setStorepccMoves\ postcondition\ failed"{}});}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classPCC_aa9b7b3d7674b530453dfb8c1f4bd2006}{getStorepccMoves}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ REQUIRE(\_initcheck-\/>properlyInitialized(),\textcolor{stringliteral}{"{}getStorepccMoves\ precondition\ failed"{}});}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ storepcc\_moves;}
 \DoxyCodeLine{00159\ \ \ \ \ \}}
-\DoxyCodeLine{00160\ }
-\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{int}\ getStorepccWaits()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ REQUIRE(\_initcheck-\/>properlyInitialized(),\textcolor{stringliteral}{"{}getStorepccWaits\ preconditon\ failed"{}});}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ storepcc\_waits;}
-\DoxyCodeLine{00164\ \ \ \ \ \}}
-\DoxyCodeLine{00165\ }
-\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{void}\ setStorepccWaits(\textcolor{keywordtype}{int}\ storepccWaits)\ \{}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ REQUIRE(this-\/>properlyInitialized(),\textcolor{stringliteral}{"{}setStorepccWaits\ precondition\ failed"{}});}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ REQUIRE(storepccWaits\ >\ 0,\textcolor{stringliteral}{"{}setStorepccWaits\ precondition\ failed"{}});}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ storepcc\_waits\ =\ storepccWaits;}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ curr\_waits\ =\ storepccWaits;}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ ENSURE(getStorepccWaits()\ ==\ storepccWaits,\textcolor{stringliteral}{"{}setStorepccWaits\ postcondition\ failed"{}});}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ ENSURE(getCurrWaits()\ ==\ storepccWaits,\textcolor{stringliteral}{"{}setStorepccWaits\ postcondition\ failed"{}});}
-\DoxyCodeLine{00173\ \ \ \ \ \}}
-\DoxyCodeLine{00174\ }
-\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{int}\ getCurrMoves()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ REQUIRE(\_\_inicheck-\/>properlyInitialized(),\textcolor{stringliteral}{"{}getCurrMoves\ preconditon\ failed"{}});}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ curr\_moves;}
-\DoxyCodeLine{00178\ \ \ \ \ \}}
-\DoxyCodeLine{00179\ }
-\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{void}\ setCurrMoves(\textcolor{keywordtype}{int}\ currMoves)\ \{}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ REQUIRE(this-\/>properlyInitialized(),\textcolor{stringliteral}{"{}setCurrMoves\ preconditon\ failed"{}});}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ REQUIRE(currMoves\ >=\ 0\ ,\ \textcolor{stringliteral}{"{}setCurrMoves\ precondition\ failed"{}});}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ curr\_moves\ =\ currMoves;}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ ENSURE(getCurrMoves()\ ==\ currMoves,\textcolor{stringliteral}{"{}setCurrMoves\ postcondition\ failed"{}});}
-\DoxyCodeLine{00185\ \ \ \ \ \}}
-\DoxyCodeLine{00186\ }
-\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{int}\ getCurrWaits()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ REQUIRE(\_\_inicheck-\/>properlyInitialized(),\textcolor{stringliteral}{"{}getCurrWaits\ precondition\ failed"{}});}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ curr\_waits;}
-\DoxyCodeLine{00190\ \ \ \ \ \}}
-\DoxyCodeLine{00191\ }
-\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{void}\ setCurrWaits(\textcolor{keywordtype}{int}\ currWaits)\ \{}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ REQUIRE(this-\/>properlyInitialized(),\textcolor{stringliteral}{"{}setCurrWaits\ preconditon\ failed"{}});}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ REQUIRE(currWaits\ >=\ 0,\ \textcolor{stringliteral}{"{}setCurrWaits\ precondition\ failed"{}});}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ curr\_waits\ =\ currWaits;}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ ENSURE(getCurrWaits()\ ==\ currWaits,\textcolor{stringliteral}{"{}setCurrWaits\ postcondition\ failed"{}});}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPCC_ac271b284b5ef23602be8dda940c3a91d}{setStorepccMoves}}(\textcolor{keywordtype}{int}\ storepccMoves)\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ REQUIRE(this-\/>properlyInitialized(),\textcolor{stringliteral}{"{}setStorepccMoves\ precondition\ failed"{}});}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ REQUIRE(storepccMoves\ >\ 0,\textcolor{stringliteral}{"{}setStorepccMoves\ precondition\ failed"{}});}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ storepcc\_moves\ =\ storepccMoves;}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ curr\_moves\ =\ storepccMoves;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ ENSURE(\mbox{\hyperlink{classPCC_aa9b7b3d7674b530453dfb8c1f4bd2006}{getStorepccMoves}}()\ ==\ storepccMoves,\textcolor{stringliteral}{"{}setStorepccMoves\ postcondition\ failed"{}});}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ ENSURE(\mbox{\hyperlink{classPCC_a5db043f1445a6c6e8543f5c3e4987246}{getCurrMoves}}()\ ==\ storepccMoves,\textcolor{stringliteral}{"{}setStorepccMoves\ postcondition\ failed"{}});}
+\DoxyCodeLine{00174\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classPCC_a0628a95825aea9e07d4cf671d03e813d}{getStorepccWaits}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ REQUIRE(\_initcheck-\/>properlyInitialized(),\textcolor{stringliteral}{"{}getStorepccWaits\ preconditon\ failed"{}});}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ storepcc\_waits;}
+\DoxyCodeLine{00182\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPCC_af18add09257cf438ef13cfff8e560ebd}{setStorepccWaits}}(\textcolor{keywordtype}{int}\ storepccWaits)\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ REQUIRE(this-\/>properlyInitialized(),\textcolor{stringliteral}{"{}setStorepccWaits\ precondition\ failed"{}});}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ REQUIRE(storepccWaits\ >\ 0,\textcolor{stringliteral}{"{}setStorepccWaits\ precondition\ failed"{}});}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ storepcc\_waits\ =\ storepccWaits;}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ curr\_waits\ =\ storepccWaits;}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ ENSURE(\mbox{\hyperlink{classPCC_a0628a95825aea9e07d4cf671d03e813d}{getStorepccWaits}}()\ ==\ storepccWaits,\textcolor{stringliteral}{"{}setStorepccWaits\ postcondition\ failed"{}});}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ ENSURE(\mbox{\hyperlink{classPCC_a57b33f6f9ac6859d6adb01c8ce6bd410}{getCurrWaits}}()\ ==\ storepccWaits,\textcolor{stringliteral}{"{}setStorepccWaits\ postcondition\ failed"{}});}
 \DoxyCodeLine{00197\ \ \ \ \ \}}
-\DoxyCodeLine{00198\ }
-\DoxyCodeLine{00199\ \};}
-\DoxyCodeLine{00200\ }
-\DoxyCodeLine{00201\ }
-\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TICTACTOE10\_TRAM\_H}}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classPCC_a5db043f1445a6c6e8543f5c3e4987246}{getCurrMoves}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ REQUIRE(\_\_inicheck-\/>properlyInitialized(),\textcolor{stringliteral}{"{}getCurrMoves\ preconditon\ failed"{}});}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ curr\_moves;}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPCC_a803656f9624869b235d6b0e79dcb03b9}{setCurrMoves}}(\textcolor{keywordtype}{int}\ currMoves)\ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ REQUIRE(this-\/>properlyInitialized(),\textcolor{stringliteral}{"{}setCurrMoves\ preconditon\ failed"{}});}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ REQUIRE(currMoves\ >=\ 0\ ,\ \textcolor{stringliteral}{"{}setCurrMoves\ precondition\ failed"{}});}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ curr\_moves\ =\ currMoves;}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ ENSURE(\mbox{\hyperlink{classPCC_a5db043f1445a6c6e8543f5c3e4987246}{getCurrMoves}}()\ ==\ currMoves,\textcolor{stringliteral}{"{}setCurrMoves\ postcondition\ failed"{}});}
+\DoxyCodeLine{00217\ \ \ \ \ \}}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classPCC_a57b33f6f9ac6859d6adb01c8ce6bd410}{getCurrWaits}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ REQUIRE(\_\_inicheck-\/>properlyInitialized(),\textcolor{stringliteral}{"{}getCurrWaits\ precondition\ failed"{}});}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ curr\_waits;}
+\DoxyCodeLine{00225\ \ \ \ \ \}}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPCC_aa7f30089b1e7c2459f087e21c89ec025}{setCurrWaits}}(\textcolor{keywordtype}{int}\ currWaits)\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ REQUIRE(this-\/>properlyInitialized(),\textcolor{stringliteral}{"{}setCurrWaits\ preconditon\ failed"{}});}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ REQUIRE(currWaits\ >=\ 0,\ \textcolor{stringliteral}{"{}setCurrWaits\ precondition\ failed"{}});}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ curr\_waits\ =\ currWaits;}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ ENSURE(\mbox{\hyperlink{classPCC_a57b33f6f9ac6859d6adb01c8ce6bd410}{getCurrWaits}}()\ ==\ currWaits,\textcolor{stringliteral}{"{}setCurrWaits\ postcondition\ failed"{}});}
+\DoxyCodeLine{00237\ \ \ \ \ \}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \};}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TICTACTOE10\_TRAM\_H}}
 
 \end{DoxyCode}

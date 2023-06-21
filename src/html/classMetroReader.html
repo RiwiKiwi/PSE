@@ -307,7 +307,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>XML-reader function REQUIRE(input_system.properlyInitialized(),"The system wasn' t correctly initialized!"); ENSURE(!input_system.getTrams().empty(),"importXml postcondition failed!"); ENSURE(!input_system.getStations().empty(),"importXml postconditon failed!"); </p><dl class="params"><dt>Parameters</dt><dd>
+<p>XML-reader function REQUIRE(input_system.properlyInitialized(),"The system wasn' t correctly initialized!"); ENSURE(input_system.checkConsistent() == true,"importXml postcondition failed!"); </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">input_filename</td><td>: string (directory where we will read our file ) or variable where our path is stored </td></tr>
     <tr><td class="paramname">errStream</td><td>: outstream for declaring message </td></tr>

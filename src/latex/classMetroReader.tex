@@ -92,7 +92,7 @@ string =\texorpdfstring{$>$}{>} \doxylink{classPCC}{PCC} OR ALBATROS OR STADSLIJ
 \doxysubsubsection{\texorpdfstring{importXml()}{importXml()}}
 {\footnotesize\ttfamily Success\+Enum Metro\+Reader\+::import\+Xml (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{input\+\_\+filename,  }\item[{std\+::ostream \&}]{err\+Stream,  }\item[{\mbox{\hyperlink{classSysteem}{Systeem}} \&}]{input\+\_\+system }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-XML-\/reader function REQUIRE(input\+\_\+system.\+properly\+Initialized(),\"{}\+The system wasn\textquotesingle{} t correctly initialized!\"{}); ENSURE(!input\+\_\+system.get\+Trams().empty(),\"{}import\+Xml postcondition failed!\"{}); ENSURE(!input\+\_\+system.get\+Stations().empty(),\"{}import\+Xml postconditon failed!\"{}); 
+XML-\/reader function REQUIRE(input\+\_\+system.\+properly\+Initialized(),\"{}\+The system wasn\textquotesingle{} t correctly initialized!\"{}); ENSURE(input\+\_\+system.\+check\+Consistent() == true,\"{}import\+Xml postcondition failed!\"{}); 
 \begin{DoxyParams}{Parameters}
 {\em input\+\_\+filename} & \+: string (directory where we will read our file ) or variable where our path is stored \\
 \hline

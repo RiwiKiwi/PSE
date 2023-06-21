@@ -6,5 +6,5 @@ var searchData=
   ['teststation_3',['testStation',['../classtestStation.html',1,'']]],
   ['testsysteem_4',['testSysteem',['../classtestSysteem.html',1,'']]],
   ['testtram_5',['testTram',['../classtestTram.html',1,'']]],
-  ['tram_6',['Tram',['../classTram.html',1,'']]]
+  ['tram_6',['Tram',['../classTram.html',1,'Tram'],['../classTram.html#aad83b2e7e79d57528691bf317ab0e1ef',1,'Tram::Tram()']]]
 ];
