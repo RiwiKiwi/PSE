@@ -115,7 +115,8 @@ public:
     void setBeginStation(Station *beginStation);
 
     bool properlyInitialized() const;
-    /***
+    /**
+     * Constructor
      * ENSURE(this->properlyInitialized(),"CONSTRUCTOR OF CLASS TRAM NOT PROPERLY INITIALIZED");
      */
     Tram();
@@ -131,6 +132,10 @@ class PCC: public Tram{
     PCC* __inicheck;
 
 public:
+    /**
+     * Constructor
+     * ENSURE(this->properlyInitialized(),"CONSTRUCTOR OF PCC NOT PROPERLY INITIALIZED");
+     */
     PCC(){
         __inicheck = this;
         storepcc_waits = 0;
@@ -143,12 +148,22 @@ public:
     bool properlyInitialized() {
         return _initcheck == this;
     }
+    /**
+     * REQUIRE(_initcheck->properlyInitialized(),"getStorepccMoves precondition failed");
+     * @return unsigned integer
+     */
 
     int getStorepccMoves() const {
         REQUIRE(_initcheck->properlyInitialized(),"getStorepccMoves precondition failed");
         return storepcc_moves;
     }
-
+    /**
+     * REQUIRE(this->properlyInitialized(),"setStorepccMoves precondition failed");
+     * REQUIRE(storepccMoves > 0,"setStorepccMoves precondition failed");
+     * @param storepccMoves: unsigned integer
+     * ENSURE(getStorepccMoves() == storepccMoves,"setStorepccMoves postcondition failed");
+     * ENSURE(getCurrMoves() == storepccMoves,"setStorepccMoves postcondition failed");
+     */
     void setStorepccMoves(int storepccMoves) {
         REQUIRE(this->properlyInitialized(),"setStorepccMoves precondition failed");
         REQUIRE(storepccMoves > 0,"setStorepccMoves precondition failed");
@@ -157,12 +172,21 @@ public:
         ENSURE(getStorepccMoves() == storepccMoves,"setStorepccMoves postcondition failed");
         ENSURE(getCurrMoves() == storepccMoves,"setStorepccMoves postcondition failed");
     }
-
+    /**
+     * REQUIRE(_initcheck->properlyInitialized(),"getStorepccWaits preconditon failed");
+     * @return unsigned integer
+     */
     int getStorepccWaits() const {
         REQUIRE(_initcheck->properlyInitialized(),"getStorepccWaits preconditon failed");
         return storepcc_waits;
     }
-
+    /**
+     * REQUIRE(this->properlyInitialized(),"setStorepccWaits precondition failed");
+     * REQUIRE(storepccWaits > 0,"setStorepccWaits precondition failed");
+     * @param storepccWaits: unsigned integer
+     * ENSURE(getStorepccWaits() == storepccWaits,"setStorepccWaits postcondition failed");
+     * ENSURE(getCurrWaits() == storepccWaits,"setStorepccWaits postcondition failed");
+     */
     void setStorepccWaits(int storepccWaits) {
         REQUIRE(this->properlyInitialized(),"setStorepccWaits precondition failed");
         REQUIRE(storepccWaits > 0,"setStorepccWaits precondition failed");
@@ -171,24 +195,40 @@ public:
         ENSURE(getStorepccWaits() == storepccWaits,"setStorepccWaits postcondition failed");
         ENSURE(getCurrWaits() == storepccWaits,"setStorepccWaits postcondition failed");
     }
-
+    /**
+     * REQUIRE(__inicheck->properlyInitialized(),"getCurrMoves preconditon failed");
+     * @return unsigned integer
+     */
     int getCurrMoves() const {
         REQUIRE(__inicheck->properlyInitialized(),"getCurrMoves preconditon failed");
         return curr_moves;
     }
-
+    /**
+     * REQUIRE(this->properlyInitialized(),"setCurrMoves preconditon failed");
+     * REQUIRE(currMoves >= 0 , "setCurrMoves precondition failed");
+     * @param currMoves: unsigned integer
+     * ENSURE(getCurrMoves() == currMoves,"setCurrMoves postcondition failed");
+     */
     void setCurrMoves(int currMoves) {
         REQUIRE(this->properlyInitialized(),"setCurrMoves preconditon failed");
         REQUIRE(currMoves >= 0 , "setCurrMoves precondition failed");
         curr_moves = currMoves;
         ENSURE(getCurrMoves() == currMoves,"setCurrMoves postcondition failed");
     }
-
+    /**
+     * REQUIRE(__inicheck->properlyInitialized(),"getCurrWaits precondition failed");
+     * @return unsigned integer
+     */
     int getCurrWaits() const {
         REQUIRE(__inicheck->properlyInitialized(),"getCurrWaits precondition failed");
         return curr_waits;
     }
-
+    /**
+     * REQUIRE(this->properlyInitialized(),"setCurrWaits preconditon failed");
+     * REQUIRE(currWaits >= 0, "setCurrWaits precondition failed");
+     * @param currWaits: unsigned integer
+     * ENSURE(getCurrWaits() == currWaits,"setCurrWaits postcondition failed");
+     */
     void setCurrWaits(int currWaits) {
         REQUIRE(this->properlyInitialized(),"setCurrWaits preconditon failed");
         REQUIRE(currWaits >= 0, "setCurrWaits precondition failed");

@@ -8,10 +8,13 @@
 
 
 MetroOutput::MetroOutput(const vector<Tram *> &trams, const vector<Station *> &stations) : trams(trams),stations(stations) {
+    _inicheck = this;
+    ENSURE(this->properlyInitialized(),"CONSTRUCTOR OF OUTPUTCLASS NOT PROPERLY INITIALIZED!");
 }
 
 
 void MetroOutput::writeOver(){
+    REQUIRE(this->properlyInitialized(),"CONSTRUCTOR OF OUTPUTCLASS NOT PROPERLY INITIALIZED!");
     REQUIRE(!stations.empty()," writeOver precondition failed");
     REQUIRE(!trams.empty(),"writeOver precondition failed");
     ofstream out("../output_tests/normal_scenario0_output.txt");
@@ -41,6 +44,7 @@ void MetroOutput::writeOver(){
 
 void MetroOutput::simple_writeover() {
     ofstream out("../output_tests/normal_scenario1_output.txt");
+    REQUIRE(this->properlyInitialized(),"CONSTRUCTOR OF OUTPUTCLASS NOT PROPERLY INITIALIZED!");
     REQUIRE(!stations.empty(),"simple writeOver precondition failed");
     REQUIRE(!trams.empty(),"simple writeOver precondition failed");
     out << "--== STATIONS ==--" << endl;
@@ -75,6 +79,7 @@ void MetroOutput::advanced_writeover() {
     /*
   * THIS IS USECASE 2.3
   */
+    REQUIRE(this->properlyInitialized(),"CONSTRUCTOR OF OUTPUTCLASS NOT PROPERLY INITIALIZED!");
     REQUIRE(!stations.empty(),"advanced writeOver precondition failed");
     REQUIRE(!trams.empty(),"advanced writeOver precondition failed");
     ofstream out("../output_tests/normal_scenario2_output.txt");
@@ -146,6 +151,7 @@ void MetroOutput::advanced_writeover() {
 }
 
 void MetroOutput::verplaatstram() {
+    REQUIRE(this->properlyInitialized(),"CONSTRUCTOR OF OUTPUTCLASS NOT PROPERLY INITIALIZED!");
     REQUIRE(!trams.empty(),"verplaatstram precondition failed");
     REQUIRE(!stations.empty(),"verplaatstram precondition failed");
     ofstream out("../output_tests/automatic_simulation1_output.txt",ios_base::app);
@@ -213,4 +219,10 @@ void MetroOutput::verplaatstram() {
         }
     }
     out.close();
+    ifstream file("../output_tests/automatic_simulation1_output.txt");
+    ENSURE(file.peek()!= ifstream::traits_type::eof(),"verplaatstram postcondition failed");
+}
+
+bool MetroOutput::properlyInitialized() const{
+    return _inicheck == this;
 }

@@ -47,14 +47,17 @@ public:
 
     bool properlyInitialized() const;
     /**
+     * Consistent checker
      * REQUIRE(this->properlyInitialized(), "checkConsistent precondition failed");
      */
     bool checkConsistent();
     /**
+     * Constructor
      * ENSURE(this->properlyInitialized(),"CONSTRUCTOR OF CLASS SYSTEEM NOT PROPERLY INITIALIZED");
      */
     Systeem();
     /**
+     * Automatic simulator function
      * REQUIRE(this->properlyInitialized(),"rijd precondition failed!");
      * REQUIRE(stappen > 0 , "rijd precondition failed");
      * ENSURE(this->checkConsistent() == true,"rijd postcondition failed");
